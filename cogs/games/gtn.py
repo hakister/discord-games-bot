@@ -2,7 +2,7 @@ import random
 import discord
 from discord.ext import commands
 
-ALLOWED_ROLE_ID = 1372934366870638674  # change this to your desired role ID
+# ALLOWED_ROLE_ID = 1372934366870638674  # change this to your desired role ID
 
 class Guess(commands.Cog):
     def __init__(self, bot):
@@ -70,5 +70,5 @@ class Guess(commands.Cog):
 
         await ctx.send(embed=embed)
 
-def setup(bot):
-    bot.add_cog(Guess(bot))
+async def setup(bot):
+    await bot.add_cog(Guess(bot))
