@@ -1,0 +1,203 @@
+[
+    {
+        "question": "What is the capital of Rune Midgard?",
+        "answer": "Prontera"
+    },
+    {
+        "question": "Where is the Merchant Guild located?",
+        "answer": "Alberta"
+    },
+    {
+        "question": "Where is the Thief Guild located?",
+        "answer": "Morroc"
+    },
+    {
+        "question": "Where is the Mage Guild located?",
+        "answer": "Geffen"
+    },
+    {
+        "question": "Where is the Swordsman Association located?",
+        "answer": "Izlude"
+    },
+		{
+        "question": "Where is the Archer Village located?",
+        "answer": "Payon"
+    },
+		{
+        "question": "Where is the Acolyte Guild located?",
+        "answer": "Prontera"
+    },
+		{
+        "question": "What 2nd class character is able to lay traps on the ground?",
+        "answer": "Hunter"
+    },
+		{
+        "question": "What 2nd class character is able to create elemental converters?",
+        "answer": "Sage"
+    },
+		{
+        "question": "What 2nd class character is able to brew potions?",
+        "answer": "Alchemist"
+    },
+		{
+        "question": "What 2nd class character is able to forge weapons?",
+        "answer": "Blacksmith"
+    },
+		{
+        "question": "What 2nd class character is able to cast Resurrection on fallen comrades?",
+        "answer": "Priest"
+    },
+		{
+        "question": "What 1st class character has access to the Steal skill?",
+        "answer": "Thief"
+    },
+		{
+        "question": "What 1st class character has access to the Endure skill?",
+        "answer": "Swordsman"
+    },
+		{
+        "question": "What card enchants armor with the Holy property?",
+        "answer": "Angeling"
+    },
+		{
+        "question": "What card enchants armor with the Poison property?",
+        "answer": "Argiope"
+    },
+		{
+        "question": "What card enchants armor with the Shadow property?",
+        "answer": "Bathory"
+    },
+		{
+        "question": "What card enchants armor with the Wind property?",
+        "answer": "Dokebi"
+    },
+		{
+        "question": "What card enchants armor with the Undead property?",
+        "answer": "Evil Druid"
+    },
+		{
+        "question": "What card enchants armor with the Ghost property?",
+        "answer": "Ghostring"
+    },
+		{
+        "question": "What card enchants armor with the Fire property?",
+        "answer": "Pasana"
+    },
+		{
+        "question": "What card enchants armor with the Earth property?",
+        "answer": "Sandman"
+    },
+		{
+        "question": "What card enchants armor with the Water property?",
+        "answer": "Swordfish"
+    },
+		{
+        "question": "Which NPC in the 'Seeker's New Beginnings' questline give the Auto Combat and Auto Support items?",
+        "answer": "Quest Master"
+    },
+		{
+        "question": "What item do players get after they talk to the Kafra Welcome NPC in the Training Grounds?",
+        "answer": "Kafra's Letter"
+    },
+		{
+        "question": "How much zeny is the trade tax when trading 1 item?",
+        "answer": "4000"
+    },
+		{
+        "question": "How much weight limit do players get when their refinement set is +7?",
+        "answer": "500"
+    },
+		{
+        "question": "How much weight limit do players get when their refinement set is +8?",
+        "answer": "750"
+    },
+		{
+        "question": "How much weight limit do players get when their refinement set is +9?",
+        "answer": "850"
+    },
+		{
+        "question": "How much extra bonus drop rate percentage do players get when Overkill is activated?",
+        "answer": "10"
+    },
+		{
+        "question": "How much extra bonus movement speed percentage do players get when Valkyrie's Affinity is activated?",
+        "answer": "10"
+    },
+		{
+        "question": "How many maps are selected for the PK Zone System?",
+        "answer": "3"
+    },
+		{
+        "question": "Aside from High Priest, Paladin, Clown, and Gypsy, what Transcended class can be used for the Auto Support System?",
+        "answer": "Creator"
+    },
+		{
+        "question": "Which map can players use their fishing rods?",
+        "answer": "Jawaii"
+    },
+		{
+        "question": "How many baits are available to use for Fishing?",
+        "answer": "5"
+    },
+		{
+        "question": "What fish can be exchanged in the Fish Trader NPC for a random amount of zeny?",
+        "answer": "Golden Koi"
+    },
+		{
+        "question": "How many ingots are available in Mining?",
+        "answer": "4"
+    },
+		{
+        "question": "How many Eluniums do you need to craft a Pickaxe for Mining?",
+        "answer": "40"
+    },
+		{
+        "question": "What trunk is required for crafting a Pickaxe in Mining?",
+        "answer": "Fine-grained"
+    },
+		{
+        "question": "What is the name of the very first custom instance of Forsaken Legacy?",
+        "answer": "Rigel's Awakening"
+    },
+		{
+        "question": "When starting Rigel's Awakening, what item should the party leader have in their inventory?",
+        "answer": "Lair of the Fallen Star"
+    },
+		{
+        "question": "What is the element of Rigel?",
+        "answer": "Holy"
+    },
+		{
+        "question": "What is the name of the mini-boss monster in Rigel's Awakening?",
+        "answer": "Schulang"
+    },
+		{
+        "question": "What is the name of the very first Raid Boss in Forsaken Legacy?",
+        "answer": "Bellon"
+    },
+		{
+        "question": "Aside from the Teleportation skill, what other skill is disabled in the Raid Boss map?",
+        "answer": "Greed"
+    },
+		{
+        "question": "Once the portal for the Raid Boss event opens, how many monsters will spawn before the Raid Boss appears?",
+        "answer": "200"
+    },
+		{
+        "question": "How many minutes is given for idle players before they get kicked out from the Raid Boss map?",
+        "answer": "1"
+    },
+		{
+        "question": "What is GM Yoasobi's correct Discord username?",
+        "answer": "takunsenpai."
+    },
+		{
+        "question": "What is the highest tier of VIP in Forsaken Legacy?",
+        "answer": "5"
+    },
+		{
+        "question": "What is the name of Forsaken Legacy's donation currency?",
+        "answer": "Legacy Token"
+    }
+
+]
