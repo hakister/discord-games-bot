@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Aster",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402480939245764719/1a.gif?ex=689411a8&is=6892c028&hm=a772e7de71896e1cc2d766852bdbf560423dd11dabd341fd683656349cf00b0e&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402480938927001620/1.gif?ex=689411a8&is=6892c028&hm=5a8e662a1a9a828b32dc3cfc023a8b73b5939940016fb5017a1844622a4598dc&="
+  },
+  {
+    "name": "Savage",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402480939891691540/2a.gif?ex=689411a8&is=6892c028&hm=86c2f3f67439de1b476e773bd48d49bbd628cd08ef2518d21bf56e162c459ae1&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402480939577380875/2.gif?ex=689411a8&is=6892c028&hm=ba7c1558df37f38726faa3d27c2d9a93f5d0de966ff4138e8a56d2a3267ea5e5&="
+  },
+	{
+    "name": "Tamruan",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402480940714033223/3a.gif?ex=689411a9&is=6892c029&hm=6731788c67c5a90eb8c51cb8f309054f50ffd7a978ac0c6e537dc5f508f3c6f9&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402480940336283758/3.gif?ex=689411a9&is=6892c029&hm=31054f02cef0a3551c91d1e0c10a51a4b6e5355dcc8ec17d58a62912e46787ca&="
+  },
+	{
+    "name": "Raydric Archer",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402480941405831296/4a.gif?ex=689411a9&is=6892c029&hm=ee888de09416db0ae102c6ccf1df08426fe98ad3db06a722b891c11cb80085c8&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402480941095583795/4.gif?ex=689411a9&is=6892c029&hm=38349007c8fe9f7e80826126051e6dcebbd2d9c81c256e44be93df5f7e6d992e&="
+  },
+	{
+    "name": "Arc Angeling",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402480942060146708/5a.gif?ex=689411a9&is=6892c029&hm=925c57608ddb94aaa2c61d4620e053b0ada8ac69bf3455fbc58ed70112f0c2b7&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402480941703889017/5.gif?ex=689411a9&is=6892c029&hm=96e5f371c7022cbea931864a4adafa00282c5acbdaad3e06f1d51a051f8825b6&="
+  },
+  {
+    "name": "Leib Olmai",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481029784010942/6a.gif?ex=689411be&is=6892c03e&hm=22f4adc91c0b900a959ca595e2e3395325ea41e7fa4e873f0553946def9fe1a2&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481029469700178/6.gif?ex=689411be&is=6892c03e&hm=d524c3c57674d7e3e8b2436029dc85c08a43a226d04b5d1887f2e609e96865ed&="
+  },
+	{
+    "name": "Maya",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481030497304657/7a.gif?ex=689411be&is=6892c03e&hm=46145aa8489c4d9d13aaded43c1a477f128333150ebedb739841e11af8db4abd&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481030132269127/7.gif?ex=689411be&is=6892c03e&hm=b57b21683c38f33d67186e0b3b81217a4f5a5c7718713b3422ea43ef55c888b3&="
+  },
+  {
+    "name": "Metaller",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481031264731156/8a.gif?ex=689411be&is=6892c03e&hm=044c83409a5eff501a90136a181b955bc87ef8750cc27312ebcab5829fed975a&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481030979387533/8.gif?ex=689411be&is=6892c03e&hm=b12014d72f349799e123051e76bb961f577d500eb4f9a7c5cc3d98fa9ac126e8&="
+  },
+	{
+    "name": "Owl Duke",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481031889551371/9a.gif?ex=689411be&is=6892c03e&hm=75b780fa94964062df09e287a8341b68ec4d96c1731726980a540011a5be025d&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481031583629322/9.gif?ex=689411be&is=6892c03e&hm=4637096d6fddc2e103830d267f94fe87067a82efb0733c9ec4b5dd1ed7d1b744&="
+  },
+  {
+    "name": "Penomena",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481032523153489/10a.gif?ex=689411be&is=6892c03e&hm=d5c359157eccfe158fa8c306bd75e25bf9afff1bdf7ef0176265d9d33c6dbe53&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481032200061130/10.gif?ex=689411be&is=6892c03e&hm=ebccbff04c2b2affe55dcb778b187a0e1f52c39cd23e6b1901b25ac7681b2145&="
+  },
+	{
+    "name": "Alligator",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481118787276992/11a.gif?ex=689411d3&is=6892c053&hm=df3a722fe9b7acebc041f232dcab7bd01b60fe602713e2ff99e4c5a1797bded9&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481118443470968/11.gif?ex=689411d3&is=6892c053&hm=1b09c0123cda8c399f80f3a10eb59e2f8528a2945b9130fa9138eabb1b10a3a2&="
+  },
+  {
+    "name": "Fur Seal",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481119743709309/12a.gif?ex=689411d3&is=6892c053&hm=b33a424ceb456b48013fd17b2feec485837161a4c353f1c015183ba07b73511a&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481119194120313/12.gif?ex=689411d3&is=6892c053&hm=8a4e4995b0ad93fca573536d5e3629a71b51682ba3919e9c52ecc07396c7b4f3&="
+  },
+	{
+    "name": "Ice Titan",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481120594890863/13a.gif?ex=689411d3&is=6892c053&hm=0f0fca93005f12fc0bb26838c4d337dfe18c1dec9d5a24b339f6cdfa0ca88098&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481120091705578/13.gif?ex=689411d3&is=6892c053&hm=50c5d6dd0edc05f065348b0c2650bb0b61d7f145990c357f5b041294c12dbd5f&="
+  },
+  {
+    "name": "Kukre",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481121467437106/14a.gif?ex=689411d4&is=6892c054&hm=0a334add6be644e1c92158f90e0496897e3506273e719d107eddabe26e083edb&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481121035554849/14.gif?ex=689411d4&is=6892c054&hm=540f547f3ae187470c14def2c1dd35a873eff4966178d28a29664fbacb0a1911&="
+  },
+	{
+    "name": "Marc",
+    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481122541047838/15a.gif?ex=689411d4&is=6892c054&hm=55b0cc7287b97d2483e0790c71df20cda693eef42bc45408e70baec79e22b878&=",
+    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481121891192912/15.gif?ex=689411d4&is=6892c054&hm=c88fa2b85ef090eac1905de182af379b6547d6fc7f18666099023f09e73ae9ca&="
+  }
+]

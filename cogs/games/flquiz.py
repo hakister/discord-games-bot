@@ -28,7 +28,7 @@ class FLQuiz(commands.Cog):
     async def start_flquiz(self, ctx, num_questions: int = 3):
         # Permission check
         """
-        if ALLOWED_ROLE_ID not in [role.name for role in ctx.author.roles]:
+        if ALLOWED_ROLE_ID not in [role.id for role in ctx.author.roles]:
         await ctx.send(embed=discord.Embed(
             title="🚫 Access Denied",
             description=f"Only users with the `{ALLOWED_ROLE_ID}` role can start a quiz.",
@@ -127,7 +127,6 @@ class FLQuiz(commands.Cog):
                     color=discord.Color.red(),
                 )
             )
-
 
 async def setup(bot):
     await bot.add_cog(FLQuiz(bot))

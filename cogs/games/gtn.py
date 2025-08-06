@@ -5,7 +5,7 @@ from discord.ext import commands
 # ALLOWED_ROLE_ID = 1372934366870638674  # change this to your desired role ID
 
 
-class Guess(commands.Cog):
+class NumberGuess(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.active_games = {}
@@ -13,15 +13,15 @@ class Guess(commands.Cog):
     @commands.command(name="gtn")
     async def guess_number(self, ctx):
         # Check if user has the allowed role
-        """allowed_role = discord.utils.get(ctx.author.roles, id=ALLOWED_ROLE_ID)
-        if allowed_role is None:
-            embed = discord.Embed(
-                title="🚫 Access Denied",
-                description=f"Only Echo Keepers [Mods] or Admins can start the Guess the Number game.",
-                color=discord.Color.red()
-            )
-            await ctx.send(embed=embed)
-            return"""
+        """
+        if ALLOWED_ROLE_ID not in [role.id for role in ctx.author.roles]:
+        await ctx.send(embed=discord.Embed(
+            title="🚫 Access Denied",
+            description=f"Only users with the `{ALLOWED_ROLE_ID}` role can start the Guess the Number game.",
+            color=discord.Color.red()
+        ))
+        return
+        """
 
         number = random.randint(1, 100)
         self.active_games[ctx.author.id] = number
@@ -73,4 +73,4 @@ class Guess(commands.Cog):
 
 
 async def setup(bot):
-    await bot.add_cog(Guess(bot))
+    await bot.add_cog(NumberGuess(bot))
