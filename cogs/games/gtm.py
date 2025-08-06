@@ -4,9 +4,13 @@ import json
 import asyncio
 import os
 from discord.ext import commands
+from config import MOD_ID, GROUP_ID, CHANNEL_ID  # Assuming MOD_ROLE_ID is defined in config.py
+
+ALLOWED_ROLE_ID = MOD_ID  # change this to your desired role ID
+GROUP_ROLE_ID = GROUP_ID # change this to your desired user group role ID
+ALLOWED_CHANNEL_ID = CHANNEL_ID  # change this to your desired channel ID
 
 MONSTER_DATA_FILE = "cogs/data/monsters.json"
-# ALLOWED_ROLE_ID = 1372934366870638674
 
 class MonsterQuiz(commands.Cog):
     def __init__(self, bot):
@@ -14,6 +18,7 @@ class MonsterQuiz(commands.Cog):
         self.active_round = {}
         self.winners = set()
         self.lock = asyncio.Lock()
+        self.event_starter = None	# To track who started the event
 
         try:
             with open(MONSTER_DATA_FILE, "r", encoding="utf-8") as f:
@@ -24,15 +29,18 @@ class MonsterQuiz(commands.Cog):
 
     @commands.command(name="gtm")
     async def start_monster_quiz(self, ctx, rounds: int = 3):
-        """
-				if ALLOWED_ROLE_ID not in [role.id for role in ctx.author.roles]:
+        if ctx.channel.id != ALLOWED_CHANNEL_ID:
+            return  # Ignore command if not in allowed channel
+				
+				# Check if user has the allowed role
+        if ALLOWED_ROLE_ID not in [role.id for role in ctx.author.roles]:
             await ctx.send(embed=discord.Embed(
                 title="🚫 Access Denied",
-                description=f"Only users with the `{ALLOWED_ROLE_ID}` role can start a quiz.",
+                description=f"Only CMs or Admins can start the Guess the Monster game.",
                 color=discord.Color.red()
             ))
             return
-				"""
+        
         if not self.monsters:
             await ctx.send("❗ No monster data available. Cannot start quiz.")
             return
@@ -44,14 +52,17 @@ class MonsterQuiz(commands.Cog):
 
             self.active_round[ctx.channel.id] = None
             self.winners.clear()
+            self.event_starter = ctx.author.id
             
         await ctx.send(embed=discord.Embed(
             title="👹 Forsaken Legacy - Guess the Monster Game",
-            description=f"Starting a new quiz with **{rounds} round{'s' if rounds != 1 else ''}**! Type your guesses in chat.",
+            description=f"Hello! Starting a new quiz with **{rounds} round{'s' if rounds != 1 else ''}**! Type your guesses in chat.",
             color=discord.Color.green()
         ))
 
         for _ in range(min(rounds, len(self.monsters))):
+            if ctx.channel.id not in self.active_round:
+                break  # Game was ended early
             monster = random.choice(self.monsters)
             answer = monster.get("name", "").lower().strip()
 
@@ -119,6 +130,8 @@ class MonsterQuiz(commands.Cog):
             return m.channel == ctx.channel and not m.author.bot
 
         while True:
+            if ctx.channel.id not in self.active_round:
+                return  # Game was ended early
             msg = await self.bot.wait_for("message", check=check)
 
             async with self.lock:
@@ -165,6 +178,28 @@ class MonsterQuiz(commands.Cog):
             else:
                 reveal_embed.description += "\n⚠️ Image not found."
                 await ctx.send(embed=reveal_embed)
+                
+    @commands.command(name="stopgtm", help="End the current Guess the Monster game early (event starter only).")
+    async def end_monster_quiz(self, ctx):
+        if ctx.channel.id not in self.active_round:
+            await ctx.send("❗ There is no active Guess the Monster game running in this channel.")
+            return
 
+        # Only the event starter can end the game
+        if getattr(self, "event_starter", None) != ctx.author.id:
+            await ctx.send("🚫 Only the event starter can end this game early.")
+            return
+
+        async with self.lock:
+            self.active_round.pop(ctx.channel.id, None)
+            self.winners.clear()
+            self.event_starter = None
+
+        await ctx.send(embed=discord.Embed(
+            title="🛑 Game Ended Early",
+            description=f"The Guess the Monster game has been ended by {ctx.author.mention}.",
+            color=discord.Color.red(),
+        ))
+		
 async def setup(bot):
     await bot.add_cog(MonsterQuiz(bot))

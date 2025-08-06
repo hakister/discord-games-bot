@@ -4,8 +4,12 @@ import asyncio
 import json
 import os
 from discord.ext import commands
+from config import MOD_ID, GROUP_ID, CHANNEL_ID  # Assuming MOD_ROLE_ID is defined in config.py
 
-# ALLOWED_ROLE_ID = 1372934366870638674
+ALLOWED_ROLE_ID = MOD_ID  # change this to your desired role ID
+GROUP_ROLE_ID = GROUP_ID # change this to your desired user group role ID
+ALLOWED_CHANNEL_ID = CHANNEL_ID  # change this to your desired channel ID
+
 QUESTION_FILE = "cogs/data/flquiz_questions.json"  # Adjust path if needed
 
 
@@ -14,30 +18,21 @@ class FLQuiz(commands.Cog):
         self.bot = bot
         self.active_games = set()
         self.lock = asyncio.Lock()
-
-    """
-    def _load_questions(self):
-        try:
-            with open(QUESTION_FILE, "r", encoding="utf-8") as f:
-                questions = json.load(f)
-                return [q for q in questions if "question" in q and "answer" in q]
-        except Exception as e:
-            print(f"[FLQUIZ] Failed to load questions: {e}")
-            return []
-    """
+        self.quiz_starter = {}  # To track who started the quiz
             
     @commands.command(name="flquiz")
     async def start_flquiz(self, ctx, num_questions: int = 3):
-        # Permission check
-        """
+        if ctx.channel.id != ALLOWED_CHANNEL_ID:
+            return  # Ignore command if not in allowed channel
+        
+        # Check if user has the allowed role
         if ALLOWED_ROLE_ID not in [role.id for role in ctx.author.roles]:
-        await ctx.send(embed=discord.Embed(
-            title="🚫 Access Denied",
-            description=f"Only users with the `{ALLOWED_ROLE_ID}` role can start a quiz.",
-            color=discord.Color.red()
-        ))
-        return
-        """
+            await ctx.send(embed=discord.Embed(
+                title="🚫 Access Denied",
+                description=f"Only CMs or Admins can start the Forsaken Legacy Quiz Game.",
+                color=discord.Color.red()
+            ))
+            return
 
         if ctx.channel.id in self.active_games:
             await ctx.send("⚠️ A quiz is already running in this channel.")
@@ -51,20 +46,21 @@ class FLQuiz(commands.Cog):
             return
 
         self.active_games.add(ctx.channel.id)
-        # await self._run_quiz(ctx, self.questions, num_questions)
+        self.quiz_starter[ctx.channel.id] = ctx.author.id # Track who started the quiz
         winners = set()
         selected_questions = random.sample(questions, min(num_questions, len(questions)))
-        # self.active_games.remove(ctx.channel.id)
 
         try:
             flquiz_embed = discord.Embed(
-                title="🧠 Forsaken Legacy Quiz",
-                description=f"Starting a new quiz with {num_questions} rounds of questions!\nFirst to answer wins **1x Event Box**.\n*Each player can only win once!*",
+                title="🧠 Forsaken Legacy Quiz Game",
+                description=f"Hello! We are starting a new quiz with {num_questions} rounds of questions!\nFirst to answer wins **1x Event Box**.\n*Each player can only win once!*",
                 color=discord.Color.purple(),
             )
             await ctx.send(embed=flquiz_embed)
 
             for i, q in enumerate(selected_questions, 1):
+                if ctx.channel.id not in self.active_games:
+                    break  # Quiz was ended early
                 question_embed = discord.Embed(
                     title=f"❓ Question {i}",
                     description=q["question"],
@@ -80,6 +76,8 @@ class FLQuiz(commands.Cog):
                 
                 try:
                     while not answered:
+                        if ctx.channel.id not in self.active_games:
+                            break # Quiz was ended early
                         msg = await self.bot.wait_for("message", timeout=15.0, check=check)
 
                         async with lock:
@@ -141,6 +139,27 @@ class FLQuiz(commands.Cog):
                 )
         finally:
             self.active_games.discard(ctx.channel.id)
+
+    @commands.command(name="stopquiz", help="End the current Forsaken Legacy Quiz early (event starter only).")
+    async def end_flquiz(self, ctx):
+        if ctx.channel.id not in self.active_games:
+            await ctx.send("❗ There is no active Forsaken Legacy Quiz running in this channel.")
+            return
+
+        # Only the event starter can end the quiz
+        if ctx.author.id != self.quiz_starter.get(ctx.channel.id):
+            await ctx.send("🚫 Only the event starter can end this quiz early.")
+            return
+
+        self.active_games.discard(ctx.channel.id)
+        self.quiz_starter.pop(ctx.channel.id, None)  # Clean up starter info
+        await ctx.send(
+            embed=discord.Embed(
+                title="🛑 Quiz Ended Early",
+                description=f"The Forsaken Legacy Quiz has been ended by {ctx.author.mention}.",
+                color=discord.Color.red(),
+            )
+        )
 
     def load_questions(self):
         try:
