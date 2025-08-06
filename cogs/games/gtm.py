@@ -99,10 +99,11 @@ class MonsterQuiz(commands.Cog):
             mentions = [f"<@{uid}>" for uid in self.winners]
             summary_embed = discord.Embed(
                 title="🏁 Guess the Monster Game Summary",
-                description="Thanks for playing! Here are the players who guessed correctly:",
+                description="Thanks for playing! These winners will get 1 Event Box each:",
                 color=discord.Color.gold()
             )
             summary_embed.add_field(name="Winners 🎉", value="\n".join(mentions), inline=False)
+            summary_embed.set_footer(text="Event Boxes will be sent by GM Yoasobi.")
             await ctx.send(embed=summary_embed)
         else:
             await ctx.send(embed=discord.Embed(
