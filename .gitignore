@@ -1,3 +1,4 @@
 .env
 monster_gifs/
+backupmonster.json
 __pycache__/
