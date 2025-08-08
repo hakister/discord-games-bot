@@ -1,287 +1,4197 @@
 [
   {
-    "name": "Aster",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402480939245764719/1a.gif?ex=689411a8&is=6892c028&hm=a772e7de71896e1cc2d766852bdbf560423dd11dabd341fd683656349cf00b0e&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402480938927001620/1.gif?ex=689411a8&is=6892c028&hm=5a8e662a1a9a828b32dc3cfc023a8b73b5939940016fb5017a1844622a4598dc&="
+    "name": [
+      "Acidus"
+    ],
+    "image": "monster_gifs\\1716.gif",
+    "silhouette": "monster_gifs\\1716_silhouette.gif"
   },
   {
-    "name": "Savage",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402480939891691540/2a.gif?ex=689411a8&is=6892c028&hm=86c2f3f67439de1b476e773bd48d49bbd628cd08ef2518d21bf56e162c459ae1&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402480939577380875/2.gif?ex=689411a8&is=6892c028&hm=ba7c1558df37f38726faa3d27c2d9a93f5d0de966ff4138e8a56d2a3267ea5e5&="
-  },
-	{
-    "name": "Tamruan",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402480940714033223/3a.gif?ex=689411a9&is=6892c029&hm=6731788c67c5a90eb8c51cb8f309054f50ffd7a978ac0c6e537dc5f508f3c6f9&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402480940336283758/3.gif?ex=689411a9&is=6892c029&hm=31054f02cef0a3551c91d1e0c10a51a4b6e5355dcc8ec17d58a62912e46787ca&="
-  },
-	{
-    "name": "Raydric Archer",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402480941405831296/4a.gif?ex=689411a9&is=6892c029&hm=ee888de09416db0ae102c6ccf1df08426fe98ad3db06a722b891c11cb80085c8&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402480941095583795/4.gif?ex=689411a9&is=6892c029&hm=38349007c8fe9f7e80826126051e6dcebbd2d9c81c256e44be93df5f7e6d992e&="
-  },
-	{
-    "name": "Arc Angeling",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402480942060146708/5a.gif?ex=689411a9&is=6892c029&hm=925c57608ddb94aaa2c61d4620e053b0ada8ac69bf3455fbc58ed70112f0c2b7&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402480941703889017/5.gif?ex=689411a9&is=6892c029&hm=96e5f371c7022cbea931864a4adafa00282c5acbdaad3e06f1d51a051f8825b6&="
+    "name": [
+      "Acidus"
+    ],
+    "image": "monster_gifs\\1713.gif",
+    "silhouette": "monster_gifs\\1713_silhouette.gif"
   },
   {
-    "name": "Leib Olmai",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481029784010942/6a.gif?ex=689411be&is=6892c03e&hm=22f4adc91c0b900a959ca595e2e3395325ea41e7fa4e873f0553946def9fe1a2&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481029469700178/6.gif?ex=689411be&is=6892c03e&hm=d524c3c57674d7e3e8b2436029dc85c08a43a226d04b5d1887f2e609e96865ed&="
-  },
-	{
-    "name": "Maya",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481030497304657/7a.gif?ex=689411be&is=6892c03e&hm=46145aa8489c4d9d13aaded43c1a477f128333150ebedb739841e11af8db4abd&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481030132269127/7.gif?ex=689411be&is=6892c03e&hm=b57b21683c38f33d67186e0b3b81217a4f5a5c7718713b3422ea43ef55c888b3&="
+    "name": [
+      "Agav"
+    ],
+    "image": "monster_gifs\\1769.gif",
+    "silhouette": "monster_gifs\\1769_silhouette.gif"
   },
   {
-    "name": "Metaller",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481031264731156/8a.gif?ex=689411be&is=6892c03e&hm=044c83409a5eff501a90136a181b955bc87ef8750cc27312ebcab5829fed975a&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481030979387533/8.gif?ex=689411be&is=6892c03e&hm=b12014d72f349799e123051e76bb961f577d500eb4f9a7c5cc3d98fa9ac126e8&="
-  },
-	{
-    "name": "Owl Duke",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481031889551371/9a.gif?ex=689411be&is=6892c03e&hm=75b780fa94964062df09e287a8341b68ec4d96c1731726980a540011a5be025d&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481031583629322/9.gif?ex=689411be&is=6892c03e&hm=4637096d6fddc2e103830d267f94fe87067a82efb0733c9ec4b5dd1ed7d1b744&="
+    "name": [
+      "Alarm"
+    ],
+    "image": "monster_gifs\\1193.gif",
+    "silhouette": "monster_gifs\\1193_silhouette.gif"
   },
   {
-    "name": "Penomena",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481032523153489/10a.gif?ex=689411be&is=6892c03e&hm=d5c359157eccfe158fa8c306bd75e25bf9afff1bdf7ef0176265d9d33c6dbe53&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481032200061130/10.gif?ex=689411be&is=6892c03e&hm=ebccbff04c2b2affe55dcb778b187a0e1f52c39cd23e6b1901b25ac7681b2145&="
-  },
-	{
-    "name": "Alligator",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481118787276992/11a.gif?ex=689411d3&is=6892c053&hm=df3a722fe9b7acebc041f232dcab7bd01b60fe602713e2ff99e4c5a1797bded9&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481118443470968/11.gif?ex=689411d3&is=6892c053&hm=1b09c0123cda8c399f80f3a10eb59e2f8528a2945b9130fa9138eabb1b10a3a2&="
+    "name": [
+      "Alice"
+    ],
+    "image": "monster_gifs\\1275.gif",
+    "silhouette": "monster_gifs\\1275_silhouette.gif"
   },
   {
-    "name": "Fur Seal",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481119743709309/12a.gif?ex=689411d3&is=6892c053&hm=b33a424ceb456b48013fd17b2feec485837161a4c353f1c015183ba07b73511a&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481119194120313/12.gif?ex=689411d3&is=6892c053&hm=8a4e4995b0ad93fca573536d5e3629a71b51682ba3919e9c52ecc07396c7b4f3&="
-  },
-	{
-    "name": "Ice Titan",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481120594890863/13a.gif?ex=689411d3&is=6892c053&hm=0f0fca93005f12fc0bb26838c4d337dfe18c1dec9d5a24b339f6cdfa0ca88098&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481120091705578/13.gif?ex=689411d3&is=6892c053&hm=50c5d6dd0edc05f065348b0c2650bb0b61d7f145990c357f5b041294c12dbd5f&="
+    "name": [
+      "Alicel"
+    ],
+    "image": "monster_gifs\\1739.gif",
+    "silhouette": "monster_gifs\\1739_silhouette.gif"
   },
   {
-    "name": "Kukre",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481121467437106/14a.gif?ex=689411d4&is=6892c054&hm=0a334add6be644e1c92158f90e0496897e3506273e719d107eddabe26e083edb&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481121035554849/14.gif?ex=689411d4&is=6892c054&hm=540f547f3ae187470c14def2c1dd35a873eff4966178d28a29664fbacb0a1911&="
-  },
-	{
-    "name": "Marc",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481122541047838/15a.gif?ex=689411d4&is=6892c054&hm=55b0cc7287b97d2483e0790c71df20cda693eef42bc45408e70baec79e22b878&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481121891192912/15.gif?ex=689411d4&is=6892c054&hm=c88fa2b85ef090eac1905de182af379b6547d6fc7f18666099023f09e73ae9ca&="
+    "name": [
+      "Alicel"
+    ],
+    "image": "monster_gifs\\1735.gif",
+    "silhouette": "monster_gifs\\1735_silhouette.gif"
   },
   {
-    "name": "Marina",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481239226843236/16a.gif?ex=689411f0&is=6892c070&hm=a244f6c3e7205e49e21b63104ff3b00579f6811cf4ed57a2eb29b1537f1d6f20&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481238866006077/16.gif?ex=689411f0&is=6892c070&hm=ab6ce70181da5a14103536cf19f31a2975f5400d7e08294310defe3ebad1a589&="
+    "name": [
+      "Aliot"
+    ],
+    "image": "monster_gifs\\1740.gif",
+    "silhouette": "monster_gifs\\1740_silhouette.gif"
   },
   {
-    "name": "Marse",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481240015241378/17a.gif?ex=689411f0&is=6892c070&hm=89cc669065274ae98e9b158c9179311db86332543ab3473ab0c111f93a5824bb&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481239662792726/17.gif?ex=689411f0&is=6892c070&hm=7d1a647fb3892074b5524769b5cfdfc85a7b3b1056f575b6a82078f4c4d123b1&="
+    "name": [
+      "Aliot"
+    ],
+    "image": "monster_gifs\\1736.gif",
+    "silhouette": "monster_gifs\\1736_silhouette.gif"
   },
   {
-    "name": "Ambernite",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481240724209704/18a.gif?ex=689411f0&is=6892c070&hm=338a7bad32eb434c9fadaf7f55587ccce676e60c7bb3f67e6d5827359dafca67&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481240333877348/18.gif?ex=689411f0&is=6892c070&hm=5149513236d0f4b61e8fcbec14beb9d1935364048a5139df5bd7e66c20aadb73&="
+    "name": [
+      "Aliza"
+    ],
+    "image": "monster_gifs\\1737.gif",
+    "silhouette": "monster_gifs\\1737_silhouette.gif"
   },
   {
-    "name": "Anolian",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481241504223353/19a.gif?ex=689411f0&is=6892c070&hm=bad103a53eb79f0788123516cfbf80df93a648727f3a6e0474838f0a65512cd8&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481241034326036/19.gif?ex=689411f0&is=6892c070&hm=faaf81e2e87208e620e4e4ea5c62c1b77d348d6d87b65ab2c5c74cb4e48ba6e7&="
+    "name": [
+      "Aliza"
+    ],
+    "image": "monster_gifs\\1746.gif",
+    "silhouette": "monster_gifs\\1746_silhouette.gif"
   },
   {
-    "name": "Baba Yaga",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481242238226635/20a.gif?ex=689411f0&is=6892c070&hm=b199d472ec7133552ca4255410ddeaf6f599152ebbeee1232376862b5b9d5bcd&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481241889964092/20.gif?ex=689411f0&is=6892c070&hm=1e8d9f92e1305ca9af81ee7eec069e7cb30662a642220d39fd8f6d34e7706ab6&="
+    "name": [
+      "Alligator"
+    ],
+    "image": "monster_gifs\\1271.gif",
+    "silhouette": "monster_gifs\\1271_silhouette.gif"
   },
   {
-    "name": "Cornutus",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481333447692430/21a.gif?ex=68941206&is=6892c086&hm=f285fed9143dbf0bf5ae2bb87a8b9cf772c08cedfc1b293426d3952709fcdf23&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481333149892710/21.gif?ex=68941206&is=6892c086&hm=7193f53f6a72251ef395d1b1e9ee4907a91b9dfb1c16e3727fba1c19948beead&="
+    "name": [
+      "Alnoldi",
+      "Rafflesia Alnoldi"
+    ],
+    "image": "monster_gifs\\2151.gif",
+    "silhouette": "monster_gifs\\2151_silhouette.gif"
   },
   {
-    "name": "Crab",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481334160457869/22a.gif?ex=68941206&is=6892c086&hm=c7b2893cbf4d658d83265549d3d02cbeeba6297d970adaf4f3603a8baa581f33&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481333850341506/22.gif?ex=68941206&is=6892c086&hm=bc3e79e0322beaaf365265ea2ca72aee3d65a504bc3a71243ecdf777215803b2&="
+    "name": [
+      "Am Mut"
+    ],
+    "image": "monster_gifs\\1301.gif",
+    "silhouette": "monster_gifs\\1301_silhouette.gif"
   },
   {
-    "name": "Cramp",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481334781477016/23a.gif?ex=68941207&is=6892c087&hm=ec26b6f78385ebc3c6b442475575e88834599ddc71b1365a62a3cd0d16af8861&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481334454325278/23.gif?ex=68941206&is=6892c086&hm=e5d1cb3dfbdc43eb1088c86c2419dcc71368a65bfe7822c88218cdc6b728b690&="
+    "name": [
+      "Ambernite"
+    ],
+    "image": "monster_gifs\\1094.gif",
+    "silhouette": "monster_gifs\\1094_silhouette.gif"
   },
   {
-    "name": "Deviace",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481335523872899/24a.gif?ex=68941207&is=6892c087&hm=8f7ac514cfe0bca25722d774a24ba227f873accb46b0bbd9b01829f3f72a4e92&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481335217553419/24.gif?ex=68941207&is=6892c087&hm=56c18c4f013890f41ac77943389908e63b9b76520560a6b3ae4243e878d6e2bc&="
+    "name": [
+      "Amon Ra"
+    ],
+    "image": "monster_gifs\\1511.gif",
+    "silhouette": "monster_gifs\\1511_silhouette.gif"
   },
   {
-    "name": "Dimik",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481336148689008/25a.gif?ex=68941207&is=6892c087&hm=d1bf5def61015c537883469a4cccacff1a42a71dddbecece7d6d4fcd97da8ca6&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481335834247228/25.gif?ex=68941207&is=6892c087&hm=61d7b39a77d7fdc1533b23dd6cdb82eb4451a80e749ce4e3fcc7e0ce3532e588&="
+    "name": [
+      "Anacondaq"
+    ],
+    "image": "monster_gifs\\1030.gif",
+    "silhouette": "monster_gifs\\1030_silhouette.gif"
   },
   {
-    "name": "Freezer",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481518609170452/26a.gif?ex=68941232&is=6892c0b2&hm=8a957988f496a8d3a4db66ea6385bf0dce66cd419a17c88da877d16936a294bf&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481518303252545/26.gif?ex=68941232&is=6892c0b2&hm=547507d2c4b3891aa47a207fe9bd763733f13c4855b9ae7907765e5f70834359&="
+    "name": [
+      "Ancient Mimic"
+    ],
+    "image": "monster_gifs\\1699.gif",
+    "silhouette": "monster_gifs\\1699_silhouette.gif"
   },
   {
-    "name": "Garm",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402481519288778873/27a.gif?ex=68941233&is=6892c0b3&hm=76a57996c9843ba7d9c21ca467dadd0540df5a8db9a3021e9054cdc3405ee87b&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402481518944850051/27.gif?ex=68941232&is=6892c0b2&hm=7b1c15e0fd474936e95ea8a6311871b0c09f2e2f3c98abf50e04e33bfb9449a2&="
+    "name": [
+      "Ancient Mummy"
+    ],
+    "image": "monster_gifs\\1297.gif",
+    "silhouette": "monster_gifs\\1297_silhouette.gif"
   },
   {
-    "name": "Garm Baby",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402809840144875611/28a.gif?ex=689543f8&is=6893f278&hm=ec57ad3f6d2581204f03f9d1634b6dd18d20b8dc303664cb4c1c3913109b0123&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402809839817592922/28.gif?ex=689543f8&is=6893f278&hm=c40b0471bbca9944d01a841d1135abaac90d9cc2f1d14719e6257fbe83175d1c&="
+    "name": [
+      "Ancient Tree"
+    ],
+    "image": "monster_gifs\\2019.gif",
+    "silhouette": "monster_gifs\\2019_silhouette.gif"
   },
   {
-    "name": "Gazeti",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402809840740466698/29a.gif?ex=689543f8&is=6893f278&hm=b097b092bc77ec6aaea0bbb5502b2f077769b07b34c9c02d98c428aced8f9412&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402809840417509467/29.gif?ex=689543f8&is=6893f278&hm=5e1e8a2b4b881fdd9163a21d8539b574f966badad04e730be4e404fc497a807f&="
+    "name": [
+      "Ancient Worm"
+    ],
+    "image": "monster_gifs\\1305.gif",
+    "silhouette": "monster_gifs\\1305_silhouette.gif"
   },
   {
-    "name": "Gemini-S58",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402809841327804446/30a.gif?ex=689543f9&is=6893f279&hm=04ac46f827e5ca09c79caf9381c88b7d40c8632dc32123b67b4acbdbe523e698&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402809840988061836/30.gif?ex=689543f9&is=6893f279&hm=71d83e888dc9d6458a5426e8bfe220873a94a990af6ea88ef2c2a6dc31ebf687&="
+    "name": [
+      "Andre"
+    ],
+    "image": "monster_gifs\\1095.gif",
+    "silhouette": "monster_gifs\\1095_silhouette.gif"
   },
   {
-    "name": "Goblin Mace",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402823535973371904/31a.gif?ex=689550ba&is=6893ff3a&hm=af954f4b2f2844d17efadbfc25db0c47f523abfe0355a93fd47d65ecf853b3f0&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402823535499542589/31.gif?ex=689550ba&is=6893ff3a&hm=3fd118a69c3e5c7a014e7c9616551ef744ff8047684f8b08553146b309c48a93&="
+    "name": [
+      "Angeling"
+    ],
+    "image": "monster_gifs\\1096.gif",
+    "silhouette": "monster_gifs\\1096_silhouette.gif"
   },
   {
-    "name": "Howard Alt-Eisen",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402823536644460584/32a.gif?ex=689550ba&is=6893ff3a&hm=87dc3d5d8bb4efccf42b7029f5bdac883dfb6fe4f82d572bffea4595409f47e8&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402823536292270181/32.gif?ex=689550ba&is=6893ff3a&hm=aab252d3f0c37d7d27d683f70847be997a05f7219d858dff2a646843f8e81cc3&="
+    "name": [
+      "Anolian"
+    ],
+    "image": "monster_gifs\\1206.gif",
+    "silhouette": "monster_gifs\\1206_silhouette.gif"
   },
   {
-    "name": "Hydra",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402823537294835855/33a.gif?ex=689550ba&is=6893ff3a&hm=9666b350e509d881828b36b56d1c23258abbf3a84ec865aad2c21fbde5a5a1e2&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402823536975941714/33.gif?ex=689550ba&is=6893ff3a&hm=0f2b102e04ffbfb336d7f4c5a6ce8b2a448219fc86019fe2c83dca095432adbd&="
+    "name": [
+      "Anopheles"
+    ],
+    "image": "monster_gifs\\1627.gif",
+    "silhouette": "monster_gifs\\1627_silhouette.gif"
   },
   {
-    "name": "Kapha",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402823537869328506/34a.gif?ex=689550ba&is=6893ff3a&hm=b4b5f74a0f18113f86d9cd640aeb5dff1171b0c20972f5caccce27fcc38681cf&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402823537584111697/34.gif?ex=689550ba&is=6893ff3a&hm=305159cc4ae2cdff13f5286d9964f2cdfc78be92f93a4b03b2bf7718edee55e5&="
+    "name": [
+      "Ant Egg"
+    ],
+    "image": "monster_gifs\\1097.gif",
+    "silhouette": "monster_gifs\\1097_silhouette.gif"
   },
   {
-    "name": "Ktullanux",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402823538468978729/35a.gif?ex=689550ba&is=6893ff3a&hm=e5eed0486243b2640de6ed96b1ccc3c408f87ed19673cfde42e72acb68f74419&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402823538154668194/35.gif?ex=689550ba&is=6893ff3a&hm=4147e5e93d4a10d838957eb2e08a72f2bbdb938198a3625759958eb8cb8b78b3&="
+    "name": [
+      "Antique Firelock",
+      "Firelock Soldier"
+    ],
+    "image": "monster_gifs\\1403.gif",
+    "silhouette": "monster_gifs\\1403_silhouette.gif"
   },
   {
-    "name": "Magnolia",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402828708854628400/36a.gif?ex=6895558b&is=6894040b&hm=a4f8683e432af8c5f1fbaa8e5f6869b967c1d1222dfdebb2811e2655adcd2499&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402828708452106300/36.gif?ex=6895558b&is=6894040b&hm=81fbe13bb6d44ff7af1f42504986a91535e499643e667cb5dcc908dfe36ce069&="
+    "name": [
+      "Antler Scaraba"
+    ],
+    "image": "monster_gifs\\2085.gif",
+    "silhouette": "monster_gifs\\2085_silhouette.gif"
   },
   {
-    "name": "Marin",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402828709744082964/37a.gif?ex=6895558b&is=6894040b&hm=f105ab31d6bc395d392035772f199035c10156642e3b32813795a0c65935950e&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402828709257412750/37.gif?ex=6895558b&is=6894040b&hm=21ef4635d840d22c8cbae3990a148e188f6e586bf41c7fe2f45ec5af1ea29b6b&="
+    "name": [
+      "Antler Scaraba Egg"
+    ],
+    "image": "monster_gifs\\2090.gif",
+    "silhouette": "monster_gifs\\2090_silhouette.gif"
   },
   {
-    "name": "Marin Sphere",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402828710817824889/38a.gif?ex=6895558b&is=6894040b&hm=af92a39081c6f9c6a17ab05b5446c1748dd06df48f699a62ac8e762f23017e37&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402828710289346682/38.gif?ex=6895558b&is=6894040b&hm=ebdeb502e243ec4a9e56038a1b7babb2adabdac5f55929d7d2c2709303a2a097&="
+    "name": [
+      "Anubis"
+    ],
+    "image": "monster_gifs\\1098.gif",
+    "silhouette": "monster_gifs\\1098_silhouette.gif"
   },
   {
-    "name": "Mastering",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402828711702560950/39a.gif?ex=6895558c&is=6894040c&hm=6bfbe995c25e061c0b2c001e17d050591d40281ac72017c8e38801575e2f3a1a&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402828711283261490/39.gif?ex=6895558c&is=6894040c&hm=14605bdb69902257c48bafa53d40b96ebe179c13e78a3521d23f8098f623e8c8&="
+    "name": [
+      "Apocalypse"
+    ],
+    "image": "monster_gifs\\1365.gif",
+    "silhouette": "monster_gifs\\1365_silhouette.gif"
   },
   {
-    "name": "Merman",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402828712323448864/40a.gif?ex=6895558c&is=6894040c&hm=ba98c370f6f66d9240cce77b6dfbb7e643e894bf639ba2a6b39f13388b41788c&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402828712033915011/40.gif?ex=6895558c&is=6894040c&hm=7dfe8a701ea6e6d7865a966f28440de5f6c57d83dc753367a362dfbcafae2f81&="
+    "name": [
+      "Aqua Elemental"
+    ],
+    "image": "monster_gifs\\2016.gif",
+    "silhouette": "monster_gifs\\2016_silhouette.gif"
   },
   {
-    "name": "Obeaune",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402830713073438792/41a.gif?ex=68955769&is=689405e9&hm=dbfe328a45c378083600c0bd4ed290a2d200203bbb1879c848a8b03cfb3a61cc&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402830712662523987/41.gif?ex=68955769&is=689405e9&hm=ff75606038cd02f7cdd789615567c7b1355d8132ce2468b614a43fb32d34adc6&="
+    "name": [
+      "Archangeling",
+      "Arc Angeling"
+    ],
+    "image": "monster_gifs\\1388.gif",
+    "silhouette": "monster_gifs\\1388_silhouette.gif"
   },
   {
-    "name": "Phen",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402830713769824336/42a.gif?ex=68955769&is=689405e9&hm=9b42047b4c4de3d2306aed1c9eb113f944e68445edb506be9c4601dc639465ab&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402830713388273746/42.gif?ex=68955769&is=689405e9&hm=8e9d3cf651af40c04caca428830485ce7e57d025a9c3eb92d929a7e090e4ebfd&="
+    "name": [
+      "Archdam"
+    ],
+    "image": "monster_gifs\\1668.gif",
+    "silhouette": "monster_gifs\\1668_silhouette.gif"
   },
   {
-    "name": "Plankton",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402830714759811152/43a.gif?ex=68955769&is=689405e9&hm=536c5229bb5349ce53a80bff60df64dcb79724082955fa3771d2a04eed4d81b8&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402830714306822194/43.gif?ex=68955769&is=689405e9&hm=73043211139e9161695f175d9aca7d3ee51a7bb089a708400b6f48492e35624d&="
+    "name": [
+      "Archer Guardian"
+    ],
+    "image": "monster_gifs\\1285.gif",
+    "silhouette": "monster_gifs\\1285_silhouette.gif"
   },
   {
-    "name": "Poring",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402830715686486107/44a.gif?ex=68955769&is=689405e9&hm=0766baade01657cefb95e345e6272dedda01fa008c5bbf4d247582f5cb19c5a5&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402830715351072808/44.gif?ex=68955769&is=689405e9&hm=279273e59f9cd6c01695bf37a382fe7126e72ae01e77cc6c32d9ff9e32bcb237&="
+    "name": [
+      "Archer Skeleton"
+    ],
+    "image": "monster_gifs\\1016.gif",
+    "silhouette": "monster_gifs\\1016_silhouette.gif"
   },
   {
-    "name": "Roda Frog",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402830716638859394/45a.gif?ex=6895576a&is=689405ea&hm=4bb8bbc45a40fb1a7faa68a31be32191fdb2de6dfdea2ab2ae668aadc42a2f32&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402830716189933708/45.gif?ex=6895576a&is=689405ea&hm=ead6725e4773cf257ac41976b6871bae9aa020449808a779a2b984ba7d7ebccd&="
+    "name": [
+      "Arclouse",
+      "Arclouze"
+    ],
+    "image": "monster_gifs\\1194.gif",
+    "silhouette": "monster_gifs\\1194_silhouette.gif"
   },
   {
-    "name": "Sea Otter",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402832998935826502/46a.gif?ex=6895598a&is=6894080a&hm=45d5de87fb5ef5af70dd3efd3a1551e4a66ae4b733e1a9d9b4bba14addcf57d0&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402832998176522300/46.gif?ex=6895598a&is=6894080a&hm=a734db24a4996038a4ec090bf68c06aef990f754be33351c4756a142c60edb76&="
+    "name": [
+      "Argiope"
+    ],
+    "image": "monster_gifs\\1099.gif",
+    "silhouette": "monster_gifs\\1099_silhouette.gif"
   },
   {
-    "name": "Shellfish",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402832999753449614/47a.gif?ex=6895598a&is=6894080a&hm=39c2b1b1bb6c1c70cb0d39a48e35695f0db6248470eac2f8cf920b15e75f3cda&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402832999392743485/47.gif?ex=6895598a&is=6894080a&hm=b852ef270d7cef0d6bf6ef74f523541e622449902467a9c392ed0a60209c2d16&="
+    "name": [
+      "Argos"
+    ],
+    "image": "monster_gifs\\1100.gif",
+    "silhouette": "monster_gifs\\1100_silhouette.gif"
   },
   {
-    "name": "Siroma",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402833000479199263/48a.gif?ex=6895598a&is=6894080a&hm=52979908ee7203b3b63f7806bac669f04aa3b59bcf5d9917e1fb2b057e279ad9&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402833000089124905/48.gif?ex=6895598a&is=6894080a&hm=d5923d03129ce5fd6c9b621e139c17a300016e25a907bccfcae3461ae6113e90&="
+    "name": [
+      "Armaia",
+      "Armeyer Dinze"
+    ],
+    "image": "monster_gifs\\1654.gif",
+    "silhouette": "monster_gifs\\1654_silhouette.gif"
   },
   {
-    "name": "Snowier",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402833001532096705/49a.gif?ex=6895598a&is=6894080a&hm=7ccb3dcdb71f0cc880ad7039b91e923dbd2abe8f06509f229c69d4f85478e662&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402833001129447455/49.gif?ex=6895598a&is=6894080a&hm=af10a66fe505da54e760f2b369893df6de4d75456c4e3ce2ed0fe2d5c306e0fc&="
+    "name": [
+      "Assassin Cross Eremes"
+    ],
+    "image": "monster_gifs\\1641.gif",
+    "silhouette": "monster_gifs\\1641_silhouette.gif"
   },
   {
-    "name": "Sohee",
-    "image": "https://media.discordapp.net/attachments/1402469897203748936/1402833002425352222/50a.gif?ex=6895598b&is=6894080b&hm=2657e4edde12b94597567695adf9411c56856d848075ee61df5d1b9552c97897&=",
-    "silhouette": "https://media.discordapp.net/attachments/1402469897203748936/1402833001964113990/50.gif?ex=6895598b&is=6894080b&hm=df72ee153d665742e14b2efd53b7b0510fdce9fcc264428f3c73cafcfa652079&="
+    "name": [
+      "Assassin Cross Eremes"
+    ],
+    "image": "monster_gifs\\1647.gif",
+    "silhouette": "monster_gifs\\1647_silhouette.gif"
   },
   {
-    "name": "",
-    "image": "",
-    "silhouette": ""
+    "name": [
+      "Assaulter"
+    ],
+    "image": "monster_gifs\\1315.gif",
+    "silhouette": "monster_gifs\\1315_silhouette.gif"
   },
   {
-    "name": "",
-    "image": "",
-    "silhouette": ""
+    "name": [
+      "Aster"
+    ],
+    "image": "monster_gifs\\1266.gif",
+    "silhouette": "monster_gifs\\1266_silhouette.gif"
   },
   {
-    "name": "",
-    "image": "",
-    "silhouette": ""
+    "name": [
+      "Atroce"
+    ],
+    "image": "monster_gifs\\1785.gif",
+    "silhouette": "monster_gifs\\1785_silhouette.gif"
   },
   {
-    "name": "",
-    "image": "",
-    "silhouette": ""
+    "name": [
+      "Aunoe"
+    ],
+    "image": "monster_gifs\\1796.gif",
+    "silhouette": "monster_gifs\\1796_silhouette.gif"
   },
   {
-    "name": "",
-    "image": "",
-    "silhouette": ""
+    "name": [
+      "Baba-Yaga",
+      "Vava-Yaga"
+    ],
+    "image": "monster_gifs\\1882.gif",
+    "silhouette": "monster_gifs\\1882_silhouette.gif"
   },
   {
-    "name": "",
-    "image": "",
-    "silhouette": ""
+    "name": [
+      "Baby Desert Wolf"
+    ],
+    "image": "monster_gifs\\1107.gif",
+    "silhouette": "monster_gifs\\1107_silhouette.gif"
   },
   {
-    "name": "",
-    "image": "",
-    "silhouette": ""
+    "name": [
+      "Baby Leopard"
+    ],
+    "image": "monster_gifs\\1415.gif",
+    "silhouette": "monster_gifs\\1415_silhouette.gif"
+  },
+  {
+    "name": [
+      "Bacsojin",
+      "White Lady"
+    ],
+    "image": "monster_gifs\\1630.gif",
+    "silhouette": "monster_gifs\\1630_silhouette.gif"
+  },
+  {
+    "name": [
+      "Banaspaty"
+    ],
+    "image": "monster_gifs\\2154.gif",
+    "silhouette": "monster_gifs\\2154_silhouette.gif"
+  },
+  {
+    "name": [
+      "Banshee"
+    ],
+    "image": "monster_gifs\\1867.gif",
+    "silhouette": "monster_gifs\\1867_silhouette.gif"
+  },
+  {
+    "name": [
+      "Banshee Master"
+    ],
+    "image": "monster_gifs\\1974.gif",
+    "silhouette": "monster_gifs\\1974_silhouette.gif"
+  },
+  {
+    "name": [
+      "Baphomet"
+    ],
+    "image": "monster_gifs\\1039.gif",
+    "silhouette": "monster_gifs\\1039_silhouette.gif"
+  },
+  {
+    "name": [
+      "Baphomet Jr."
+    ],
+    "image": "monster_gifs\\1101.gif",
+    "silhouette": "monster_gifs\\1101_silhouette.gif"
+  },
+  {
+    "name": [
+      "Barricade"
+    ],
+    "image": "monster_gifs\\1905.gif",
+    "silhouette": "monster_gifs\\1905_silhouette.gif"
+  },
+  {
+    "name": [
+      "Bathory"
+    ],
+    "image": "monster_gifs\\1102.gif",
+    "silhouette": "monster_gifs\\1102_silhouette.gif"
+  },
+  {
+    "name": [
+      "Beelzebub"
+    ],
+    "image": "monster_gifs\\1873.gif",
+    "silhouette": "monster_gifs\\1873_silhouette.gif"
+  },
+  {
+    "name": [
+      "Beetle King"
+    ],
+    "image": "monster_gifs\\1494.gif",
+    "silhouette": "monster_gifs\\1494_silhouette.gif"
+  },
+  {
+    "name": [
+      "Beholder"
+    ],
+    "image": "monster_gifs\\1633.gif",
+    "silhouette": "monster_gifs\\1633_silhouette.gif"
+  },
+  {
+    "name": [
+      "Beholder Master",
+      "Beholder master"
+    ],
+    "image": "monster_gifs\\1975.gif",
+    "silhouette": "monster_gifs\\1975_silhouette.gif"
+  },
+  {
+    "name": [
+      "Bigfoot"
+    ],
+    "image": "monster_gifs\\1060.gif",
+    "silhouette": "monster_gifs\\1060_silhouette.gif"
+  },
+  {
+    "name": [
+      "Black Mushroom"
+    ],
+    "image": "monster_gifs\\1084.gif",
+    "silhouette": "monster_gifs\\1084_silhouette.gif"
+  },
+  {
+    "name": [
+      "Blazer"
+    ],
+    "image": "monster_gifs\\1367.gif",
+    "silhouette": "monster_gifs\\1367_silhouette.gif"
+  },
+  {
+    "name": [
+      "Bloody Butterfly"
+    ],
+    "image": "monster_gifs\\1408.gif",
+    "silhouette": "monster_gifs\\1408_silhouette.gif"
+  },
+  {
+    "name": [
+      "Bloody Knight"
+    ],
+    "image": "monster_gifs\\1268.gif",
+    "silhouette": "monster_gifs\\1268_silhouette.gif"
+  },
+  {
+    "name": [
+      "Bloody Murderer"
+    ],
+    "image": "monster_gifs\\1507.gif",
+    "silhouette": "monster_gifs\\1507_silhouette.gif"
+  },
+  {
+    "name": [
+      "Blue Plant"
+    ],
+    "image": "monster_gifs\\1079.gif",
+    "silhouette": "monster_gifs\\1079_silhouette.gif"
+  },
+  {
+    "name": [
+      "Boitata"
+    ],
+    "image": "monster_gifs\\2068.gif",
+    "silhouette": "monster_gifs\\2068_silhouette.gif"
+  },
+  {
+    "name": [
+      "Bongun"
+    ],
+    "image": "monster_gifs\\1188.gif",
+    "silhouette": "monster_gifs\\1188_silhouette.gif"
+  },
+  {
+    "name": [
+      "Bow Guardian",
+      "Bow Master"
+    ],
+    "image": "monster_gifs\\1830.gif",
+    "silhouette": "monster_gifs\\1830_silhouette.gif"
+  },
+  {
+    "name": [
+      "Bradium Golem"
+    ],
+    "image": "monster_gifs\\2024.gif",
+    "silhouette": "monster_gifs\\2024_silhouette.gif"
+  },
+  {
+    "name": [
+      "Breeze"
+    ],
+    "image": "monster_gifs\\1692.gif",
+    "silhouette": "monster_gifs\\1692_silhouette.gif"
+  },
+  {
+    "name": [
+      "Brilight"
+    ],
+    "image": "monster_gifs\\1211.gif",
+    "silhouette": "monster_gifs\\1211_silhouette.gif"
+  },
+  {
+    "name": [
+      "Bungisngis"
+    ],
+    "image": "monster_gifs\\2309.gif",
+    "silhouette": "monster_gifs\\2309_silhouette.gif"
+  },
+  {
+    "name": [
+      "Butoijo"
+    ],
+    "image": "monster_gifs\\2155.gif",
+    "silhouette": "monster_gifs\\2155_silhouette.gif"
+  },
+  {
+    "name": [
+      "Byorgue"
+    ],
+    "image": "monster_gifs\\1839.gif",
+    "silhouette": "monster_gifs\\1839_silhouette.gif"
+  },
+  {
+    "name": [
+      "Caramel"
+    ],
+    "image": "monster_gifs\\1103.gif",
+    "silhouette": "monster_gifs\\1103_silhouette.gif"
+  },
+  {
+    "name": [
+      "Carat"
+    ],
+    "image": "monster_gifs\\1267.gif",
+    "silhouette": "monster_gifs\\1267_silhouette.gif"
+  },
+  {
+    "name": [
+      "Cat o' Nine Tails"
+    ],
+    "image": "monster_gifs\\1307.gif",
+    "silhouette": "monster_gifs\\1307_silhouette.gif"
+  },
+  {
+    "name": [
+      "Caterpillar"
+    ],
+    "image": "monster_gifs\\1300.gif",
+    "silhouette": "monster_gifs\\1300_silhouette.gif"
+  },
+  {
+    "name": [
+      "Cendrawasih"
+    ],
+    "image": "monster_gifs\\2153.gif",
+    "silhouette": "monster_gifs\\2153_silhouette.gif"
+  },
+  {
+    "name": [
+      "Centipede"
+    ],
+    "image": "monster_gifs\\1987.gif",
+    "silhouette": "monster_gifs\\1987_silhouette.gif"
+  },
+  {
+    "name": [
+      "Centipede Larva"
+    ],
+    "image": "monster_gifs\\1999.gif",
+    "silhouette": "monster_gifs\\1999_silhouette.gif"
+  },
+  {
+    "name": [
+      "Chepet"
+    ],
+    "image": "monster_gifs\\1250.gif",
+    "silhouette": "monster_gifs\\1250_silhouette.gif"
+  },
+  {
+    "name": [
+      "Chimera"
+    ],
+    "image": "monster_gifs\\1283.gif",
+    "silhouette": "monster_gifs\\1283_silhouette.gif"
+  },
+  {
+    "name": [
+      "Choco"
+    ],
+    "image": "monster_gifs\\1214.gif",
+    "silhouette": "monster_gifs\\1214_silhouette.gif"
+  },
+  {
+    "name": [
+      "Chonchon"
+    ],
+    "image": "monster_gifs\\1011.gif",
+    "silhouette": "monster_gifs\\1011_silhouette.gif"
+  },
+  {
+    "name": [
+      "Christmas Cookie"
+    ],
+    "image": "monster_gifs\\1246.gif",
+    "silhouette": "monster_gifs\\1246_silhouette.gif"
+  },
+  {
+    "name": [
+      "Chung E",
+      "Green Maiden"
+    ],
+    "image": "monster_gifs\\1519.gif",
+    "silhouette": "monster_gifs\\1519_silhouette.gif"
+  },
+  {
+    "name": [
+      "Chung E",
+      "Green Maiden"
+    ],
+    "image": "monster_gifs\\1631.gif",
+    "silhouette": "monster_gifs\\1631_silhouette.gif"
+  },
+  {
+    "name": [
+      "Civil Servant",
+      "Mao Guai"
+    ],
+    "image": "monster_gifs\\1513.gif",
+    "silhouette": "monster_gifs\\1513_silhouette.gif"
+  },
+  {
+    "name": [
+      "Clock"
+    ],
+    "image": "monster_gifs\\1269.gif",
+    "silhouette": "monster_gifs\\1269_silhouette.gif"
+  },
+  {
+    "name": [
+      "Clock Tower Manager"
+    ],
+    "image": "monster_gifs\\1270.gif",
+    "silhouette": "monster_gifs\\1270_silhouette.gif"
+  },
+  {
+    "name": [
+      "Cobalt Mineral"
+    ],
+    "image": "monster_gifs\\1976.gif",
+    "silhouette": "monster_gifs\\1976_silhouette.gif"
+  },
+  {
+    "name": [
+      "Coco"
+    ],
+    "image": "monster_gifs\\1104.gif",
+    "silhouette": "monster_gifs\\1104_silhouette.gif"
+  },
+  {
+    "name": [
+      "Comodo"
+    ],
+    "image": "monster_gifs\\2152.gif",
+    "silhouette": "monster_gifs\\2152_silhouette.gif"
+  },
+  {
+    "name": [
+      "Condor"
+    ],
+    "image": "monster_gifs\\1009.gif",
+    "silhouette": "monster_gifs\\1009_silhouette.gif"
+  },
+  {
+    "name": [
+      "Constant"
+    ],
+    "image": "monster_gifs\\1745.gif",
+    "silhouette": "monster_gifs\\1745_silhouette.gif"
+  },
+  {
+    "name": [
+      "Constant"
+    ],
+    "image": "monster_gifs\\1738.gif",
+    "silhouette": "monster_gifs\\1738_silhouette.gif"
+  },
+  {
+    "name": [
+      "Cookie"
+    ],
+    "image": "monster_gifs\\1265.gif",
+    "silhouette": "monster_gifs\\1265_silhouette.gif"
+  },
+  {
+    "name": [
+      "Cornus"
+    ],
+    "image": "monster_gifs\\1992.gif",
+    "silhouette": "monster_gifs\\1992_silhouette.gif"
+  },
+  {
+    "name": [
+      "Cornutus"
+    ],
+    "image": "monster_gifs\\1067.gif",
+    "silhouette": "monster_gifs\\1067_silhouette.gif"
+  },
+  {
+    "name": [
+      "Crab"
+    ],
+    "image": "monster_gifs\\1073.gif",
+    "silhouette": "monster_gifs\\1073_silhouette.gif"
+  },
+  {
+    "name": [
+      "Cramp"
+    ],
+    "image": "monster_gifs\\2057.gif",
+    "silhouette": "monster_gifs\\2057_silhouette.gif"
+  },
+  {
+    "name": [
+      "Cramp"
+    ],
+    "image": "monster_gifs\\1209.gif",
+    "silhouette": "monster_gifs\\1209_silhouette.gif"
+  },
+  {
+    "name": [
+      "Creamy"
+    ],
+    "image": "monster_gifs\\1018.gif",
+    "silhouette": "monster_gifs\\1018_silhouette.gif"
+  },
+  {
+    "name": [
+      "Creamy Fear"
+    ],
+    "image": "monster_gifs\\1293.gif",
+    "silhouette": "monster_gifs\\1293_silhouette.gif"
+  },
+  {
+    "name": [
+      "Cruiser"
+    ],
+    "image": "monster_gifs\\1248.gif",
+    "silhouette": "monster_gifs\\1248_silhouette.gif"
+  },
+  {
+    "name": [
+      "Curupira"
+    ],
+    "image": "monster_gifs\\2074.gif",
+    "silhouette": "monster_gifs\\2074_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dancing Dragon",
+      "Zhu Po Long"
+    ],
+    "image": "monster_gifs\\1514.gif",
+    "silhouette": "monster_gifs\\1514_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dark Frame"
+    ],
+    "image": "monster_gifs\\1260.gif",
+    "silhouette": "monster_gifs\\1260_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dark Illusion"
+    ],
+    "image": "monster_gifs\\1302.gif",
+    "silhouette": "monster_gifs\\1302_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dark Lord"
+    ],
+    "image": "monster_gifs\\1272.gif",
+    "silhouette": "monster_gifs\\1272_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dark Pinguicula"
+    ],
+    "image": "monster_gifs\\2015.gif",
+    "silhouette": "monster_gifs\\2015_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dark Shadow"
+    ],
+    "image": "monster_gifs\\2023.gif",
+    "silhouette": "monster_gifs\\2023_silhouette.gif"
+  },
+  {
+    "name": [
+      "Deathword",
+      "Death Word"
+    ],
+    "image": "monster_gifs\\1698.gif",
+    "silhouette": "monster_gifs\\1698_silhouette.gif"
+  },
+  {
+    "name": [
+      "Deleter"
+    ],
+    "image": "monster_gifs\\1385.gif",
+    "silhouette": "monster_gifs\\1385_silhouette.gif"
+  },
+  {
+    "name": [
+      "Deleter"
+    ],
+    "image": "monster_gifs\\1384.gif",
+    "silhouette": "monster_gifs\\1384_silhouette.gif"
+  },
+  {
+    "name": [
+      "Demon Pungus"
+    ],
+    "image": "monster_gifs\\1378.gif",
+    "silhouette": "monster_gifs\\1378_silhouette.gif"
+  },
+  {
+    "name": [
+      "Deniro"
+    ],
+    "image": "monster_gifs\\1105.gif",
+    "silhouette": "monster_gifs\\1105_silhouette.gif"
+  },
+  {
+    "name": [
+      "Depraved Orc Spirit"
+    ],
+    "image": "monster_gifs\\1983.gif",
+    "silhouette": "monster_gifs\\1983_silhouette.gif"
+  },
+  {
+    "name": [
+      "Desert Wolf"
+    ],
+    "image": "monster_gifs\\1106.gif",
+    "silhouette": "monster_gifs\\1106_silhouette.gif"
+  },
+  {
+    "name": [
+      "Despero of Thanatos"
+    ],
+    "image": "monster_gifs\\1705.gif",
+    "silhouette": "monster_gifs\\1705_silhouette.gif"
+  },
+  {
+    "name": [
+      "Despero of Thanatos"
+    ],
+    "image": "monster_gifs\\1710.gif",
+    "silhouette": "monster_gifs\\1710_silhouette.gif"
+  },
+  {
+    "name": [
+      "Detale",
+      "Detardeurus"
+    ],
+    "image": "monster_gifs\\1719.gif",
+    "silhouette": "monster_gifs\\1719_silhouette.gif"
+  },
+  {
+    "name": [
+      "Deviace"
+    ],
+    "image": "monster_gifs\\1108.gif",
+    "silhouette": "monster_gifs\\1108_silhouette.gif"
+  },
+  {
+    "name": [
+      "Deviling"
+    ],
+    "image": "monster_gifs\\1582.gif",
+    "silhouette": "monster_gifs\\1582_silhouette.gif"
+  },
+  {
+    "name": [
+      "Deviruchi"
+    ],
+    "image": "monster_gifs\\1109.gif",
+    "silhouette": "monster_gifs\\1109_silhouette.gif"
+  },
+  {
+    "name": [
+      "Diabolic"
+    ],
+    "image": "monster_gifs\\1382.gif",
+    "silhouette": "monster_gifs\\1382_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dimik"
+    ],
+    "image": "monster_gifs\\1673.gif",
+    "silhouette": "monster_gifs\\1673_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dimik"
+    ],
+    "image": "monster_gifs\\1671.gif",
+    "silhouette": "monster_gifs\\1671_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dimik"
+    ],
+    "image": "monster_gifs\\1672.gif",
+    "silhouette": "monster_gifs\\1672_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dimik"
+    ],
+    "image": "monster_gifs\\1670.gif",
+    "silhouette": "monster_gifs\\1670_silhouette.gif"
+  },
+  {
+    "name": [
+      "Disguise"
+    ],
+    "image": "monster_gifs\\1506.gif",
+    "silhouette": "monster_gifs\\1506_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dokebi"
+    ],
+    "image": "monster_gifs\\1110.gif",
+    "silhouette": "monster_gifs\\1110_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dolomedes"
+    ],
+    "image": "monster_gifs\\2092.gif",
+    "silhouette": "monster_gifs\\2092_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dolor of Thanatos"
+    ],
+    "image": "monster_gifs\\1712.gif",
+    "silhouette": "monster_gifs\\1712_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dolor of Thanatos"
+    ],
+    "image": "monster_gifs\\1707.gif",
+    "silhouette": "monster_gifs\\1707_silhouette.gif"
+  },
+  {
+    "name": [
+      "Doppelganger"
+    ],
+    "image": "monster_gifs\\1046.gif",
+    "silhouette": "monster_gifs\\1046_silhouette.gif"
+  },
+  {
+    "name": [
+      "Draco"
+    ],
+    "image": "monster_gifs\\2013.gif",
+    "silhouette": "monster_gifs\\2013_silhouette.gif"
+  },
+  {
+    "name": [
+      "Draco Egg"
+    ],
+    "image": "monster_gifs\\2014.gif",
+    "silhouette": "monster_gifs\\2014_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dracula"
+    ],
+    "image": "monster_gifs\\1389.gif",
+    "silhouette": "monster_gifs\\1389_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dragon Egg"
+    ],
+    "image": "monster_gifs\\1721.gif",
+    "silhouette": "monster_gifs\\1721_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dragon Fly"
+    ],
+    "image": "monster_gifs\\1091.gif",
+    "silhouette": "monster_gifs\\1091_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dragon Tail"
+    ],
+    "image": "monster_gifs\\1321.gif",
+    "silhouette": "monster_gifs\\1321_silhouette.gif"
+  },
+  {
+    "name": [
+      "Drainliar"
+    ],
+    "image": "monster_gifs\\1111.gif",
+    "silhouette": "monster_gifs\\1111_silhouette.gif"
+  },
+  {
+    "name": [
+      "Drake"
+    ],
+    "image": "monster_gifs\\1112.gif",
+    "silhouette": "monster_gifs\\1112_silhouette.gif"
+  },
+  {
+    "name": [
+      "Driller"
+    ],
+    "image": "monster_gifs\\1380.gif",
+    "silhouette": "monster_gifs\\1380_silhouette.gif"
+  },
+  {
+    "name": [
+      "Drops"
+    ],
+    "image": "monster_gifs\\1113.gif",
+    "silhouette": "monster_gifs\\1113_silhouette.gif"
+  },
+  {
+    "name": [
+      "Drosera"
+    ],
+    "image": "monster_gifs\\1781.gif",
+    "silhouette": "monster_gifs\\1781_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dryad"
+    ],
+    "image": "monster_gifs\\1493.gif",
+    "silhouette": "monster_gifs\\1493_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dullahan"
+    ],
+    "image": "monster_gifs\\1504.gif",
+    "silhouette": "monster_gifs\\1504_silhouette.gif"
+  },
+  {
+    "name": [
+      "Duneyrr"
+    ],
+    "image": "monster_gifs\\2018.gif",
+    "silhouette": "monster_gifs\\2018_silhouette.gif"
+  },
+  {
+    "name": [
+      "Dustiness"
+    ],
+    "image": "monster_gifs\\1114.gif",
+    "silhouette": "monster_gifs\\1114_silhouette.gif"
+  },
+  {
+    "name": [
+      "Echio"
+    ],
+    "image": "monster_gifs\\1770.gif",
+    "silhouette": "monster_gifs\\1770_silhouette.gif"
+  },
+  {
+    "name": [
+      "Eclipse"
+    ],
+    "image": "monster_gifs\\1093.gif",
+    "silhouette": "monster_gifs\\1093_silhouette.gif"
+  },
+  {
+    "name": [
+      "Eddga"
+    ],
+    "image": "monster_gifs\\1115.gif",
+    "silhouette": "monster_gifs\\1115_silhouette.gif"
+  },
+  {
+    "name": [
+      "Eggyra"
+    ],
+    "image": "monster_gifs\\1116.gif",
+    "silhouette": "monster_gifs\\1116_silhouette.gif"
+  },
+  {
+    "name": [
+      "Elder"
+    ],
+    "image": "monster_gifs\\1377.gif",
+    "silhouette": "monster_gifs\\1377_silhouette.gif"
+  },
+  {
+    "name": [
+      "Elder Willow"
+    ],
+    "image": "monster_gifs\\1033.gif",
+    "silhouette": "monster_gifs\\1033_silhouette.gif"
+  },
+  {
+    "name": [
+      "Emperium"
+    ],
+    "image": "monster_gifs\\1288.gif",
+    "silhouette": "monster_gifs\\1288_silhouette.gif"
+  },
+  {
+    "name": [
+      "Engkanto"
+    ],
+    "image": "monster_gifs\\2310.gif",
+    "silhouette": "monster_gifs\\2310_silhouette.gif"
+  },
+  {
+    "name": [
+      "Entweihen Crothen"
+    ],
+    "image": "monster_gifs\\1957.gif",
+    "silhouette": "monster_gifs\\1957_silhouette.gif"
+  },
+  {
+    "name": [
+      "Eremes Guile"
+    ],
+    "image": "monster_gifs\\1635.gif",
+    "silhouette": "monster_gifs\\1635_silhouette.gif"
+  },
+  {
+    "name": [
+      "Erend",
+      "Errende Ebecee"
+    ],
+    "image": "monster_gifs\\1655.gif",
+    "silhouette": "monster_gifs\\1655_silhouette.gif"
+  },
+  {
+    "name": [
+      "Evil Cloud Hermit",
+      "Taoist Hermit"
+    ],
+    "image": "monster_gifs\\1412.gif",
+    "silhouette": "monster_gifs\\1412_silhouette.gif"
+  },
+  {
+    "name": [
+      "Evil Druid"
+    ],
+    "image": "monster_gifs\\1117.gif",
+    "silhouette": "monster_gifs\\1117_silhouette.gif"
+  },
+  {
+    "name": [
+      "Evil Snake Lord"
+    ],
+    "image": "monster_gifs\\1418.gif",
+    "silhouette": "monster_gifs\\1418_silhouette.gif"
+  },
+  {
+    "name": [
+      "Executioner"
+    ],
+    "image": "monster_gifs\\1205.gif",
+    "silhouette": "monster_gifs\\1205_silhouette.gif"
+  },
+  {
+    "name": [
+      "Explosion"
+    ],
+    "image": "monster_gifs\\1383.gif",
+    "silhouette": "monster_gifs\\1383_silhouette.gif"
+  },
+  {
+    "name": [
+      "Fabre"
+    ],
+    "image": "monster_gifs\\1007.gif",
+    "silhouette": "monster_gifs\\1007_silhouette.gif"
+  },
+  {
+    "name": [
+      "Fake Angel",
+      "False Angel"
+    ],
+    "image": "monster_gifs\\1371.gif",
+    "silhouette": "monster_gifs\\1371_silhouette.gif"
+  },
+  {
+    "name": [
+      "Fallen Bishop",
+      "Fallen Bishop Hibram"
+    ],
+    "image": "monster_gifs\\1871.gif",
+    "silhouette": "monster_gifs\\1871_silhouette.gif"
+  },
+  {
+    "name": [
+      "Familiar"
+    ],
+    "image": "monster_gifs\\1005.gif",
+    "silhouette": "monster_gifs\\1005_silhouette.gif"
+  },
+  {
+    "name": [
+      "Fanat"
+    ],
+    "image": "monster_gifs\\1797.gif",
+    "silhouette": "monster_gifs\\1797_silhouette.gif"
+  },
+  {
+    "name": [
+      "Ferus"
+    ],
+    "image": "monster_gifs\\1717.gif",
+    "silhouette": "monster_gifs\\1717_silhouette.gif"
+  },
+  {
+    "name": [
+      "Ferus"
+    ],
+    "image": "monster_gifs\\1714.gif",
+    "silhouette": "monster_gifs\\1714_silhouette.gif"
+  },
+  {
+    "name": [
+      "Flame Skull"
+    ],
+    "image": "monster_gifs\\1869.gif",
+    "silhouette": "monster_gifs\\1869_silhouette.gif"
+  },
+  {
+    "name": [
+      "Flora"
+    ],
+    "image": "monster_gifs\\1118.gif",
+    "silhouette": "monster_gifs\\1118_silhouette.gif"
+  },
+  {
+    "name": [
+      "Freezer"
+    ],
+    "image": "monster_gifs\\1319.gif",
+    "silhouette": "monster_gifs\\1319_silhouette.gif"
+  },
+  {
+    "name": [
+      "Frilldora"
+    ],
+    "image": "monster_gifs\\1119.gif",
+    "silhouette": "monster_gifs\\1119_silhouette.gif"
+  },
+  {
+    "name": [
+      "Frus"
+    ],
+    "image": "monster_gifs\\1753.gif",
+    "silhouette": "monster_gifs\\1753_silhouette.gif"
+  },
+  {
+    "name": [
+      "Frus"
+    ],
+    "image": "monster_gifs\\1762.gif",
+    "silhouette": "monster_gifs\\1762_silhouette.gif"
+  },
+  {
+    "name": [
+      "Fur Seal",
+      "Seal"
+    ],
+    "image": "monster_gifs\\1317.gif",
+    "silhouette": "monster_gifs\\1317_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gajomart"
+    ],
+    "image": "monster_gifs\\1309.gif",
+    "silhouette": "monster_gifs\\1309_silhouette.gif"
+  },
+  {
+    "name": [
+      "Galapago"
+    ],
+    "image": "monster_gifs\\1391.gif",
+    "silhouette": "monster_gifs\\1391_silhouette.gif"
+  },
+  {
+    "name": [
+      "Galion"
+    ],
+    "image": "monster_gifs\\1783.gif",
+    "silhouette": "monster_gifs\\1783_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gargoyle"
+    ],
+    "image": "monster_gifs\\1253.gif",
+    "silhouette": "monster_gifs\\1253_silhouette.gif"
+  },
+  {
+    "name": [
+      "Garm",
+      "Hatii"
+    ],
+    "image": "monster_gifs\\1252.gif",
+    "silhouette": "monster_gifs\\1252_silhouette.gif"
+  },
+  {
+    "name": [
+      "Garm Baby",
+      "Baby Hatii"
+    ],
+    "image": "monster_gifs\\1515.gif",
+    "silhouette": "monster_gifs\\1515_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gazeti"
+    ],
+    "image": "monster_gifs\\1778.gif",
+    "silhouette": "monster_gifs\\1778_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gemini-S58"
+    ],
+    "image": "monster_gifs\\1681.gif",
+    "silhouette": "monster_gifs\\1681_silhouette.gif"
+  },
+  {
+    "name": [
+      "Geographer"
+    ],
+    "image": "monster_gifs\\1368.gif",
+    "silhouette": "monster_gifs\\1368_silhouette.gif"
+  },
+  {
+    "name": [
+      "Ghostring"
+    ],
+    "image": "monster_gifs\\1120.gif",
+    "silhouette": "monster_gifs\\1120_silhouette.gif"
+  },
+  {
+    "name": [
+      "Ghoul"
+    ],
+    "image": "monster_gifs\\1036.gif",
+    "silhouette": "monster_gifs\\1036_silhouette.gif"
+  },
+  {
+    "name": [
+      "Giant Hornet"
+    ],
+    "image": "monster_gifs\\1303.gif",
+    "silhouette": "monster_gifs\\1303_silhouette.gif"
+  },
+  {
+    "name": [
+      "Giant Spider"
+    ],
+    "image": "monster_gifs\\1304.gif",
+    "silhouette": "monster_gifs\\1304_silhouette.gif"
+  },
+  {
+    "name": [
+      "Giant Whisper"
+    ],
+    "image": "monster_gifs\\1186.gif",
+    "silhouette": "monster_gifs\\1186_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gibbet"
+    ],
+    "image": "monster_gifs\\1503.gif",
+    "silhouette": "monster_gifs\\1503_silhouette.gif"
+  },
+  {
+    "name": [
+      "Giearth"
+    ],
+    "image": "monster_gifs\\1121.gif",
+    "silhouette": "monster_gifs\\1121_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gig"
+    ],
+    "image": "monster_gifs\\1387.gif",
+    "silhouette": "monster_gifs\\1387_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gloom Under Night"
+    ],
+    "image": "monster_gifs\\1768.gif",
+    "silhouette": "monster_gifs\\1768_silhouette.gif"
+  },
+  {
+    "name": [
+      "Goat"
+    ],
+    "image": "monster_gifs\\1372.gif",
+    "silhouette": "monster_gifs\\1372_silhouette.gif"
+  },
+  {
+    "name": [
+      "Goblin"
+    ],
+    "image": "monster_gifs\\1125.gif",
+    "silhouette": "monster_gifs\\1125_silhouette.gif"
+  },
+  {
+    "name": [
+      "Goblin"
+    ],
+    "image": "monster_gifs\\1123.gif",
+    "silhouette": "monster_gifs\\1123_silhouette.gif"
+  },
+  {
+    "name": [
+      "Goblin"
+    ],
+    "image": "monster_gifs\\1126.gif",
+    "silhouette": "monster_gifs\\1126_silhouette.gif"
+  },
+  {
+    "name": [
+      "Goblin"
+    ],
+    "image": "monster_gifs\\1124.gif",
+    "silhouette": "monster_gifs\\1124_silhouette.gif"
+  },
+  {
+    "name": [
+      "Goblin"
+    ],
+    "image": "monster_gifs\\1122.gif",
+    "silhouette": "monster_gifs\\1122_silhouette.gif"
+  },
+  {
+    "name": [
+      "Goblin Archer"
+    ],
+    "image": "monster_gifs\\1258.gif",
+    "silhouette": "monster_gifs\\1258_silhouette.gif"
+  },
+  {
+    "name": [
+      "Goblin Leader"
+    ],
+    "image": "monster_gifs\\1299.gif",
+    "silhouette": "monster_gifs\\1299_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gold Antler Scaraba"
+    ],
+    "image": "monster_gifs\\2163.gif",
+    "silhouette": "monster_gifs\\2163_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gold Antler Scaraba Egg"
+    ],
+    "image": "monster_gifs\\2168.gif",
+    "silhouette": "monster_gifs\\2168_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gold One-Horn Scaraba"
+    ],
+    "image": "monster_gifs\\2161.gif",
+    "silhouette": "monster_gifs\\2161_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gold One-Horn Scaraba Egg"
+    ],
+    "image": "monster_gifs\\2166.gif",
+    "silhouette": "monster_gifs\\2166_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gold Queen Scaraba"
+    ],
+    "image": "monster_gifs\\2165.gif",
+    "silhouette": "monster_gifs\\2165_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gold Rake Scaraba"
+    ],
+    "image": "monster_gifs\\2164.gif",
+    "silhouette": "monster_gifs\\2164_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gold Rake Scaraba Egg"
+    ],
+    "image": "monster_gifs\\2169.gif",
+    "silhouette": "monster_gifs\\2169_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gold Two-Horn Scaraba"
+    ],
+    "image": "monster_gifs\\2162.gif",
+    "silhouette": "monster_gifs\\2162_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gold Two-Horn Scaraba Egg"
+    ],
+    "image": "monster_gifs\\2167.gif",
+    "silhouette": "monster_gifs\\2167_silhouette.gif"
+  },
+  {
+    "name": [
+      "Golden Thief Bug"
+    ],
+    "image": "monster_gifs\\1086.gif",
+    "silhouette": "monster_gifs\\1086_silhouette.gif"
+  },
+  {
+    "name": [
+      "Golem"
+    ],
+    "image": "monster_gifs\\1040.gif",
+    "silhouette": "monster_gifs\\1040_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gopinich"
+    ],
+    "image": "monster_gifs\\1885.gif",
+    "silhouette": "monster_gifs\\1885_silhouette.gif"
+  },
+  {
+    "name": [
+      "Grand Peco"
+    ],
+    "image": "monster_gifs\\1369.gif",
+    "silhouette": "monster_gifs\\1369_silhouette.gif"
+  },
+  {
+    "name": [
+      "Great Demon Baphomet"
+    ],
+    "image": "monster_gifs\\1929.gif",
+    "silhouette": "monster_gifs\\1929_silhouette.gif"
+  },
+  {
+    "name": [
+      "Greatest General"
+    ],
+    "image": "monster_gifs\\1277.gif",
+    "silhouette": "monster_gifs\\1277_silhouette.gif"
+  },
+  {
+    "name": [
+      "Green Iguana",
+      "Grove"
+    ],
+    "image": "monster_gifs\\1687.gif",
+    "silhouette": "monster_gifs\\1687_silhouette.gif"
+  },
+  {
+    "name": [
+      "Green Plant"
+    ],
+    "image": "monster_gifs\\1080.gif",
+    "silhouette": "monster_gifs\\1080_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gremlin"
+    ],
+    "image": "monster_gifs\\1632.gif",
+    "silhouette": "monster_gifs\\1632_silhouette.gif"
+  },
+  {
+    "name": [
+      "Grizzly"
+    ],
+    "image": "monster_gifs\\1381.gif",
+    "silhouette": "monster_gifs\\1381_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gryphon"
+    ],
+    "image": "monster_gifs\\1259.gif",
+    "silhouette": "monster_gifs\\1259_silhouette.gif"
+  },
+  {
+    "name": [
+      "Guardian Stone"
+    ],
+    "image": "monster_gifs\\1907.gif",
+    "silhouette": "monster_gifs\\1907_silhouette.gif"
+  },
+  {
+    "name": [
+      "Guardian Stone"
+    ],
+    "image": "monster_gifs\\1908.gif",
+    "silhouette": "monster_gifs\\1908_silhouette.gif"
+  },
+  {
+    "name": [
+      "Gullinbursti"
+    ],
+    "image": "monster_gifs\\1311.gif",
+    "silhouette": "monster_gifs\\1311_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hardrock Mammoth"
+    ],
+    "image": "monster_gifs\\1990.gif",
+    "silhouette": "monster_gifs\\1990_silhouette.gif"
+  },
+  {
+    "name": [
+      "Harpy"
+    ],
+    "image": "monster_gifs\\1376.gif",
+    "silhouette": "monster_gifs\\1376_silhouette.gif"
+  },
+  {
+    "name": [
+      "Harword",
+      "Howard Alt-Eisen"
+    ],
+    "image": "monster_gifs\\1636.gif",
+    "silhouette": "monster_gifs\\1636_silhouette.gif"
+  },
+  {
+    "name": [
+      "Headless Mule"
+    ],
+    "image": "monster_gifs\\2071.gif",
+    "silhouette": "monster_gifs\\2071_silhouette.gif"
+  },
+  {
+    "name": [
+      "Heater"
+    ],
+    "image": "monster_gifs\\1318.gif",
+    "silhouette": "monster_gifs\\1318_silhouette.gif"
+  },
+  {
+    "name": [
+      "Heavy Metaling"
+    ],
+    "image": "monster_gifs\\1977.gif",
+    "silhouette": "monster_gifs\\1977_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hell Apocalips",
+      "Hell Apocalypse"
+    ],
+    "image": "monster_gifs\\1978.gif",
+    "silhouette": "monster_gifs\\1978_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hell Poodle"
+    ],
+    "image": "monster_gifs\\1866.gif",
+    "silhouette": "monster_gifs\\1866_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hellion Revenant"
+    ],
+    "image": "monster_gifs\\1626.gif",
+    "silhouette": "monster_gifs\\1626_silhouette.gif"
+  },
+  {
+    "name": [
+      "High Orc"
+    ],
+    "image": "monster_gifs\\1213.gif",
+    "silhouette": "monster_gifs\\1213_silhouette.gif"
+  },
+  {
+    "name": [
+      "High Priest Magaleta",
+      "Margaretha"
+    ],
+    "image": "monster_gifs\\1643.gif",
+    "silhouette": "monster_gifs\\1643_silhouette.gif"
+  },
+  {
+    "name": [
+      "High Priest Magaleta",
+      "Margaretha"
+    ],
+    "image": "monster_gifs\\1649.gif",
+    "silhouette": "monster_gifs\\1649_silhouette.gif"
+  },
+  {
+    "name": [
+      "High Wizard Katrinn",
+      "Kathryne"
+    ],
+    "image": "monster_gifs\\1651.gif",
+    "silhouette": "monster_gifs\\1651_silhouette.gif"
+  },
+  {
+    "name": [
+      "High Wizard Katrinn",
+      "Kathryne"
+    ],
+    "image": "monster_gifs\\1645.gif",
+    "silhouette": "monster_gifs\\1645_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hill Wind"
+    ],
+    "image": "monster_gifs\\1629.gif",
+    "silhouette": "monster_gifs\\1629_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hill Wind"
+    ],
+    "image": "monster_gifs\\1680.gif",
+    "silhouette": "monster_gifs\\1680_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hillslion"
+    ],
+    "image": "monster_gifs\\1989.gif",
+    "silhouette": "monster_gifs\\1989_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hode"
+    ],
+    "image": "monster_gifs\\1127.gif",
+    "silhouette": "monster_gifs\\1127_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hodremlin"
+    ],
+    "image": "monster_gifs\\1773.gif",
+    "silhouette": "monster_gifs\\1773_silhouette.gif"
+  },
+  {
+    "name": [
+      "Horn"
+    ],
+    "image": "monster_gifs\\1128.gif",
+    "silhouette": "monster_gifs\\1128_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hornet"
+    ],
+    "image": "monster_gifs\\1004.gif",
+    "silhouette": "monster_gifs\\1004_silhouette.gif"
+  },
+  {
+    "name": [
+      "Horong"
+    ],
+    "image": "monster_gifs\\1129.gif",
+    "silhouette": "monster_gifs\\1129_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hunter Fly"
+    ],
+    "image": "monster_gifs\\1035.gif",
+    "silhouette": "monster_gifs\\1035_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hydra"
+    ],
+    "image": "monster_gifs\\1068.gif",
+    "silhouette": "monster_gifs\\1068_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hydro",
+      "Hydrolancer"
+    ],
+    "image": "monster_gifs\\1720.gif",
+    "silhouette": "monster_gifs\\1720_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hyegun",
+      "Yao Jun"
+    ],
+    "image": "monster_gifs\\1512.gif",
+    "silhouette": "monster_gifs\\1512_silhouette.gif"
+  },
+  {
+    "name": [
+      "Hylozoist",
+      "Heirozoist"
+    ],
+    "image": "monster_gifs\\1510.gif",
+    "silhouette": "monster_gifs\\1510_silhouette.gif"
+  },
+  {
+    "name": [
+      "Iara"
+    ],
+    "image": "monster_gifs\\2069.gif",
+    "silhouette": "monster_gifs\\2069_silhouette.gif"
+  },
+  {
+    "name": [
+      "Ice Titan"
+    ],
+    "image": "monster_gifs\\1777.gif",
+    "silhouette": "monster_gifs\\1777_silhouette.gif"
+  },
+  {
+    "name": [
+      "Iceicle"
+    ],
+    "image": "monster_gifs\\1789.gif",
+    "silhouette": "monster_gifs\\1789_silhouette.gif"
+  },
+  {
+    "name": [
+      "Ifrit"
+    ],
+    "image": "monster_gifs\\1832.gif",
+    "silhouette": "monster_gifs\\1832_silhouette.gif"
+  },
+  {
+    "name": [
+      "Imp",
+      "Fire Imp"
+    ],
+    "image": "monster_gifs\\1837.gif",
+    "silhouette": "monster_gifs\\1837_silhouette.gif"
+  },
+  {
+    "name": [
+      "Incantation Samurai",
+      "Samurai Specter"
+    ],
+    "image": "monster_gifs\\1492.gif",
+    "silhouette": "monster_gifs\\1492_silhouette.gif"
+  },
+  {
+    "name": [
+      "Incarnation of Morocc"
+    ],
+    "image": "monster_gifs\\1920.gif",
+    "silhouette": "monster_gifs\\1920_silhouette.gif"
+  },
+  {
+    "name": [
+      "Incarnation of Morocc"
+    ],
+    "image": "monster_gifs\\1918.gif",
+    "silhouette": "monster_gifs\\1918_silhouette.gif"
+  },
+  {
+    "name": [
+      "Incarnation of Morocc"
+    ],
+    "image": "monster_gifs\\1921.gif",
+    "silhouette": "monster_gifs\\1921_silhouette.gif"
+  },
+  {
+    "name": [
+      "Incarnation of Morocc"
+    ],
+    "image": "monster_gifs\\1921.gif",
+    "silhouette": "monster_gifs\\1921_silhouette.gif"
+  },
+  {
+    "name": [
+      "Increase Soil",
+      "Mi Gao"
+    ],
+    "image": "monster_gifs\\1516.gif",
+    "silhouette": "monster_gifs\\1516_silhouette.gif"
+  },
+  {
+    "name": [
+      "Incubus"
+    ],
+    "image": "monster_gifs\\1374.gif",
+    "silhouette": "monster_gifs\\1374_silhouette.gif"
+  },
+  {
+    "name": [
+      "Injustice"
+    ],
+    "image": "monster_gifs\\1257.gif",
+    "silhouette": "monster_gifs\\1257_silhouette.gif"
+  },
+  {
+    "name": [
+      "Iron Fist"
+    ],
+    "image": "monster_gifs\\1212.gif",
+    "silhouette": "monster_gifs\\1212_silhouette.gif"
+  },
+  {
+    "name": [
+      "Isilla"
+    ],
+    "image": "monster_gifs\\1772.gif",
+    "silhouette": "monster_gifs\\1772_silhouette.gif"
+  },
+  {
+    "name": [
+      "Isis"
+    ],
+    "image": "monster_gifs\\1029.gif",
+    "silhouette": "monster_gifs\\1029_silhouette.gif"
+  },
+  {
+    "name": [
+      "Jaguar"
+    ],
+    "image": "monster_gifs\\2072.gif",
+    "silhouette": "monster_gifs\\2072_silhouette.gif"
+  },
+  {
+    "name": [
+      "Jakk"
+    ],
+    "image": "monster_gifs\\1130.gif",
+    "silhouette": "monster_gifs\\1130_silhouette.gif"
+  },
+  {
+    "name": [
+      "Joker"
+    ],
+    "image": "monster_gifs\\1131.gif",
+    "silhouette": "monster_gifs\\1131_silhouette.gif"
+  },
+  {
+    "name": [
+      "Kaho"
+    ],
+    "image": "monster_gifs\\1072.gif",
+    "silhouette": "monster_gifs\\1072_silhouette.gif"
+  },
+  {
+    "name": [
+      "Kapha"
+    ],
+    "image": "monster_gifs\\1406.gif",
+    "silhouette": "monster_gifs\\1406_silhouette.gif"
+  },
+  {
+    "name": [
+      "Karakasa"
+    ],
+    "image": "monster_gifs\\1400.gif",
+    "silhouette": "monster_gifs\\1400_silhouette.gif"
+  },
+  {
+    "name": [
+      "Kasa"
+    ],
+    "image": "monster_gifs\\1833.gif",
+    "silhouette": "monster_gifs\\1833_silhouette.gif"
+  },
+  {
+    "name": [
+      "Katrinn",
+      "Kathryne Keyron"
+    ],
+    "image": "monster_gifs\\1639.gif",
+    "silhouette": "monster_gifs\\1639_silhouette.gif"
+  },
+  {
+    "name": [
+      "Kavac",
+      "Kavach Icarus"
+    ],
+    "image": "monster_gifs\\1656.gif",
+    "silhouette": "monster_gifs\\1656_silhouette.gif"
+  },
+  {
+    "name": [
+      "Khalitzburg"
+    ],
+    "image": "monster_gifs\\1132.gif",
+    "silhouette": "monster_gifs\\1132_silhouette.gif"
+  },
+  {
+    "name": [
+      "Kiel D-01"
+    ],
+    "image": "monster_gifs\\1734.gif",
+    "silhouette": "monster_gifs\\1734_silhouette.gif"
+  },
+  {
+    "name": [
+      "Killer Mantis"
+    ],
+    "image": "monster_gifs\\1294.gif",
+    "silhouette": "monster_gifs\\1294_silhouette.gif"
+  },
+  {
+    "name": [
+      "King Kray",
+      "King Dramoh"
+    ],
+    "image": "monster_gifs\\2198.gif",
+    "silhouette": "monster_gifs\\2198_silhouette.gif"
+  },
+  {
+    "name": [
+      "Knight Guardian"
+    ],
+    "image": "monster_gifs\\1286.gif",
+    "silhouette": "monster_gifs\\1286_silhouette.gif"
+  },
+  {
+    "name": [
+      "Knight of Abyss",
+      "Abysmal Knight"
+    ],
+    "image": "monster_gifs\\1219.gif",
+    "silhouette": "monster_gifs\\1219_silhouette.gif"
+  },
+  {
+    "name": [
+      "Knight of Windstorm",
+      "Stormy Knight"
+    ],
+    "image": "monster_gifs\\1251.gif",
+    "silhouette": "monster_gifs\\1251_silhouette.gif"
+  },
+  {
+    "name": [
+      "Knocker"
+    ],
+    "image": "monster_gifs\\1838.gif",
+    "silhouette": "monster_gifs\\1838_silhouette.gif"
+  },
+  {
+    "name": [
+      "Kobold"
+    ],
+    "image": "monster_gifs\\1135.gif",
+    "silhouette": "monster_gifs\\1135_silhouette.gif"
+  },
+  {
+    "name": [
+      "Kobold"
+    ],
+    "image": "monster_gifs\\1133.gif",
+    "silhouette": "monster_gifs\\1133_silhouette.gif"
+  },
+  {
+    "name": [
+      "Kobold"
+    ],
+    "image": "monster_gifs\\1134.gif",
+    "silhouette": "monster_gifs\\1134_silhouette.gif"
+  },
+  {
+    "name": [
+      "Kobold Archer"
+    ],
+    "image": "monster_gifs\\1282.gif",
+    "silhouette": "monster_gifs\\1282_silhouette.gif"
+  },
+  {
+    "name": [
+      "Kobold Leader"
+    ],
+    "image": "monster_gifs\\1296.gif",
+    "silhouette": "monster_gifs\\1296_silhouette.gif"
+  },
+  {
+    "name": [
+      "Kraben"
+    ],
+    "image": "monster_gifs\\1587.gif",
+    "silhouette": "monster_gifs\\1587_silhouette.gif"
+  },
+  {
+    "name": [
+      "Ktullanux"
+    ],
+    "image": "monster_gifs\\1779.gif",
+    "silhouette": "monster_gifs\\1779_silhouette.gif"
+  },
+  {
+    "name": [
+      "Kukre"
+    ],
+    "image": "monster_gifs\\1070.gif",
+    "silhouette": "monster_gifs\\1070_silhouette.gif"
+  },
+  {
+    "name": [
+      "Lady Solace"
+    ],
+    "image": "monster_gifs\\1703.gif",
+    "silhouette": "monster_gifs\\1703_silhouette.gif"
+  },
+  {
+    "name": [
+      "Lady Tanee"
+    ],
+    "image": "monster_gifs\\1688.gif",
+    "silhouette": "monster_gifs\\1688_silhouette.gif"
+  },
+  {
+    "name": [
+      "Lava Golem"
+    ],
+    "image": "monster_gifs\\1366.gif",
+    "silhouette": "monster_gifs\\1366_silhouette.gif"
+  },
+  {
+    "name": [
+      "Leaf Cat"
+    ],
+    "image": "monster_gifs\\1586.gif",
+    "silhouette": "monster_gifs\\1586_silhouette.gif"
+  },
+  {
+    "name": [
+      "Leak"
+    ],
+    "image": "monster_gifs\\2156.gif",
+    "silhouette": "monster_gifs\\2156_silhouette.gif"
+  },
+  {
+    "name": [
+      "Leib Olmai"
+    ],
+    "image": "monster_gifs\\1306.gif",
+    "silhouette": "monster_gifs\\1306_silhouette.gif"
+  },
+  {
+    "name": [
+      "Les"
+    ],
+    "image": "monster_gifs\\1881.gif",
+    "silhouette": "monster_gifs\\1881_silhouette.gif"
+  },
+  {
+    "name": [
+      "Li Me Mang Ryang",
+      "Jing Guai"
+    ],
+    "image": "monster_gifs\\1517.gif",
+    "silhouette": "monster_gifs\\1517_silhouette.gif"
+  },
+  {
+    "name": [
+      "Live Peach Tree",
+      "Enchanted Peach Tree"
+    ],
+    "image": "monster_gifs\\1410.gif",
+    "silhouette": "monster_gifs\\1410_silhouette.gif"
+  },
+  {
+    "name": [
+      "Loli Ruri"
+    ],
+    "image": "monster_gifs\\1505.gif",
+    "silhouette": "monster_gifs\\1505_silhouette.gif"
+  },
+  {
+    "name": [
+      "Lord Knight Seyren"
+    ],
+    "image": "monster_gifs\\1646.gif",
+    "silhouette": "monster_gifs\\1646_silhouette.gif"
+  },
+  {
+    "name": [
+      "Lord Knight Seyren"
+    ],
+    "image": "monster_gifs\\1640.gif",
+    "silhouette": "monster_gifs\\1640_silhouette.gif"
+  },
+  {
+    "name": [
+      "Lord of Death",
+      "Lord of the Dead"
+    ],
+    "image": "monster_gifs\\1373.gif",
+    "silhouette": "monster_gifs\\1373_silhouette.gif"
+  },
+  {
+    "name": [
+      "Luciola Vespa"
+    ],
+    "image": "monster_gifs\\1994.gif",
+    "silhouette": "monster_gifs\\1994_silhouette.gif"
+  },
+  {
+    "name": [
+      "Lude"
+    ],
+    "image": "monster_gifs\\1509.gif",
+    "silhouette": "monster_gifs\\1509_silhouette.gif"
+  },
+  {
+    "name": [
+      "Lunatic"
+    ],
+    "image": "monster_gifs\\1063.gif",
+    "silhouette": "monster_gifs\\1063_silhouette.gif"
+  },
+  {
+    "name": [
+      "Maero of Thanatos"
+    ],
+    "image": "monster_gifs\\1706.gif",
+    "silhouette": "monster_gifs\\1706_silhouette.gif"
+  },
+  {
+    "name": [
+      "Maero of Thanatos"
+    ],
+    "image": "monster_gifs\\1711.gif",
+    "silhouette": "monster_gifs\\1711_silhouette.gif"
+  },
+  {
+    "name": [
+      "Magaleta",
+      "Margaretha Sorin"
+    ],
+    "image": "monster_gifs\\1637.gif",
+    "silhouette": "monster_gifs\\1637_silhouette.gif"
+  },
+  {
+    "name": [
+      "Magmaring"
+    ],
+    "image": "monster_gifs\\1836.gif",
+    "silhouette": "monster_gifs\\1836_silhouette.gif"
+  },
+  {
+    "name": [
+      "Magnolia"
+    ],
+    "image": "monster_gifs\\1138.gif",
+    "silhouette": "monster_gifs\\1138_silhouette.gif"
+  },
+  {
+    "name": [
+      "Majoruros"
+    ],
+    "image": "monster_gifs\\1310.gif",
+    "silhouette": "monster_gifs\\1310_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mandragora"
+    ],
+    "image": "monster_gifs\\1020.gif",
+    "silhouette": "monster_gifs\\1020_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mantis"
+    ],
+    "image": "monster_gifs\\1139.gif",
+    "silhouette": "monster_gifs\\1139_silhouette.gif"
+  },
+  {
+    "name": [
+      "Marc"
+    ],
+    "image": "monster_gifs\\1045.gif",
+    "silhouette": "monster_gifs\\1045_silhouette.gif"
+  },
+  {
+    "name": [
+      "Marduk"
+    ],
+    "image": "monster_gifs\\1140.gif",
+    "silhouette": "monster_gifs\\1140_silhouette.gif"
+  },
+  {
+    "name": [
+      "Marin"
+    ],
+    "image": "monster_gifs\\1242.gif",
+    "silhouette": "monster_gifs\\1242_silhouette.gif"
+  },
+  {
+    "name": [
+      "Marina"
+    ],
+    "image": "monster_gifs\\1141.gif",
+    "silhouette": "monster_gifs\\1141_silhouette.gif"
+  },
+  {
+    "name": [
+      "Marine Sphere"
+    ],
+    "image": "monster_gifs\\1142.gif",
+    "silhouette": "monster_gifs\\1142_silhouette.gif"
+  },
+  {
+    "name": [
+      "Marionette"
+    ],
+    "image": "monster_gifs\\1143.gif",
+    "silhouette": "monster_gifs\\1143_silhouette.gif"
+  },
+  {
+    "name": [
+      "Marse"
+    ],
+    "image": "monster_gifs\\1144.gif",
+    "silhouette": "monster_gifs\\1144_silhouette.gif"
+  },
+  {
+    "name": [
+      "Martin"
+    ],
+    "image": "monster_gifs\\1145.gif",
+    "silhouette": "monster_gifs\\1145_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mastering"
+    ],
+    "image": "monster_gifs\\1090.gif",
+    "silhouette": "monster_gifs\\1090_silhouette.gif"
+  },
+  {
+    "name": [
+      "Matyr"
+    ],
+    "image": "monster_gifs\\1146.gif",
+    "silhouette": "monster_gifs\\1146_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mavka"
+    ],
+    "image": "monster_gifs\\1884.gif",
+    "silhouette": "monster_gifs\\1884_silhouette.gif"
+  },
+  {
+    "name": [
+      "Maya"
+    ],
+    "image": "monster_gifs\\1147.gif",
+    "silhouette": "monster_gifs\\1147_silhouette.gif"
+  },
+  {
+    "name": [
+      "Maya Purple"
+    ],
+    "image": "monster_gifs\\1289.gif",
+    "silhouette": "monster_gifs\\1289_silhouette.gif"
+  },
+  {
+    "name": [
+      "Medusa"
+    ],
+    "image": "monster_gifs\\1148.gif",
+    "silhouette": "monster_gifs\\1148_silhouette.gif"
+  },
+  {
+    "name": [
+      "Megalith"
+    ],
+    "image": "monster_gifs\\1274.gif",
+    "silhouette": "monster_gifs\\1274_silhouette.gif"
+  },
+  {
+    "name": [
+      "Megalodon"
+    ],
+    "image": "monster_gifs\\1064.gif",
+    "silhouette": "monster_gifs\\1064_silhouette.gif"
+  },
+  {
+    "name": [
+      "Merman"
+    ],
+    "image": "monster_gifs\\1264.gif",
+    "silhouette": "monster_gifs\\1264_silhouette.gif"
+  },
+  {
+    "name": [
+      "Metaling"
+    ],
+    "image": "monster_gifs\\1613.gif",
+    "silhouette": "monster_gifs\\1613_silhouette.gif"
+  },
+  {
+    "name": [
+      "Metaller"
+    ],
+    "image": "monster_gifs\\1058.gif",
+    "silhouette": "monster_gifs\\1058_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mimic"
+    ],
+    "image": "monster_gifs\\1191.gif",
+    "silhouette": "monster_gifs\\1191_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mineral"
+    ],
+    "image": "monster_gifs\\1614.gif",
+    "silhouette": "monster_gifs\\1614_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mini Demon"
+    ],
+    "image": "monster_gifs\\1292.gif",
+    "silhouette": "monster_gifs\\1292_silhouette.gif"
+  },
+  {
+    "name": [
+      "Minorous"
+    ],
+    "image": "monster_gifs\\1149.gif",
+    "silhouette": "monster_gifs\\1149_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mistress"
+    ],
+    "image": "monster_gifs\\1059.gif",
+    "silhouette": "monster_gifs\\1059_silhouette.gif"
+  },
+  {
+    "name": [
+      "Miyabi Ningyo",
+      "Miyabi Doll"
+    ],
+    "image": "monster_gifs\\1404.gif",
+    "silhouette": "monster_gifs\\1404_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mobster"
+    ],
+    "image": "monster_gifs\\1313.gif",
+    "silhouette": "monster_gifs\\1313_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mole",
+      "Holden"
+    ],
+    "image": "monster_gifs\\1628.gif",
+    "silhouette": "monster_gifs\\1628_silhouette.gif"
+  },
+  {
+    "name": [
+      "Moonlight Flower"
+    ],
+    "image": "monster_gifs\\1150.gif",
+    "silhouette": "monster_gifs\\1150_silhouette.gif"
+  },
+  {
+    "name": [
+      "Muka"
+    ],
+    "image": "monster_gifs\\1055.gif",
+    "silhouette": "monster_gifs\\1055_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mummy"
+    ],
+    "image": "monster_gifs\\1041.gif",
+    "silhouette": "monster_gifs\\1041_silhouette.gif"
+  },
+  {
+    "name": [
+      "Munak"
+    ],
+    "image": "monster_gifs\\1026.gif",
+    "silhouette": "monster_gifs\\1026_silhouette.gif"
+  },
+  {
+    "name": [
+      "Muscipular"
+    ],
+    "image": "monster_gifs\\1780.gif",
+    "silhouette": "monster_gifs\\1780_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mutant Dragon",
+      "Mutant Dragonoid"
+    ],
+    "image": "monster_gifs\\1262.gif",
+    "silhouette": "monster_gifs\\1262_silhouette.gif"
+  },
+  {
+    "name": [
+      "Myst"
+    ],
+    "image": "monster_gifs\\1151.gif",
+    "silhouette": "monster_gifs\\1151_silhouette.gif"
+  },
+  {
+    "name": [
+      "Myst Case"
+    ],
+    "image": "monster_gifs\\1249.gif",
+    "silhouette": "monster_gifs\\1249_silhouette.gif"
+  },
+  {
+    "name": [
+      "Mysteltainn"
+    ],
+    "image": "monster_gifs\\1203.gif",
+    "silhouette": "monster_gifs\\1203_silhouette.gif"
+  },
+  {
+    "name": [
+      "Naga"
+    ],
+    "image": "monster_gifs\\1993.gif",
+    "silhouette": "monster_gifs\\1993_silhouette.gif"
+  },
+  {
+    "name": [
+      "Naght Sieger"
+    ],
+    "image": "monster_gifs\\1956.gif",
+    "silhouette": "monster_gifs\\1956_silhouette.gif"
+  },
+  {
+    "name": [
+      "Necromancer"
+    ],
+    "image": "monster_gifs\\1870.gif",
+    "silhouette": "monster_gifs\\1870_silhouette.gif"
+  },
+  {
+    "name": [
+      "Nepenthes"
+    ],
+    "image": "monster_gifs\\1988.gif",
+    "silhouette": "monster_gifs\\1988_silhouette.gif"
+  },
+  {
+    "name": [
+      "Neraid",
+      "Nereid"
+    ],
+    "image": "monster_gifs\\1255.gif",
+    "silhouette": "monster_gifs\\1255_silhouette.gif"
+  },
+  {
+    "name": [
+      "Nidhoggr's Shadow"
+    ],
+    "image": "monster_gifs\\2022.gif",
+    "silhouette": "monster_gifs\\2022_silhouette.gif"
+  },
+  {
+    "name": [
+      "Nightmare"
+    ],
+    "image": "monster_gifs\\1061.gif",
+    "silhouette": "monster_gifs\\1061_silhouette.gif"
+  },
+  {
+    "name": [
+      "Nightmare Terror"
+    ],
+    "image": "monster_gifs\\1379.gif",
+    "silhouette": "monster_gifs\\1379_silhouette.gif"
+  },
+  {
+    "name": [
+      "Nine Tail"
+    ],
+    "image": "monster_gifs\\1180.gif",
+    "silhouette": "monster_gifs\\1180_silhouette.gif"
+  },
+  {
+    "name": [
+      "Novus"
+    ],
+    "image": "monster_gifs\\1718.gif",
+    "silhouette": "monster_gifs\\1718_silhouette.gif"
+  },
+  {
+    "name": [
+      "Novus"
+    ],
+    "image": "monster_gifs\\1715.gif",
+    "silhouette": "monster_gifs\\1715_silhouette.gif"
+  },
+  {
+    "name": [
+      "Noxious"
+    ],
+    "image": "monster_gifs\\1620.gif",
+    "silhouette": "monster_gifs\\1620_silhouette.gif"
+  },
+  {
+    "name": [
+      "Obeaune"
+    ],
+    "image": "monster_gifs\\1044.gif",
+    "silhouette": "monster_gifs\\1044_silhouette.gif"
+  },
+  {
+    "name": [
+      "Observation",
+      "Dame of Sentinel"
+    ],
+    "image": "monster_gifs\\1700.gif",
+    "silhouette": "monster_gifs\\1700_silhouette.gif"
+  },
+  {
+    "name": [
+      "Obsidian"
+    ],
+    "image": "monster_gifs\\1615.gif",
+    "silhouette": "monster_gifs\\1615_silhouette.gif"
+  },
+  {
+    "name": [
+      "Odium of Thanatos"
+    ],
+    "image": "monster_gifs\\1704.gif",
+    "silhouette": "monster_gifs\\1704_silhouette.gif"
+  },
+  {
+    "name": [
+      "Odium of Thanatos"
+    ],
+    "image": "monster_gifs\\1709.gif",
+    "silhouette": "monster_gifs\\1709_silhouette.gif"
+  },
+  {
+    "name": [
+      "Orc Archer"
+    ],
+    "image": "monster_gifs\\1189.gif",
+    "silhouette": "monster_gifs\\1189_silhouette.gif"
+  },
+  {
+    "name": [
+      "Orc Baby"
+    ],
+    "image": "monster_gifs\\1686.gif",
+    "silhouette": "monster_gifs\\1686_silhouette.gif"
+  },
+  {
+    "name": [
+      "Orc Hero"
+    ],
+    "image": "monster_gifs\\1087.gif",
+    "silhouette": "monster_gifs\\1087_silhouette.gif"
+  },
+  {
+    "name": [
+      "Orc Lady"
+    ],
+    "image": "monster_gifs\\1273.gif",
+    "silhouette": "monster_gifs\\1273_silhouette.gif"
+  },
+  {
+    "name": [
+      "Orc Lord"
+    ],
+    "image": "monster_gifs\\1190.gif",
+    "silhouette": "monster_gifs\\1190_silhouette.gif"
+  },
+  {
+    "name": [
+      "Orc Skeleton"
+    ],
+    "image": "monster_gifs\\1152.gif",
+    "silhouette": "monster_gifs\\1152_silhouette.gif"
+  },
+  {
+    "name": [
+      "Orc Sniper"
+    ],
+    "image": "monster_gifs\\1982.gif",
+    "silhouette": "monster_gifs\\1982_silhouette.gif"
+  },
+  {
+    "name": [
+      "Orc Warrior"
+    ],
+    "image": "monster_gifs\\1023.gif",
+    "silhouette": "monster_gifs\\1023_silhouette.gif"
+  },
+  {
+    "name": [
+      "Orc Zombie"
+    ],
+    "image": "monster_gifs\\1153.gif",
+    "silhouette": "monster_gifs\\1153_silhouette.gif"
+  },
+  {
+    "name": [
+      "Osiris"
+    ],
+    "image": "monster_gifs\\1038.gif",
+    "silhouette": "monster_gifs\\1038_silhouette.gif"
+  },
+  {
+    "name": [
+      "Owl Baron"
+    ],
+    "image": "monster_gifs\\1295.gif",
+    "silhouette": "monster_gifs\\1295_silhouette.gif"
+  },
+  {
+    "name": [
+      "Owl Duke"
+    ],
+    "image": "monster_gifs\\1320.gif",
+    "silhouette": "monster_gifs\\1320_silhouette.gif"
+  },
+  {
+    "name": [
+      "Panzer Goblin"
+    ],
+    "image": "monster_gifs\\1308.gif",
+    "silhouette": "monster_gifs\\1308_silhouette.gif"
+  },
+  {
+    "name": [
+      "Parasite"
+    ],
+    "image": "monster_gifs\\1500.gif",
+    "silhouette": "monster_gifs\\1500_silhouette.gif"
+  },
+  {
+    "name": [
+      "Pasana"
+    ],
+    "image": "monster_gifs\\1154.gif",
+    "silhouette": "monster_gifs\\1154_silhouette.gif"
+  },
+  {
+    "name": [
+      "Peco Peco"
+    ],
+    "image": "monster_gifs\\1019.gif",
+    "silhouette": "monster_gifs\\1019_silhouette.gif"
+  },
+  {
+    "name": [
+      "Peco Peco Egg"
+    ],
+    "image": "monster_gifs\\1047.gif",
+    "silhouette": "monster_gifs\\1047_silhouette.gif"
+  },
+  {
+    "name": [
+      "Penomena"
+    ],
+    "image": "monster_gifs\\1216.gif",
+    "silhouette": "monster_gifs\\1216_silhouette.gif"
+  },
+  {
+    "name": [
+      "Permeter"
+    ],
+    "image": "monster_gifs\\1314.gif",
+    "silhouette": "monster_gifs\\1314_silhouette.gif"
+  },
+  {
+    "name": [
+      "Pest"
+    ],
+    "image": "monster_gifs\\1256.gif",
+    "silhouette": "monster_gifs\\1256_silhouette.gif"
+  },
+  {
+    "name": [
+      "Petite"
+    ],
+    "image": "monster_gifs\\1155.gif",
+    "silhouette": "monster_gifs\\1155_silhouette.gif"
+  },
+  {
+    "name": [
+      "Petite"
+    ],
+    "image": "monster_gifs\\1156.gif",
+    "silhouette": "monster_gifs\\1156_silhouette.gif"
+  },
+  {
+    "name": [
+      "Pharaoh"
+    ],
+    "image": "monster_gifs\\1157.gif",
+    "silhouette": "monster_gifs\\1157_silhouette.gif"
+  },
+  {
+    "name": [
+      "Phen"
+    ],
+    "image": "monster_gifs\\1158.gif",
+    "silhouette": "monster_gifs\\1158_silhouette.gif"
+  },
+  {
+    "name": [
+      "Phendark"
+    ],
+    "image": "monster_gifs\\1202.gif",
+    "silhouette": "monster_gifs\\1202_silhouette.gif"
+  },
+  {
+    "name": [
+      "Phreeoni"
+    ],
+    "image": "monster_gifs\\1159.gif",
+    "silhouette": "monster_gifs\\1159_silhouette.gif"
+  },
+  {
+    "name": [
+      "Phylla"
+    ],
+    "image": "monster_gifs\\2021.gif",
+    "silhouette": "monster_gifs\\2021_silhouette.gif"
+  },
+  {
+    "name": [
+      "Picky"
+    ],
+    "image": "monster_gifs\\1049.gif",
+    "silhouette": "monster_gifs\\1049_silhouette.gif"
+  },
+  {
+    "name": [
+      "Picky"
+    ],
+    "image": "monster_gifs\\1050.gif",
+    "silhouette": "monster_gifs\\1050_silhouette.gif"
+  },
+  {
+    "name": [
+      "Piere"
+    ],
+    "image": "monster_gifs\\1160.gif",
+    "silhouette": "monster_gifs\\1160_silhouette.gif"
+  },
+  {
+    "name": [
+      "Pinguicula"
+    ],
+    "image": "monster_gifs\\1995.gif",
+    "silhouette": "monster_gifs\\1995_silhouette.gif"
+  },
+  {
+    "name": [
+      "Piranha"
+    ],
+    "image": "monster_gifs\\2070.gif",
+    "silhouette": "monster_gifs\\2070_silhouette.gif"
+  },
+  {
+    "name": [
+      "Pirate Skeleton"
+    ],
+    "image": "monster_gifs\\1071.gif",
+    "silhouette": "monster_gifs\\1071_silhouette.gif"
+  },
+  {
+    "name": [
+      "Pitman"
+    ],
+    "image": "monster_gifs\\1616.gif",
+    "silhouette": "monster_gifs\\1616_silhouette.gif"
+  },
+  {
+    "name": [
+      "Plankton"
+    ],
+    "image": "monster_gifs\\1161.gif",
+    "silhouette": "monster_gifs\\1161_silhouette.gif"
+  },
+  {
+    "name": [
+      "Plasma"
+    ],
+    "image": "monster_gifs\\1697.gif",
+    "silhouette": "monster_gifs\\1697_silhouette.gif"
+  },
+  {
+    "name": [
+      "Plasma"
+    ],
+    "image": "monster_gifs\\1695.gif",
+    "silhouette": "monster_gifs\\1695_silhouette.gif"
+  },
+  {
+    "name": [
+      "Plasma"
+    ],
+    "image": "monster_gifs\\1693.gif",
+    "silhouette": "monster_gifs\\1693_silhouette.gif"
+  },
+  {
+    "name": [
+      "Plasma"
+    ],
+    "image": "monster_gifs\\1696.gif",
+    "silhouette": "monster_gifs\\1696_silhouette.gif"
+  },
+  {
+    "name": [
+      "Plasma"
+    ],
+    "image": "monster_gifs\\1694.gif",
+    "silhouette": "monster_gifs\\1694_silhouette.gif"
+  },
+  {
+    "name": [
+      "Poison Spore"
+    ],
+    "image": "monster_gifs\\1077.gif",
+    "silhouette": "monster_gifs\\1077_silhouette.gif"
+  },
+  {
+    "name": [
+      "Poison Toad"
+    ],
+    "image": "monster_gifs\\1402.gif",
+    "silhouette": "monster_gifs\\1402_silhouette.gif"
+  },
+  {
+    "name": [
+      "Poporing"
+    ],
+    "image": "monster_gifs\\1031.gif",
+    "silhouette": "monster_gifs\\1031_silhouette.gif"
+  },
+  {
+    "name": [
+      "Porcellio"
+    ],
+    "image": "monster_gifs\\1619.gif",
+    "silhouette": "monster_gifs\\1619_silhouette.gif"
+  },
+  {
+    "name": [
+      "Poring"
+    ],
+    "image": "monster_gifs\\1002.gif",
+    "silhouette": "monster_gifs\\1002_silhouette.gif"
+  },
+  {
+    "name": [
+      "Pouring"
+    ],
+    "image": "monster_gifs\\1894.gif",
+    "silhouette": "monster_gifs\\1894_silhouette.gif"
+  },
+  {
+    "name": [
+      "Punk"
+    ],
+    "image": "monster_gifs\\1199.gif",
+    "silhouette": "monster_gifs\\1199_silhouette.gif"
+  },
+  {
+    "name": [
+      "Pupa"
+    ],
+    "image": "monster_gifs\\1008.gif",
+    "silhouette": "monster_gifs\\1008_silhouette.gif"
+  },
+  {
+    "name": [
+      "Queen Scaraba",
+      "Scaraba Queen"
+    ],
+    "image": "monster_gifs\\2087.gif",
+    "silhouette": "monster_gifs\\2087_silhouette.gif"
+  },
+  {
+    "name": [
+      "Quve"
+    ],
+    "image": "monster_gifs\\1508.gif",
+    "silhouette": "monster_gifs\\1508_silhouette.gif"
+  },
+  {
+    "name": [
+      "Rafflesia"
+    ],
+    "image": "monster_gifs\\1162.gif",
+    "silhouette": "monster_gifs\\1162_silhouette.gif"
+  },
+  {
+    "name": [
+      "Ragged Zombie"
+    ],
+    "image": "monster_gifs\\1865.gif",
+    "silhouette": "monster_gifs\\1865_silhouette.gif"
+  },
+  {
+    "name": [
+      "Raggler"
+    ],
+    "image": "monster_gifs\\1254.gif",
+    "silhouette": "monster_gifs\\1254_silhouette.gif"
+  },
+  {
+    "name": [
+      "Rake Scaraba"
+    ],
+    "image": "monster_gifs\\2086.gif",
+    "silhouette": "monster_gifs\\2086_silhouette.gif"
+  },
+  {
+    "name": [
+      "Rake Scaraba Egg"
+    ],
+    "image": "monster_gifs\\2091.gif",
+    "silhouette": "monster_gifs\\2091_silhouette.gif"
+  },
+  {
+    "name": [
+      "Rata"
+    ],
+    "image": "monster_gifs\\2017.gif",
+    "silhouette": "monster_gifs\\2017_silhouette.gif"
+  },
+  {
+    "name": [
+      "Rawrel",
+      "Laurell Weinder"
+    ],
+    "image": "monster_gifs\\1657.gif",
+    "silhouette": "monster_gifs\\1657_silhouette.gif"
+  },
+  {
+    "name": [
+      "Raydric"
+    ],
+    "image": "monster_gifs\\1163.gif",
+    "silhouette": "monster_gifs\\1163_silhouette.gif"
+  },
+  {
+    "name": [
+      "Raydric Archer"
+    ],
+    "image": "monster_gifs\\1276.gif",
+    "silhouette": "monster_gifs\\1276_silhouette.gif"
+  },
+  {
+    "name": [
+      "Red Eruma"
+    ],
+    "image": "monster_gifs\\2197.gif",
+    "silhouette": "monster_gifs\\2197_silhouette.gif"
+  },
+  {
+    "name": [
+      "Red Mushroom"
+    ],
+    "image": "monster_gifs\\1085.gif",
+    "silhouette": "monster_gifs\\1085_silhouette.gif"
+  },
+  {
+    "name": [
+      "Red Plant"
+    ],
+    "image": "monster_gifs\\1078.gif",
+    "silhouette": "monster_gifs\\1078_silhouette.gif"
+  },
+  {
+    "name": [
+      "Removal",
+      "Remover"
+    ],
+    "image": "monster_gifs\\1682.gif",
+    "silhouette": "monster_gifs\\1682_silhouette.gif"
+  },
+  {
+    "name": [
+      "Requiem"
+    ],
+    "image": "monster_gifs\\1164.gif",
+    "silhouette": "monster_gifs\\1164_silhouette.gif"
+  },
+  {
+    "name": [
+      "Retribution",
+      "Baroness of Retribution"
+    ],
+    "image": "monster_gifs\\1702.gif",
+    "silhouette": "monster_gifs\\1702_silhouette.gif"
+  },
+  {
+    "name": [
+      "Rhyncho"
+    ],
+    "image": "monster_gifs\\2020.gif",
+    "silhouette": "monster_gifs\\2020_silhouette.gif"
+  },
+  {
+    "name": [
+      "Rice Cake Boy",
+      "Dumpling Child"
+    ],
+    "image": "monster_gifs\\1409.gif",
+    "silhouette": "monster_gifs\\1409_silhouette.gif"
+  },
+  {
+    "name": [
+      "Rideword"
+    ],
+    "image": "monster_gifs\\1195.gif",
+    "silhouette": "monster_gifs\\1195_silhouette.gif"
+  },
+  {
+    "name": [
+      "Rocker"
+    ],
+    "image": "monster_gifs\\1052.gif",
+    "silhouette": "monster_gifs\\1052_silhouette.gif"
+  },
+  {
+    "name": [
+      "Roda Frog"
+    ],
+    "image": "monster_gifs\\1012.gif",
+    "silhouette": "monster_gifs\\1012_silhouette.gif"
+  },
+  {
+    "name": [
+      "Rotar Zairo"
+    ],
+    "image": "monster_gifs\\1392.gif",
+    "silhouette": "monster_gifs\\1392_silhouette.gif"
+  },
+  {
+    "name": [
+      "Roween"
+    ],
+    "image": "monster_gifs\\1782.gif",
+    "silhouette": "monster_gifs\\1782_silhouette.gif"
+  },
+  {
+    "name": [
+      "RSX 0806",
+      "RSX-0806"
+    ],
+    "image": "monster_gifs\\1623.gif",
+    "silhouette": "monster_gifs\\1623_silhouette.gif"
+  },
+  {
+    "name": [
+      "Rybio"
+    ],
+    "image": "monster_gifs\\1201.gif",
+    "silhouette": "monster_gifs\\1201_silhouette.gif"
+  },
+  {
+    "name": [
+      "Safeguard Chief"
+    ],
+    "image": "monster_gifs\\1981.gif",
+    "silhouette": "monster_gifs\\1981_silhouette.gif"
+  },
+  {
+    "name": [
+      "Sage Worm"
+    ],
+    "image": "monster_gifs\\1281.gif",
+    "silhouette": "monster_gifs\\1281_silhouette.gif"
+  },
+  {
+    "name": [
+      "Salamander"
+    ],
+    "image": "monster_gifs\\1831.gif",
+    "silhouette": "monster_gifs\\1831_silhouette.gif"
+  },
+  {
+    "name": [
+      "Sandman"
+    ],
+    "image": "monster_gifs\\1165.gif",
+    "silhouette": "monster_gifs\\1165_silhouette.gif"
+  },
+  {
+    "name": [
+      "Sasquatch"
+    ],
+    "image": "monster_gifs\\1243.gif",
+    "silhouette": "monster_gifs\\1243_silhouette.gif"
+  },
+  {
+    "name": [
+      "Satan Morocc"
+    ],
+    "image": "monster_gifs\\1916.gif",
+    "silhouette": "monster_gifs\\1916_silhouette.gif"
+  },
+  {
+    "name": [
+      "Savage"
+    ],
+    "image": "monster_gifs\\1166.gif",
+    "silhouette": "monster_gifs\\1166_silhouette.gif"
+  },
+  {
+    "name": [
+      "Savage Babe"
+    ],
+    "image": "monster_gifs\\1167.gif",
+    "silhouette": "monster_gifs\\1167_silhouette.gif"
+  },
+  {
+    "name": [
+      "Scaraba",
+      "One-Horned Scaraba"
+    ],
+    "image": "monster_gifs\\2083.gif",
+    "silhouette": "monster_gifs\\2083_silhouette.gif"
+  },
+  {
+    "name": [
+      "Scaraba",
+      "Two-Horned Scaraba"
+    ],
+    "image": "monster_gifs\\2084.gif",
+    "silhouette": "monster_gifs\\2084_silhouette.gif"
+  },
+  {
+    "name": [
+      "Scaraba Egg"
+    ],
+    "image": "monster_gifs\\2089.gif",
+    "silhouette": "monster_gifs\\2089_silhouette.gif"
+  },
+  {
+    "name": [
+      "Scaraba Egg"
+    ],
+    "image": "monster_gifs\\2088.gif",
+    "silhouette": "monster_gifs\\2088_silhouette.gif"
+  },
+  {
+    "name": [
+      "Scorpion"
+    ],
+    "image": "monster_gifs\\1001.gif",
+    "silhouette": "monster_gifs\\1001_silhouette.gif"
+  },
+  {
+    "name": [
+      "Sea Otter"
+    ],
+    "image": "monster_gifs\\1323.gif",
+    "silhouette": "monster_gifs\\1323_silhouette.gif"
+  },
+  {
+    "name": [
+      "Seeker"
+    ],
+    "image": "monster_gifs\\1774.gif",
+    "silhouette": "monster_gifs\\1774_silhouette.gif"
+  },
+  {
+    "name": [
+      "Seyren Windsor"
+    ],
+    "image": "monster_gifs\\1634.gif",
+    "silhouette": "monster_gifs\\1634_silhouette.gif"
+  },
+  {
+    "name": [
+      "Shaman Cargalache"
+    ],
+    "image": "monster_gifs\\1984.gif",
+    "silhouette": "monster_gifs\\1984_silhouette.gif"
+  },
+  {
+    "name": [
+      "Shecil",
+      "Cecil Damon"
+    ],
+    "image": "monster_gifs\\1638.gif",
+    "silhouette": "monster_gifs\\1638_silhouette.gif"
+  },
+  {
+    "name": [
+      "Shellfish"
+    ],
+    "image": "monster_gifs\\1074.gif",
+    "silhouette": "monster_gifs\\1074_silhouette.gif"
+  },
+  {
+    "name": [
+      "Shelter",
+      "Mistress of Shelter"
+    ],
+    "image": "monster_gifs\\1701.gif",
+    "silhouette": "monster_gifs\\1701_silhouette.gif"
+  },
+  {
+    "name": [
+      "Shining Plant"
+    ],
+    "image": "monster_gifs\\1083.gif",
+    "silhouette": "monster_gifs\\1083_silhouette.gif"
+  },
+  {
+    "name": [
+      "Shinobi"
+    ],
+    "image": "monster_gifs\\1401.gif",
+    "silhouette": "monster_gifs\\1401_silhouette.gif"
+  },
+  {
+    "name": [
+      "Side Winder"
+    ],
+    "image": "monster_gifs\\1037.gif",
+    "silhouette": "monster_gifs\\1037_silhouette.gif"
+  },
+  {
+    "name": [
+      "Siorava"
+    ],
+    "image": "monster_gifs\\2199.gif",
+    "silhouette": "monster_gifs\\2199_silhouette.gif"
+  },
+  {
+    "name": [
+      "Siroma"
+    ],
+    "image": "monster_gifs\\1776.gif",
+    "silhouette": "monster_gifs\\1776_silhouette.gif"
+  },
+  {
+    "name": [
+      "Skeggiold"
+    ],
+    "image": "monster_gifs\\1755.gif",
+    "silhouette": "monster_gifs\\1755_silhouette.gif"
+  },
+  {
+    "name": [
+      "Skeggiold"
+    ],
+    "image": "monster_gifs\\1754.gif",
+    "silhouette": "monster_gifs\\1754_silhouette.gif"
+  },
+  {
+    "name": [
+      "Skeleton"
+    ],
+    "image": "monster_gifs\\1076.gif",
+    "silhouette": "monster_gifs\\1076_silhouette.gif"
+  },
+  {
+    "name": [
+      "Skeleton General"
+    ],
+    "image": "monster_gifs\\1290.gif",
+    "silhouette": "monster_gifs\\1290_silhouette.gif"
+  },
+  {
+    "name": [
+      "Skeleton Prisoner"
+    ],
+    "image": "monster_gifs\\1196.gif",
+    "silhouette": "monster_gifs\\1196_silhouette.gif"
+  },
+  {
+    "name": [
+      "Skeleton Worker"
+    ],
+    "image": "monster_gifs\\1169.gif",
+    "silhouette": "monster_gifs\\1169_silhouette.gif"
+  },
+  {
+    "name": [
+      "Skogul"
+    ],
+    "image": "monster_gifs\\1761.gif",
+    "silhouette": "monster_gifs\\1761_silhouette.gif"
+  },
+  {
+    "name": [
+      "Skogul"
+    ],
+    "image": "monster_gifs\\1752.gif",
+    "silhouette": "monster_gifs\\1752_silhouette.gif"
+  },
+  {
+    "name": [
+      "Sleeper"
+    ],
+    "image": "monster_gifs\\1386.gif",
+    "silhouette": "monster_gifs\\1386_silhouette.gif"
+  },
+  {
+    "name": [
+      "Smokie"
+    ],
+    "image": "monster_gifs\\1056.gif",
+    "silhouette": "monster_gifs\\1056_silhouette.gif"
+  },
+  {
+    "name": [
+      "Snake",
+      "Boa"
+    ],
+    "image": "monster_gifs\\1025.gif",
+    "silhouette": "monster_gifs\\1025_silhouette.gif"
+  },
+  {
+    "name": [
+      "Sniper Shecil",
+      "Cecil"
+    ],
+    "image": "monster_gifs\\1644.gif",
+    "silhouette": "monster_gifs\\1644_silhouette.gif"
+  },
+  {
+    "name": [
+      "Sniper Shecil",
+      "Sniper Cecil"
+    ],
+    "image": "monster_gifs\\1650.gif",
+    "silhouette": "monster_gifs\\1650_silhouette.gif"
+  },
+  {
+    "name": [
+      "Snowier"
+    ],
+    "image": "monster_gifs\\1775.gif",
+    "silhouette": "monster_gifs\\1775_silhouette.gif"
+  },
+  {
+    "name": [
+      "Sohee"
+    ],
+    "image": "monster_gifs\\1170.gif",
+    "silhouette": "monster_gifs\\1170_silhouette.gif"
+  },
+  {
+    "name": [
+      "Soldier Guardian"
+    ],
+    "image": "monster_gifs\\1287.gif",
+    "silhouette": "monster_gifs\\1287_silhouette.gif"
+  },
+  {
+    "name": [
+      "Soldier Skeleton"
+    ],
+    "image": "monster_gifs\\1028.gif",
+    "silhouette": "monster_gifs\\1028_silhouette.gif"
+  },
+  {
+    "name": [
+      "Solider"
+    ],
+    "image": "monster_gifs\\1316.gif",
+    "silhouette": "monster_gifs\\1316_silhouette.gif"
+  },
+  {
+    "name": [
+      "Spore"
+    ],
+    "image": "monster_gifs\\1014.gif",
+    "silhouette": "monster_gifs\\1014_silhouette.gif"
+  },
+  {
+    "name": [
+      "Spring Rabbit"
+    ],
+    "image": "monster_gifs\\1322.gif",
+    "silhouette": "monster_gifs\\1322_silhouette.gif"
+  },
+  {
+    "name": [
+      "Stainer"
+    ],
+    "image": "monster_gifs\\1174.gif",
+    "silhouette": "monster_gifs\\1174_silhouette.gif"
+  },
+  {
+    "name": [
+      "Stalactic Golem"
+    ],
+    "image": "monster_gifs\\1278.gif",
+    "silhouette": "monster_gifs\\1278_silhouette.gif"
+  },
+  {
+    "name": [
+      "Stapo"
+    ],
+    "image": "monster_gifs\\1784.gif",
+    "silhouette": "monster_gifs\\1784_silhouette.gif"
+  },
+  {
+    "name": [
+      "Steam Goblin",
+      "Goblin Steamrider"
+    ],
+    "image": "monster_gifs\\1280.gif",
+    "silhouette": "monster_gifs\\1280_silhouette.gif"
+  },
+  {
+    "name": [
+      "Steel Chonchon"
+    ],
+    "image": "monster_gifs\\1042.gif",
+    "silhouette": "monster_gifs\\1042_silhouette.gif"
+  },
+  {
+    "name": [
+      "Stem Worm"
+    ],
+    "image": "monster_gifs\\1215.gif",
+    "silhouette": "monster_gifs\\1215_silhouette.gif"
+  },
+  {
+    "name": [
+      "Sting"
+    ],
+    "image": "monster_gifs\\1207.gif",
+    "silhouette": "monster_gifs\\1207_silhouette.gif"
+  },
+  {
+    "name": [
+      "Stone Shooter"
+    ],
+    "image": "monster_gifs\\1495.gif",
+    "silhouette": "monster_gifs\\1495_silhouette.gif"
+  },
+  {
+    "name": [
+      "Strouf"
+    ],
+    "image": "monster_gifs\\1065.gif",
+    "silhouette": "monster_gifs\\1065_silhouette.gif"
+  },
+  {
+    "name": [
+      "Succubus"
+    ],
+    "image": "monster_gifs\\1370.gif",
+    "silhouette": "monster_gifs\\1370_silhouette.gif"
+  },
+  {
+    "name": [
+      "Suspicious Hydra",
+      "Strange Hydra"
+    ],
+    "image": "monster_gifs\\2081.gif",
+    "silhouette": "monster_gifs\\2081_silhouette.gif"
+  },
+  {
+    "name": [
+      "Sword Guardian",
+      "Sword Master"
+    ],
+    "image": "monster_gifs\\1829.gif",
+    "silhouette": "monster_gifs\\1829_silhouette.gif"
+  },
+  {
+    "name": [
+      "Swordfish"
+    ],
+    "image": "monster_gifs\\1069.gif",
+    "silhouette": "monster_gifs\\1069_silhouette.gif"
+  },
+  {
+    "name": [
+      "Tamruan"
+    ],
+    "image": "monster_gifs\\1584.gif",
+    "silhouette": "monster_gifs\\1584_silhouette.gif"
+  },
+  {
+    "name": [
+      "Tao Gunka"
+    ],
+    "image": "monster_gifs\\1583.gif",
+    "silhouette": "monster_gifs\\1583_silhouette.gif"
+  },
+  {
+    "name": [
+      "Tarou"
+    ],
+    "image": "monster_gifs\\1175.gif",
+    "silhouette": "monster_gifs\\1175_silhouette.gif"
+  },
+  {
+    "name": [
+      "Tatacho"
+    ],
+    "image": "monster_gifs\\1986.gif",
+    "silhouette": "monster_gifs\\1986_silhouette.gif"
+  },
+  {
+    "name": [
+      "Teddy Bear"
+    ],
+    "image": "monster_gifs\\1622.gif",
+    "silhouette": "monster_gifs\\1622_silhouette.gif"
+  },
+  {
+    "name": [
+      "Tendrillion",
+      "Tendrilion"
+    ],
+    "image": "monster_gifs\\1991.gif",
+    "silhouette": "monster_gifs\\1991_silhouette.gif"
+  },
+  {
+    "name": [
+      "Tengu"
+    ],
+    "image": "monster_gifs\\1405.gif",
+    "silhouette": "monster_gifs\\1405_silhouette.gif"
+  },
+  {
+    "name": [
+      "Thanatos",
+      "Memory of Thanatos"
+    ],
+    "image": "monster_gifs\\1708.gif",
+    "silhouette": "monster_gifs\\1708_silhouette.gif"
+  },
+  {
+    "name": [
+      "Thara Frog"
+    ],
+    "image": "monster_gifs\\1034.gif",
+    "silhouette": "monster_gifs\\1034_silhouette.gif"
+  },
+  {
+    "name": [
+      "The Paper"
+    ],
+    "image": "monster_gifs\\1375.gif",
+    "silhouette": "monster_gifs\\1375_silhouette.gif"
+  },
+  {
+    "name": [
+      "Thief Bug"
+    ],
+    "image": "monster_gifs\\1051.gif",
+    "silhouette": "monster_gifs\\1051_silhouette.gif"
+  },
+  {
+    "name": [
+      "Thief Bug Egg"
+    ],
+    "image": "monster_gifs\\1048.gif",
+    "silhouette": "monster_gifs\\1048_silhouette.gif"
+  },
+  {
+    "name": [
+      "Thief Bug Female"
+    ],
+    "image": "monster_gifs\\1053.gif",
+    "silhouette": "monster_gifs\\1053_silhouette.gif"
+  },
+  {
+    "name": [
+      "Thief Bug Male"
+    ],
+    "image": "monster_gifs\\1054.gif",
+    "silhouette": "monster_gifs\\1054_silhouette.gif"
+  },
+  {
+    "name": [
+      "Thorn of Magic"
+    ],
+    "image": "monster_gifs\\1960.gif",
+    "silhouette": "monster_gifs\\1960_silhouette.gif"
+  },
+  {
+    "name": [
+      "Thorn of Purification"
+    ],
+    "image": "monster_gifs\\1961.gif",
+    "silhouette": "monster_gifs\\1961_silhouette.gif"
+  },
+  {
+    "name": [
+      "Thorn of Recovery"
+    ],
+    "image": "monster_gifs\\1959.gif",
+    "silhouette": "monster_gifs\\1959_silhouette.gif"
+  },
+  {
+    "name": [
+      "Thorny Skeleton"
+    ],
+    "image": "monster_gifs\\1958.gif",
+    "silhouette": "monster_gifs\\1958_silhouette.gif"
+  },
+  {
+    "name": [
+      "Tirfing",
+      "Ogretooth"
+    ],
+    "image": "monster_gifs\\1204.gif",
+    "silhouette": "monster_gifs\\1204_silhouette.gif"
+  },
+  {
+    "name": [
+      "Toad"
+    ],
+    "image": "monster_gifs\\1089.gif",
+    "silhouette": "monster_gifs\\1089_silhouette.gif"
+  },
+  {
+    "name": [
+      "Toucan"
+    ],
+    "image": "monster_gifs\\2073.gif",
+    "silhouette": "monster_gifs\\2073_silhouette.gif"
+  },
+  {
+    "name": [
+      "Treasure Chest"
+    ],
+    "image": "monster_gifs\\1324.gif",
+    "silhouette": "monster_gifs\\1324_silhouette.gif"
+  },
+  {
+    "name": [
+      "Tri Joint"
+    ],
+    "image": "monster_gifs\\1279.gif",
+    "silhouette": "monster_gifs\\1279_silhouette.gif"
+  },
+  {
+    "name": [
+      "Turtle General"
+    ],
+    "image": "monster_gifs\\1312.gif",
+    "silhouette": "monster_gifs\\1312_silhouette.gif"
+  },
+  {
+    "name": [
+      "Ungoliant"
+    ],
+    "image": "monster_gifs\\1618.gif",
+    "silhouette": "monster_gifs\\1618_silhouette.gif"
+  },
+  {
+    "name": [
+      "Uzhas"
+    ],
+    "image": "monster_gifs\\1883.gif",
+    "silhouette": "monster_gifs\\1883_silhouette.gif"
+  },
+  {
+    "name": [
+      "Vadon"
+    ],
+    "image": "monster_gifs\\1066.gif",
+    "silhouette": "monster_gifs\\1066_silhouette.gif"
+  },
+  {
+    "name": [
+      "Vagabond Wolf"
+    ],
+    "image": "monster_gifs\\1092.gif",
+    "silhouette": "monster_gifs\\1092_silhouette.gif"
+  },
+  {
+    "name": [
+      "Valkyrie"
+    ],
+    "image": "monster_gifs\\1765.gif",
+    "silhouette": "monster_gifs\\1765_silhouette.gif"
+  },
+  {
+    "name": [
+      "Valkyrie Randgris"
+    ],
+    "image": "monster_gifs\\1751.gif",
+    "silhouette": "monster_gifs\\1751_silhouette.gif"
+  },
+  {
+    "name": [
+      "Vanberk"
+    ],
+    "image": "monster_gifs\\1771.gif",
+    "silhouette": "monster_gifs\\1771_silhouette.gif"
+  },
+  {
+    "name": [
+      "Venatu"
+    ],
+    "image": "monster_gifs\\1679.gif",
+    "silhouette": "monster_gifs\\1679_silhouette.gif"
+  },
+  {
+    "name": [
+      "Venatu"
+    ],
+    "image": "monster_gifs\\1677.gif",
+    "silhouette": "monster_gifs\\1677_silhouette.gif"
+  },
+  {
+    "name": [
+      "Venatu"
+    ],
+    "image": "monster_gifs\\1678.gif",
+    "silhouette": "monster_gifs\\1678_silhouette.gif"
+  },
+  {
+    "name": [
+      "Venatu"
+    ],
+    "image": "monster_gifs\\1676.gif",
+    "silhouette": "monster_gifs\\1676_silhouette.gif"
+  },
+  {
+    "name": [
+      "Venomous"
+    ],
+    "image": "monster_gifs\\1621.gif",
+    "silhouette": "monster_gifs\\1621_silhouette.gif"
+  },
+  {
+    "name": [
+      "Verit"
+    ],
+    "image": "monster_gifs\\1032.gif",
+    "silhouette": "monster_gifs\\1032_silhouette.gif"
+  },
+  {
+    "name": [
+      "Vesper"
+    ],
+    "image": "monster_gifs\\1685.gif",
+    "silhouette": "monster_gifs\\1685_silhouette.gif"
+  },
+  {
+    "name": [
+      "Violy"
+    ],
+    "image": "monster_gifs\\1390.gif",
+    "silhouette": "monster_gifs\\1390_silhouette.gif"
+  },
+  {
+    "name": [
+      "Vitata"
+    ],
+    "image": "monster_gifs\\1176.gif",
+    "silhouette": "monster_gifs\\1176_silhouette.gif"
+  },
+  {
+    "name": [
+      "Vocal"
+    ],
+    "image": "monster_gifs\\1088.gif",
+    "silhouette": "monster_gifs\\1088_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wander Man",
+      "Wanderer"
+    ],
+    "image": "monster_gifs\\1208.gif",
+    "silhouette": "monster_gifs\\1208_silhouette.gif"
+  },
+  {
+    "name": [
+      "Waste Stove",
+      "Old Stove"
+    ],
+    "image": "monster_gifs\\1617.gif",
+    "silhouette": "monster_gifs\\1617_silhouette.gif"
+  },
+  {
+    "name": [
+      "Whikebain",
+      "Wickebine Tres"
+    ],
+    "image": "monster_gifs\\1653.gif",
+    "silhouette": "monster_gifs\\1653_silhouette.gif"
+  },
+  {
+    "name": [
+      "Whisper"
+    ],
+    "image": "monster_gifs\\1185.gif",
+    "silhouette": "monster_gifs\\1185_silhouette.gif"
+  },
+  {
+    "name": [
+      "Whisper"
+    ],
+    "image": "monster_gifs\\1179.gif",
+    "silhouette": "monster_gifs\\1179_silhouette.gif"
+  },
+  {
+    "name": [
+      "White Plant"
+    ],
+    "image": "monster_gifs\\1082.gif",
+    "silhouette": "monster_gifs\\1082_silhouette.gif"
+  },
+  {
+    "name": [
+      "Whitesmith Harword",
+      "Mastersmith Howard"
+    ],
+    "image": "monster_gifs\\1648.gif",
+    "silhouette": "monster_gifs\\1648_silhouette.gif"
+  },
+  {
+    "name": [
+      "Whitesmith Harword",
+      "Mastersmith Howard"
+    ],
+    "image": "monster_gifs\\1642.gif",
+    "silhouette": "monster_gifs\\1642_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wicked Nymph",
+      "Evil Nymph"
+    ],
+    "image": "monster_gifs\\1416.gif",
+    "silhouette": "monster_gifs\\1416_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wild Ginseng",
+      "Hermit Plant"
+    ],
+    "image": "monster_gifs\\1413.gif",
+    "silhouette": "monster_gifs\\1413_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wild Rose"
+    ],
+    "image": "monster_gifs\\1261.gif",
+    "silhouette": "monster_gifs\\1261_silhouette.gif"
+  },
+  {
+    "name": [
+      "Willow"
+    ],
+    "image": "monster_gifs\\1010.gif",
+    "silhouette": "monster_gifs\\1010_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wind Ghost"
+    ],
+    "image": "monster_gifs\\1263.gif",
+    "silhouette": "monster_gifs\\1263_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wolf"
+    ],
+    "image": "monster_gifs\\1013.gif",
+    "silhouette": "monster_gifs\\1013_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wood Goblin"
+    ],
+    "image": "monster_gifs\\1880.gif",
+    "silhouette": "monster_gifs\\1880_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wooden Golem"
+    ],
+    "image": "monster_gifs\\1497.gif",
+    "silhouette": "monster_gifs\\1497_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wootan Fighter"
+    ],
+    "image": "monster_gifs\\1499.gif",
+    "silhouette": "monster_gifs\\1499_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wootan Shooter"
+    ],
+    "image": "monster_gifs\\1498.gif",
+    "silhouette": "monster_gifs\\1498_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wormtail"
+    ],
+    "image": "monster_gifs\\1024.gif",
+    "silhouette": "monster_gifs\\1024_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wounded Morocc"
+    ],
+    "image": "monster_gifs\\1917.gif",
+    "silhouette": "monster_gifs\\1917_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wraith"
+    ],
+    "image": "monster_gifs\\1192.gif",
+    "silhouette": "monster_gifs\\1192_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wraith"
+    ],
+    "image": "monster_gifs\\1475.gif",
+    "silhouette": "monster_gifs\\1475_silhouette.gif"
+  },
+  {
+    "name": [
+      "Wraith Dead"
+    ],
+    "image": "monster_gifs\\1291.gif",
+    "silhouette": "monster_gifs\\1291_silhouette.gif"
+  },
+  {
+    "name": [
+      "Yellow Plant"
+    ],
+    "image": "monster_gifs\\1081.gif",
+    "silhouette": "monster_gifs\\1081_silhouette.gif"
+  },
+  {
+    "name": [
+      "Ygnizem",
+      "Egnigem Cenia"
+    ],
+    "image": "monster_gifs\\1658.gif",
+    "silhouette": "monster_gifs\\1658_silhouette.gif"
+  },
+  {
+    "name": [
+      "Ygnizem",
+      "Egnigem Cenia"
+    ],
+    "image": "monster_gifs\\1652.gif",
+    "silhouette": "monster_gifs\\1652_silhouette.gif"
+  },
+  {
+    "name": [
+      "Yoyo"
+    ],
+    "image": "monster_gifs\\1057.gif",
+    "silhouette": "monster_gifs\\1057_silhouette.gif"
+  },
+  {
+    "name": [
+      "Zenorc"
+    ],
+    "image": "monster_gifs\\1177.gif",
+    "silhouette": "monster_gifs\\1177_silhouette.gif"
+  },
+  {
+    "name": [
+      "Zerom"
+    ],
+    "image": "monster_gifs\\1178.gif",
+    "silhouette": "monster_gifs\\1178_silhouette.gif"
+  },
+  {
+    "name": [
+      "Zherlthsh",
+      "Zealotus"
+    ],
+    "image": "monster_gifs\\1200.gif",
+    "silhouette": "monster_gifs\\1200_silhouette.gif"
+  },
+  {
+    "name": [
+      "Zipper Bear"
+    ],
+    "image": "monster_gifs\\1417.gif",
+    "silhouette": "monster_gifs\\1417_silhouette.gif"
+  },
+  {
+    "name": [
+      "Zombie"
+    ],
+    "image": "monster_gifs\\1015.gif",
+    "silhouette": "monster_gifs\\1015_silhouette.gif"
+  },
+  {
+    "name": [
+      "Zombie Master"
+    ],
+    "image": "monster_gifs\\1298.gif",
+    "silhouette": "monster_gifs\\1298_silhouette.gif"
+  },
+  {
+    "name": [
+      "Zombie Prisoner"
+    ],
+    "image": "monster_gifs\\1197.gif",
+    "silhouette": "monster_gifs\\1197_silhouette.gif"
+  },
+  {
+    "name": [
+      "Zombie Slaughter"
+    ],
+    "image": "monster_gifs\\1864.gif",
+    "silhouette": "monster_gifs\\1864_silhouette.gif"
+  },
+  {
+    "name": [
+      "Zukadam",
+      "Zakudam"
+    ],
+    "image": "monster_gifs\\1979.gif",
+    "silhouette": "monster_gifs\\1979_silhouette.gif"
   }
 ]

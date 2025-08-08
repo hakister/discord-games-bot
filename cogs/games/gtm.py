@@ -4,13 +4,15 @@ import json
 import asyncio
 import os
 from discord.ext import commands
-from config import MOD_ID, GROUP_ID, CHANNEL_ID  # Assuming MOD_ROLE_ID is defined in config.py
+from config import MOD_ID, GROUP_ID, CHANNEL_ID, MONSTER_IMAGE_FOLDER
 
-ALLOWED_ROLE_ID = MOD_ID  # change this to your desired role ID
-GROUP_ROLE_ID = GROUP_ID # change this to your desired user group role ID
-ALLOWED_CHANNEL_ID = CHANNEL_ID  # change this to your desired channel ID
+ALLOWED_ROLE_ID = MOD_ID
+GROUP_ROLE_ID = GROUP_ID
+ALLOWED_CHANNEL_ID = CHANNEL_ID
 
 MONSTER_DATA_FILE = "cogs/data/monsters.json"
+MONSTER_FOLDER = MONSTER_IMAGE_FOLDER
+
 
 class MonsterQuiz(commands.Cog):
     def __init__(self, bot):
@@ -18,7 +20,7 @@ class MonsterQuiz(commands.Cog):
         self.active_round = {}
         self.winners = set()
         self.lock = asyncio.Lock()
-        self.event_starter = None	# To track who started the event
+        self.event_starter = None
 
         try:
             with open(MONSTER_DATA_FILE, "r", encoding="utf-8") as f:
@@ -30,17 +32,16 @@ class MonsterQuiz(commands.Cog):
     @commands.command(name="gtm")
     async def start_monster_quiz(self, ctx, rounds: int = 3):
         if ctx.channel.id != ALLOWED_CHANNEL_ID:
-            return  # Ignore command if not in allowed channel
-				
-				# Check if user has the allowed role
+            return
+
         if ALLOWED_ROLE_ID not in [role.id for role in ctx.author.roles]:
             await ctx.send(embed=discord.Embed(
                 title="🚫 Access Denied",
-                description=f"Only CMs or Admins can start the Guess the Monster game.",
+                description="Only CMs or Admins can start the Guess the Monster game.",
                 color=discord.Color.red()
             ))
             return
-        
+
         if not self.monsters:
             await ctx.send("❗ No monster data available. Cannot start quiz.")
             return
@@ -53,43 +54,53 @@ class MonsterQuiz(commands.Cog):
             self.active_round[ctx.channel.id] = None
             self.winners.clear()
             self.event_starter = ctx.author.id
-            
+
         await ctx.send(embed=discord.Embed(
             title="👹 Forsaken Legacy - Guess the Monster Game",
-            description=f"Hello! Starting a new quiz with **{rounds} round{'s' if rounds != 1 else ''}**! Type your guesses in chat.",
+            description=f"Starting a new quiz with **{rounds} round{'s' if rounds != 1 else ''}**! Type your guesses in chat.",
             color=discord.Color.green()
         ))
 
-        for _ in range(min(rounds, len(self.monsters))):
+        # Work with a copy so original list stays intact
+        available_monsters = self.monsters.copy()
+
+        for round_num in range(min(rounds, len(available_monsters))):
             if ctx.channel.id not in self.active_round:
-                break  # Game was ended early
-            monster = random.choice(self.monsters)
-            answer = monster.get("name", "").lower().strip()
+                break
+
+            monster = random.choice(available_monsters)
+            available_monsters.remove(monster)  # No repeats
+
+            names = monster["name"] if isinstance(monster["name"], list) else [monster["name"]]
+            valid_answers = [n.lower().strip() for n in names]
 
             async with self.lock:
-                self.active_round[ctx.channel.id] = {"answer": answer, "guessed": False}
+                self.active_round[ctx.channel.id] = {"answer": valid_answers, "guessed": False}
 
             embed = discord.Embed(
-                title=f"🎩 Guess the Monster! Round {_ + 1}!",
+                title=f"🎩 Guess the Monster! Round {round_num + 1}!",
                 description="Here's a silhouette... Type your answer in chat!",
                 color=discord.Color.dark_gray()
             )
 
-            silhouette_path = monster.get("silhouette")
+            silhouette_path = monster.get("silhouette", "").strip()
             if not silhouette_path:
                 await ctx.send("❗ No silhouette image provided for this monster.")
                 continue
 
-            if silhouette_path.startswith("http://") or silhouette_path.startswith("https://"):
+            if silhouette_path.startswith(("http://", "https://")):
                 embed.set_image(url=silhouette_path)
                 await ctx.send(embed=embed)
             else:
-                if not os.path.isfile(silhouette_path):
+                full_path = silhouette_path
+                if not os.path.isabs(full_path):
+                    full_path = os.path.join(MONSTER_FOLDER, silhouette_path)
+
+                if not os.path.isfile(full_path):
                     await ctx.send(f"❗ Silhouette image not found: `{silhouette_path}`")
-                    async with self.lock:
-                        self.active_round.pop(ctx.channel.id, None)
                     continue
-                file = discord.File(silhouette_path, filename="silhouette.gif" if silhouette_path.endswith(".gif") else "silhouette.jpg")
+
+                file = discord.File(full_path, filename="silhouette.gif" if full_path.endswith(".gif") else "silhouette.jpg")
                 embed.set_image(url=f"attachment://{file.filename}")
                 await ctx.send(embed=embed, file=file)
 
@@ -99,13 +110,17 @@ class MonsterQuiz(commands.Cog):
                 async with self.lock:
                     round_info = self.active_round.get(ctx.channel.id)
                     if round_info and not round_info["guessed"]:
-                        await self._reveal_monster(ctx, monster, answer, winner=None)
-                    self.active_round.pop(ctx.channel.id, None)
+                        await ctx.send(embed=discord.Embed(
+                            title="⏳ Time's Up!",
+                            description="No one guessed correctly in this round.",
+                            color=discord.Color.orange()
+                        ))
+                        await self._reveal_monster(ctx, monster, winner=None)
+                        self.active_round[ctx.channel.id]["guessed"] = True
 
         async with self.lock:
             self.active_round.pop(ctx.channel.id, None)
 
-        # Game summary
         if self.winners:
             mentions = [f"<@{uid}>" for uid in self.winners]
             summary_embed = discord.Embed(
@@ -124,37 +139,42 @@ class MonsterQuiz(commands.Cog):
             ))
 
     async def _wait_for_guess(self, ctx, monster):
-        answer = monster.get("name", "").lower().strip()
+        names = monster["name"] if isinstance(monster["name"], list) else [monster["name"]]
+        valid_answers = [n.lower().strip() for n in names]
 
         def check(m):
             return m.channel == ctx.channel and not m.author.bot
 
         while True:
             if ctx.channel.id not in self.active_round:
-                return  # Game was ended early
+                return
+
             msg = await self.bot.wait_for("message", check=check)
 
             async with self.lock:
                 round_info = self.active_round.get(ctx.channel.id)
                 if not round_info or round_info["guessed"]:
-                    continue  # Round already handled or no active round
+                    continue
 
                 if msg.author.id in self.winners:
                     await ctx.send(f"🛑 {msg.author.mention}, you've already answered correctly in this game! Let others try.")
                     continue
 
-                if msg.content.lower().strip() == answer:
+                if msg.content.lower().strip() in valid_answers:
                     round_info["guessed"] = True
                     self.winners.add(msg.author.id)
-                    await self._reveal_monster(ctx, monster, answer, winner=msg.author)
+                    await self._reveal_monster(ctx, monster, winner=msg.author)
                     return
                 else:
                     await ctx.send(f"❌ Wrong answer, {msg.author.mention}!")
 
-    async def _reveal_monster(self, ctx, monster, answer, winner=None):
+    async def _reveal_monster(self, ctx, monster, winner=None):
+        names = monster["name"] if isinstance(monster["name"], list) else [monster["name"]]
+        display_names = " or ".join(names)
+
         reveal_embed = discord.Embed(
             title="👁 Monster Revealed!",
-            description=f"The correct answer was **{answer.title()}**.",
+            description=f"The correct answer was **{display_names}**.",
             color=discord.Color.purple()
         )
 
@@ -167,25 +187,29 @@ class MonsterQuiz(commands.Cog):
             await ctx.send(embed=reveal_embed)
             return
 
-        if image_path.startswith("http://") or image_path.startswith("https://"):
+        if image_path.startswith(("http://", "https://")):
             reveal_embed.set_image(url=image_path)
             await ctx.send(embed=reveal_embed)
         else:
-            if os.path.isfile(image_path):
-                file = discord.File(image_path, filename="monster.gif" if image_path.endswith(".gif") else "monster.jpg")
+            # Fix: ensure we look in the monster image folder if not absolute path
+            full_path = image_path
+            if not os.path.isabs(full_path):
+                full_path = os.path.join(MONSTER_FOLDER, image_path)
+
+            if os.path.isfile(full_path):
+                file = discord.File(full_path, filename="monster.gif" if full_path.endswith(".gif") else "monster.jpg")
                 reveal_embed.set_image(url=f"attachment://{file.filename}")
                 await ctx.send(embed=reveal_embed, file=file)
             else:
                 reveal_embed.description += "\n⚠️ Image not found."
                 await ctx.send(embed=reveal_embed)
-                
+
     @commands.command(name="stopgtm", help="End the current Guess the Monster game early (event starter only).")
     async def end_monster_quiz(self, ctx):
         if ctx.channel.id not in self.active_round:
             await ctx.send("❗ There is no active Guess the Monster game running in this channel.")
             return
 
-        # Only the event starter can end the game
         if getattr(self, "event_starter", None) != ctx.author.id:
             await ctx.send("🚫 Only the event starter can end this game early.")
             return
@@ -200,6 +224,7 @@ class MonsterQuiz(commands.Cog):
             description=f"The Guess the Monster game has been ended by {ctx.author.mention}.",
             color=discord.Color.red(),
         ))
-		
+
+
 async def setup(bot):
     await bot.add_cog(MonsterQuiz(bot))
