@@ -78,7 +78,7 @@ class FLQuiz(commands.Cog):
                     while not answered:
                         if ctx.channel.id not in self.active_games:
                             break # Quiz was ended early
-                        msg = await self.bot.wait_for("message", timeout=15.0, check=check)
+                        msg = await self.bot.wait_for("message", timeout=20.0, check=check)
 
                         async with lock:
                             if answered:

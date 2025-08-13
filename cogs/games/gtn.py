@@ -78,7 +78,7 @@ class NumberGuess(commands.Cog):
         if guess == target:
             embed = discord.Embed(
                 title="🎉 Correct!",
-                description=f"Well done {message.author.mention}, the number was **{target}**! The game is now over.",
+                description=f"Well done {message.author.mention}, the number was **{target}**! Reply your IGN below.",
                 color=discord.Color.green(),
             ).set_footer(text="Your Event Box will be sent by GM Yoasobi.")
             await message.channel.send(embed=embed)

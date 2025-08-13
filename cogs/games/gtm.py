@@ -105,7 +105,7 @@ class MonsterQuiz(commands.Cog):
                 await ctx.send(embed=embed, file=file)
 
             try:
-                await asyncio.wait_for(self._wait_for_guess(ctx, monster), timeout=15)
+                await asyncio.wait_for(self._wait_for_guess(ctx, monster), timeout=20)
             except asyncio.TimeoutError:
                 async with self.lock:
                     round_info = self.active_round.get(ctx.channel.id)
@@ -125,7 +125,7 @@ class MonsterQuiz(commands.Cog):
             mentions = [f"<@{uid}>" for uid in self.winners]
             summary_embed = discord.Embed(
                 title="🏁 Guess the Monster Game Summary",
-                description="Thanks for playing! These winners will get 1 Event Box each:",
+                description="Congratulations to the winners! Reply your IGN below.",
                 color=discord.Color.gold()
             )
             summary_embed.add_field(name="Winners 🎉", value="\n".join(mentions), inline=False)
