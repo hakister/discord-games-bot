@@ -12,8 +12,9 @@ class NumberGuess(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.active_game = {}
+        self.lock = asyncio.Lock()
 
-    @commands.command(name="gtn", help="Start a new Guess the Number game. The bot picks a number between 1 and 100.")
+    @commands.command(name="gtn", help="Start a new Guess the Number game. The bot picks a number between 1 and 200.")
     async def guess_number(self, ctx):
         if ctx.channel.id != ALLOWED_CHANNEL_ID:
             return  # Ignore command if not in allowed channel
@@ -34,7 +35,7 @@ class NumberGuess(commands.Cog):
         
         # Start a new game
 
-        number = random.randint(1, 100)
+        number = random.randint(1, 200)
         timeout_task = self.bot.loop.create_task(self.expire_game(ctx))
 
         self.active_game = {"user_id": ctx.author.id, "target": number, "timeout": timeout_task}
@@ -42,7 +43,7 @@ class NumberGuess(commands.Cog):
         embed = discord.Embed(
             title="🎲 Forsaken Legacy - Guess the Number Game",
             description=(
-                f"Hello! I've picked a number between **1 and 100**.\n"
+                f"Hello! I've picked a number between **1 and 200**.\n"
                 "Type your guess in chat!"
             ),
             color=discord.Color.orange(),
@@ -61,33 +62,34 @@ class NumberGuess(commands.Cog):
         if message.author.bot:
             return
 
-        if not self.active_game: # or message.author.id != self.active_game["user_id"]:
-            return
+        async with self.lock:
+            if not self.active_game:
+                return
 
-        content = message.content.strip()
-        if not content.isdigit():
-            return # Ignore non-numeric messages
+            content = message.content.strip()
+            if not content.isdigit():
+                return
 
-        guess = int(content)
-        target = self.active_game["target"]
+            guess = int(content)
+            target = self.active_game["target"]
 
-        if not (1 <= guess <= 100):
-            await message.channel.send(f"❗ {message.author.mention}, your guess must be between 1 and 100.")
-            return
+            if not (1 <= guess <= 200):
+                await message.channel.send(f"❗ {message.author.mention}, your guess must be between 1 and 200.")
+                return
 
-        if guess == target:
-            embed = discord.Embed(
-                title="🎉 Correct!",
-                description=f"Well done {message.author.mention}, the number was **{target}**! Reply your IGN below.",
-                color=discord.Color.green(),
-            ).set_footer(text="Your Event Box will be sent by GM Yoasobi.")
-            await message.channel.send(embed=embed)
-            self.active_game["timeout"].cancel()
-            self.active_game = None
-        elif guess < target:
-            await message.channel.send(f"🔻 {message.author.mention}, too low! Try a higher number.")
-        else:
-            await message.channel.send(f"🔺 {message.author.mention}, too high! Try a lower number.")
+            if guess == target:
+                embed = discord.Embed(
+                    title="🎉 Correct!",
+                    description=f"Well done {message.author.mention}, the number was **{target}**! Reply your IGN below.",
+                    color=discord.Color.green(),
+                ).set_footer(text="Your Event Box will be sent by [CM] Gold Ship after the event.")
+                await message.channel.send(embed=embed)
+                self.active_game["timeout"].cancel()
+                self.active_game = None
+            elif guess < target:
+                await message.channel.send(f"🔻 {message.author.mention}, too low! Try a higher number.")
+            else:
+                await message.channel.send(f"🔺 {message.author.mention}, too high! Try a lower number.")
 
     @commands.command(name="stopgtn", help="End the current Guess the Number game early (event starter only).")
     async def end_guess_number(self, ctx):
