@@ -129,7 +129,7 @@ class MonsterQuiz(commands.Cog):
                 color=discord.Color.gold()
             )
             summary_embed.add_field(name="Winners 🎉", value="\n".join(mentions), inline=False)
-            summary_embed.set_footer(text="Event Boxes will be sent by GM Yoasobi.")
+            summary_embed.set_footer(text="Event Boxes will be sent by [CM] Gold Ship after the event.")
             await ctx.send(embed=summary_embed)
         else:
             await ctx.send(embed=discord.Embed(

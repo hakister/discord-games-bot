@@ -126,7 +126,7 @@ class FLQuiz(commands.Cog):
                         color=discord.Color.gold(),
                     ).add_field(
                         name="Each winner will get 1x Event Box.", value="\n".join(mentions)
-                    ).set_footer(text="Event Boxes will be sent by GM Yoasobi.")
+                    ).set_footer(text="Event Boxes will be sent by [CM] Gold Ship after the event.")
                 )
                 await ctx.send(embed=summary_embed)
             else:
