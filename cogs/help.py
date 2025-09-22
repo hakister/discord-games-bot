@@ -20,6 +20,11 @@ class Help(commands.Cog):
         embed.add_field(name="!flquiz", value="Start a Forsaken Legacy Quiz Game with 3 Rounds Default", inline=False)
         embed.add_field(name="!flquiz [number]", value="Start a Forsaken Legacy Quiz Game with [number] Rounds", inline=False)
         embed.add_field(name="!stopquiz", value="Stop currently running Forsaken Legacy Quiz Game", inline=False)
+        embed.add_field(name="!flbingo", value="Start a Bingo Game", inline=False)
+        embed.add_field(name="!bingonumbers", value="Show all numbers that have been called so far", inline=False)
+        embed.add_field(name="!bingo", value="Declare Bingo if you have a winning card", inline=False)
+        embed.add_field(name="!stopbingo", value="Stop currently running Bingo Game", inline=False)
+        embed.set_footer(text="Games are usually held once or twice a day. Winners get Event Boxes!")
         await ctx.send(embed=embed)
 
 
