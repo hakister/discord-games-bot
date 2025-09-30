@@ -17,7 +17,7 @@ class Bingo(commands.Cog):
         self.call_task = None
         self.current_pattern = "row_col_diag"  # default pattern
 
-    @commands.command(name="flbingo", help="Start a Bingo game and deal cards to players. Optionally specify pattern: row_col_diag, blackout, four_corners")
+    @commands.command(name="flbingo", help="Start a Bingo game and deal cards to players. Optionally specify pattern: row_col_diag, blackout, four_corners, f_pattern, l_pattern")
     async def start_bingo(self, ctx, pattern: str = "row_col_diag"):
         if ctx.channel.id != ALLOWED_CHANNEL_ID:
             return
@@ -29,8 +29,8 @@ class Bingo(commands.Cog):
             ))
             return
 
-        if pattern not in ["row_col_diag", "blackout", "four_corners"]:
-            await ctx.send("❌ Invalid pattern. Use row_col_diag, blackout, or four_corners.")
+        if pattern not in ["row_col_diag", "blackout", "four_corners", "f_pattern", "l_pattern"]:
+            await ctx.send("❌ Invalid pattern. Use row_col_diag, blackout, four_corners, f_pattern, or l_pattern.")
             return
 
         if self.game_active:
@@ -234,6 +234,17 @@ class Bingo(commands.Cog):
             return all(all(row) for row in marked)
         elif self.current_pattern == "four_corners":
             return marked[0][0] and marked[0][4] and marked[4][0] and marked[4][4]
+        elif self.current_pattern == "f_pattern":
+            col_full = all(marked[r][0] for r in range(5))
+            top_row = all(marked[0][c] for c in range(5))
+            mid_row = all(marked[2][c] for c in range(5))
+            if col_full and top_row and mid_row:
+                return True
+        elif self.current_pattern == "l_pattern":
+            col_full = all(marked[r][0] for r in range(5))
+            bottom_row = all(marked[4][c] for c in range(5))
+            if col_full and bottom_row:
+                return True
 
         return False
 
