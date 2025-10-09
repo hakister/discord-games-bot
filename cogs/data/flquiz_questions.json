@@ -161,7 +161,7 @@
     },
 		{
         "question": "When starting Rigel's Awakening, what item should the party leader have in their inventory?",
-        "answer": "Lair of the Fallen Star"
+        "answer": "Lair of the Fallen Star Key"
     },
 		{
         "question": "What is the element of Rigel?",
@@ -198,6 +198,58 @@
 		{
         "question": "What is the name of Forsaken Legacy's donation currency?",
         "answer": "Legacy Token"
+    },
+		{
+        "question": "How many kinds of stats are there when you create a character?",
+        "answer": "6"
+    },
+		{
+        "question": "What stat affects the 'Melee' physical power of your character?",
+        "answer": "Strength"
+    },
+		{
+        "question": "What stat affects the attack speed and flee of your character?",
+        "answer": "Agility"
+    },
+		{
+        "question": "What stat affects the endurance, HP, and restorative power of your character?",
+        "answer": "Vitality"
+    },
+		{
+        "question": "What stat affects the mental power of your character, allowing to deal magic damage?",
+        "answer": "Intelligence"
+    },
+		{
+        "question": "What stat affects the accuracy and ranged physical power of your character?",
+        "answer": "Dexterity"
+    },
+		{
+        "question": "What stat affects the fortune of your character, allowing it to deal critical attacks and luckily dodging enemy attacks?",
+        "answer": "Luck"
+    },
+		{
+        "question": "What status ailment causes the reduction of your character's HIT and FLEE rate by 25%?",
+        "answer": "Blind"
+    },
+		{
+        "question": "What status ailment causes the reduction of your character's ATK by 25% and LUK becomes 0?",
+        "answer": "Curse"
+    },
+		{
+        "question": "What status ailment causes players to be unable to re-equip items stripped from them?",
+        "answer": "Divest"
+    },
+		{
+        "question": "What status ailment causes the screen to go wavy and see crazy numbers for all damages processed around you even though it is fake?",
+        "answer": "Hallucination"
+    },
+		{
+        "question": "What status ailments causes the inability to use any active skills?",
+        "answer": "Silence"
+    },
+		{
+        "question": "What status ailment causes an increased casting time for skills by 20% to 100%?",
+        "answer": "Slow Casting"
     }
 
 ]
