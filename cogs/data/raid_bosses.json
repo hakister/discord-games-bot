@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Amon Ra",
+    "hp": 1800,
+    "atk": 180,
+    "def": 120,
+    "image": "monster_gifs\\1511.gif"
+  },
+  {
+    "name": "Baphomet",
+    "hp": 2400,
+    "atk": 240,
+    "def": 130,
+    "image": "monster_gifs\\1039.gif"
+  },
+  {
+    "name": "Dark Lord",
+    "hp": 2300,
+    "atk": 250,
+    "def": 110,
+    "image": "monster_gifs\\1272.gif"
+  },
+  {
+    "name": "Doppelganger",
+    "hp": 1900,
+    "atk": 220,
+    "def": 90,
+    "image": "monster_gifs\\1046.gif"
+  },
+  {
+    "name": "Dracula",
+    "hp": 2000,
+    "atk": 210,
+    "def": 100,
+    "image": "monster_gifs\\1389.gif"
+  },
+  {
+    "name": "Drake",
+    "hp": 2200,
+    "atk": 230,
+    "def": 100,
+    "image": "monster_gifs\\1112.gif"
+  },
+  {
+    "name": "Eddga",
+    "hp": 2100,
+    "atk": 200,
+    "def": 130,
+    "image": "monster_gifs\\1115.gif"
+  },
+  {
+    "name": "Garm",
+    "hp": 2300,
+    "atk": 240,
+    "def": 120,
+    "image": "monster_gifs\\1252.gif"
+  },
+  {
+    "name": "Golden Thief Bug",
+    "hp": 2000,
+    "atk": 190,
+    "def": 150,
+    "image": "monster_gifs\\1086.gif"
+  },
+  {
+    "name": "Maya",
+    "hp": 2100,
+    "atk": 200,
+    "def": 140,
+    "image": "monster_gifs\\1147.gif"
+  },
+  {
+    "name": "Mistress",
+    "hp": 1800,
+    "atk": 180,
+    "def": 100,
+    "image": "monster_gifs\\1059.gif"
+  },
+  {
+    "name": "Moonlight Flower",
+    "hp": 1700,
+    "atk": 190,
+    "def": 90,
+    "image": "monster_gifs\\1150.gif"
+  },
+  {
+    "name": "Orc Hero",
+    "hp": 1900,
+    "atk": 210,
+    "def": 120,
+    "image": "monster_gifs\\1087.gif"
+  },
+  {
+    "name": "Orc Lord",
+    "hp": 2200,
+    "atk": 230,
+    "def": 140,
+    "image": "monster_gifs\\1190.gif"
+  },
+  {
+    "name": "Osiris",
+    "hp": 2000,
+    "atk": 200,
+    "def": 110,
+    "image": "monster_gifs\\1038.gif"
+  },
+  {
+    "name": "Pharaoh",
+    "hp": 2400,
+    "atk": 240,
+    "def": 130,
+    "image": "monster_gifs\\1157.gif"
+  },
+  {
+    "name": "Phreeoni",
+    "hp": 2100,
+    "atk": 230,
+    "def": 100,
+    "image": "monster_gifs\\1159.gif"
+  },
+  {
+    "name": "Tao Gunka",
+    "hp": 2500,
+    "atk": 200,
+    "def": 50,
+    "image": "monster_gifs\\1583.gif"
+  },
+  {
+    "name": "Turtle General",
+    "hp": 2300,
+    "atk": 240,
+    "def": 140,
+    "image": "monster_gifs\\1312.gif"
+  }
+]

@@ -1,117 +1,201 @@
-# cogs/raid_boss.py
 import random
 import asyncio
 import math
+import json
 import discord
 from discord.ext import commands
-from config import MOD_ID, GROUP_ID, CHANNEL_ID # Assuming MOD_ROLE_ID is defined in config.py
+from config import MOD_ID, GROUP_ID, CHANNEL_ID, MONSTER_IMAGE_FOLDER
+import os
 
-ALLOWED_ROLE_ID = MOD_ID  # change this to your desired role ID
-GROUP_ROLE_ID = GROUP_ID # change this to your desired user group role ID
-ALLOWED_CHANNEL_ID = CHANNEL_ID  # change this to your desired channel ID
+ALLOWED_ROLE_ID = MOD_ID
+GROUP_ROLE_ID = GROUP_ID
+ALLOWED_CHANNEL_ID = CHANNEL_ID
 
-# emojis for actions
+# JSON file containing boss data
+BOSS_FOLDER = MONSTER_IMAGE_FOLDER
+BOSS_FILE = "cogs/data/raid_bosses.json"
+
 EMOJI_ATTACK = "⚔️"
 EMOJI_HEAL = "💉"
 EMOJI_DEFEND = "🛡️"
 ACTION_EMOJIS = [EMOJI_ATTACK, EMOJI_HEAL, EMOJI_DEFEND]
 
+
 class RaidBoss(commands.Cog):
-    """
-    Raid boss Cog — turn-based group-action raid with reaction selection.
-    Players join with !joinraid during the join window after !raidstart.
-    Each turn the bot posts an embed and players react to pick their action
-    (attack / heal / defend). Actions are collected for 20s, resolved together,
-    then the boss attacks 1-2 random alive players. Survivors are listed at end.
-    """
     def __init__(self, bot):
         self.bot = bot
-        # runtime state
         self.active = False
         self.join_phase = False
         self.join_task = None
-        self.players = {}           # user_id -> player dict
-        self.player_order = []      # list of user ids (not strictly needed here)
-        self.boss = None            # boss dict
+        self.players = {}
+        self.player_order = []
+        self.boss = None
         self.called_turn = 0
         self.action_message = None
-        self.called_numbers = None  # unused here, for parity with other cogs
+        self.called_numbers = None
         self.turn_lock = asyncio.Lock()
         self.join_end_time = None
+
+        # Load boss list from JSON file
+        try:
+            with open(BOSS_FILE, "r", encoding="utf-8") as f:
+                self.boss_list = json.load(f)
+        except Exception as e:
+            print(f"[RaidBoss] ⚠️ Error loading boss data: {e}")
+            self.boss_list = []
 
     # ---------- Commands ----------
 
     @commands.command(name="raidstart", help="Start a raid boss event. (Admin only)")
-    async def raidstart(self, ctx, *, boss_name: str = "The Beast"):
-        """Start a raid. Admins only; requires correct channel."""
+    async def raidstart(self, ctx, *, boss_name: str = None):
+        """Start a raid. Admins only; allows boss name or random."""
         if ctx.channel.id != ALLOWED_CHANNEL_ID:
             return
 
         if ALLOWED_ROLE_ID not in [r.id for r in ctx.author.roles]:
-            await ctx.send(embed=discord.Embed(
-                title="🚫 Access Denied",
-                description="You don't have permission to start raids.",
-                color=discord.Color.red()
-            ))
+            await ctx.send(
+                embed=discord.Embed(
+                    title="🚫 Access Denied",
+                    description="You don't have permission to start raids.",
+                    color=discord.Color.red(),
+                )
+            )
             return
 
         if self.active:
             await ctx.send("⚠️ A raid is already in progress.")
             return
 
-        # initialize join phase
+        if not self.boss_list:
+            await ctx.send(
+                "⚠️ No bosses available. Please check your `raid_bosses.json` file."
+            )
+            return
+
+        # Find or randomly pick a boss
+        boss_data = None
+        if boss_name:
+            boss_data = next(
+                (b for b in self.boss_list if b["name"].lower() == boss_name.lower()),
+                None,
+            )
+            if not boss_data:
+                await ctx.send(
+                    embed=discord.Embed(
+                        title="❓ Boss Not Found",
+                        description=f"No boss named **{boss_name}** found. Random boss selected instead.",
+                        color=discord.Color.orange(),
+                    )
+                )
+                boss_data = random.choice(self.boss_list)
+        else:
+            boss_data = random.choice(self.boss_list)
+
+        # Set boss stats
+        self.boss = {
+            "name": boss_data["name"],
+            "hp": boss_data["hp"],
+            "max_hp": boss_data["hp"],
+            "atk": boss_data["atk"],
+            "defense": boss_data["def"],
+            "image": boss_data.get("image"),
+        }
+
         self.join_phase = True
         self.players.clear()
         self.player_order.clear()
-        self.boss = None
         self.called_turn = 0
         self.active = True
 
-        join_duration = 60  # seconds (fixed, does not reset when players join)
+        join_duration = 60
         self.join_end_time = asyncio.get_event_loop().time() + join_duration
 
+        # Announce boss
         embed = discord.Embed(
-            title=f"⚔️ Raid Starting: {boss_name}",
-            description=(f"A raid is forming! Type `!joinraid` to join. "
-                         f"Join window: **{join_duration} seconds**."),
-            color=discord.Color.blurple()
+            title=f"⚔️ Raid Starting: {self.boss['name']} Appears!",
+            description=(
+                f"Prepare yourselves to battle **{self.boss['name']}** with "
+                f"**{self.boss['hp']:,} HP**, **{self.boss['atk']} ATK**, and **{self.boss['defense']} DEF**!\n\n"
+                f"Type `!joinraid` to join. You have **{join_duration} seconds** to join."
+            ),
+            color=discord.Color.red(),
         )
-        embed.add_field(name="Actions (choose by reacting during turns)",
-                        value=f"{EMOJI_ATTACK} Attack — damage boss\n"
-                              f"{EMOJI_HEAL} Heal — heal an ally\n"
-                              f"{EMOJI_DEFEND} Defend — reduce incoming damage (DEF applies)\n",
-                        inline=False)
-        await ctx.send(embed=embed)
+        embed.add_field(
+            name="Actions",
+            value=f"{EMOJI_ATTACK} Attack — damage boss\n"
+            f"{EMOJI_HEAL} Heal — heal yourself\n"
+            f"{EMOJI_DEFEND} Defend — reduce incoming damage (DEF applies)\n",
+            inline=False,
+        )
 
-        # create background task to end join phase after join_duration
-        self.join_task = self.bot.loop.create_task(self._end_join_phase_after(ctx, join_duration))
+        if self.boss["image"]:
+            img = self.boss["image"]
+            # If it's a URL, use it directly
+            if isinstance(img, str) and (img.startswith("http://") or img.startswith("https://")):
+                embed.set_image(url=img)
+                await ctx.send(embed=embed)
+                # cache URL for later turns
+                self._boss_image_url = img
+                self._boss_image_path = None
+                self._boss_image_filename = None
+            else:
+                # Local file: resolve against configured folder if not absolute
+                img_path = img or ""
+                if not os.path.isabs(img_path) and BOSS_FOLDER:
+                    img_path = os.path.join(BOSS_FOLDER, img_path)
+                img_path = os.path.abspath(img_path)
+
+                if os.path.exists(img_path):
+                    filename = os.path.basename(img_path)
+                    file = discord.File(img_path, filename=filename)
+                    embed.set_image(url=f"attachment://{filename}")
+                    await ctx.send(embed=embed, file=file)
+                    # cache local path and filename for reuse per-turn
+                    self._boss_image_path = img_path
+                    self._boss_image_filename = filename
+                    self._boss_image_url = None
+                else:
+                    print(f"[RaidBoss] image not found: {img_path}")
+                    await ctx.send(embed=embed)
+                    self._boss_image_path = None
+                    self._boss_image_filename = None
+                    self._boss_image_url = None
+        else:
+            await ctx.send(embed=embed)
+            self._boss_image_path = None
+            self._boss_image_filename = None
+            self._boss_image_url = None
+
+        self.join_task = self.bot.loop.create_task(
+            self._end_join_phase_after(ctx, join_duration)
+        )
 
     async def _end_join_phase_after(self, ctx, delay):
-        """Wait `delay` seconds then begin the raid if players joined."""
         try:
             await asyncio.sleep(delay)
-            # lock to avoid races
             async with self.turn_lock:
                 self.join_phase = False
                 if not self.players:
                     await ctx.send("No players joined the raid — event cancelled.")
                     self.active = False
                     return
-                # initialize boss and players
-                self._finalize_players_and_boss()
-                await ctx.send(embed=discord.Embed(
-                    title="🔥 Raid Begins!",
-                    description=(f"Boss **{self.boss['name']}** appears! "
-                                 f"HP: {self.boss['hp']:,}\n"
-                                 f"{len(self.players)} players joined."),
-                    color=discord.Color.red()
-                ))
-                # start the turn loop
+                await ctx.send(
+                    embed=discord.Embed(
+                        title="🔥 Raid Begins!",
+                        description=(
+                            f"Boss **{self.boss['name']}** appears! "
+                            f"HP: {self.boss['hp']:,}\n"
+                            f"{len(self.players)} players joined."
+                        ),
+                        color=discord.Color.red(),
+                    )
+                )
                 await self._turn_loop(ctx)
         except asyncio.CancelledError:
-            # join phase cancelled externally (e.g., raid_end)
             return
 
+    # --- Keep joinraid, raidstatus, raidend, mystats, _turn_loop, etc. exactly as-is ---
+    # Paste your unchanged versions of those functions here.
     @commands.command(name="joinraid", help="Join the currently forming raid.")
     async def joinraid(self, ctx):
         """Players call this during the join window to participate."""
@@ -133,18 +217,26 @@ class RaidBoss(commands.Cog):
             "name": getattr(ctx.author, "display_name", ctx.author.name),
             "hp": 1000,
             "max_hp": 1000,
-            "atk": random.randint(90, 140),     # randomized ATK
+            "atk": random.randint(90, 140),  # randomized ATK
             "defense": random.randint(30, 90),  # randomized DEF
             "alive": True,
             "defending": False,
-            "action": None
+            "action": None,
         }
         self.players[ctx.author.id] = player
         self.player_order.append(ctx.author.id)
-        remaining = max(0, int(self.join_end_time - asyncio.get_event_loop().time())) if self.join_end_time else 0
-        await ctx.send(f"✅ {ctx.author.mention} joined the raid! ({len(self.players)} players) — {remaining}s left to join.")
+        remaining = (
+            max(0, int(self.join_end_time - asyncio.get_event_loop().time()))
+            if self.join_end_time
+            else 0
+        )
+        await ctx.send(
+            f"✅ {ctx.author.mention} joined the raid! ({len(self.players)} players) — {remaining}s left to join."
+        )
 
-    @commands.command(name="raidstatus", help="Show current raid status (players & boss).")
+    @commands.command(
+        name="raidstatus", help="Show current raid status (players & boss)."
+    )
     async def raidstatus(self, ctx):
         if ctx.channel.id != ALLOWED_CHANNEL_ID:
             return
@@ -156,27 +248,45 @@ class RaidBoss(commands.Cog):
         embed = discord.Embed(title="🛡️ Raid Status", color=discord.Color.blue())
         # Boss
         if self.boss:
-            embed.add_field(name=f"Boss: {self.boss['name']}",
-                            value=f"HP: {self._hp_bar(self.boss['hp'], self.boss['max_hp'])} {self.boss['hp']:,}/{self.boss['max_hp']:,}",
-                            inline=False)
+            embed.add_field(
+                name=f"Boss: {self.boss['name']}",
+                value=f"HP: {self._hp_bar(self.boss['hp'], self.boss['max_hp'])} {self.boss['hp']:,}/{self.boss['max_hp']:,}",
+                inline=False,
+            )
         # Players
         lines = []
         for pid, p in self.players.items():
             status = "💀" if not p["alive"] else "❤️"
-            lines.append(f"{status} {p['name']} — {self._hp_bar(p['hp'], p['max_hp'])} {p['hp']}/{p['max_hp']}")
-        embed.add_field(name="Players", value="\n".join(lines) if lines else "(none)", inline=False)
-        await ctx.send(embed=embed)
+            lines.append(
+                f"{status} {p['name']} — {self._hp_bar(p['hp'], p['max_hp'])} {p['hp']}/{p['max_hp']}"
+            )
+        embed.add_field(
+            name="Players", value="\n".join(lines) if lines else "(none)", inline=False
+        )
+
+        # send embed with boss image if cached
+        if getattr(self, "_boss_image_url", None):
+            embed.set_image(url=self._boss_image_url)
+            await ctx.send(embed=embed)
+        elif getattr(self, "_boss_image_path", None) and getattr(self, "_boss_image_filename", None):
+            file = discord.File(self._boss_image_path, filename=self._boss_image_filename)
+            embed.set_image(url=f"attachment://{self._boss_image_filename}")
+            await ctx.send(embed=embed, file=file)
+        else:
+            await ctx.send(embed=embed)
 
     @commands.command(name="raidend", help="Force end the current raid (Admin only).")
     async def raidend(self, ctx):
         if ctx.channel.id != ALLOWED_CHANNEL_ID:
             return
         if ALLOWED_ROLE_ID not in [r.id for r in ctx.author.roles]:
-            await ctx.send(embed=discord.Embed(
-                title="🚫 Access Denied",
-                description="Only authorized users can end raids.",
-                color=discord.Color.red()
-            ))
+            await ctx.send(
+                embed=discord.Embed(
+                    title="🚫 Access Denied",
+                    description="Only authorized users can end raids.",
+                    color=discord.Color.red(),
+                )
+            )
             return
 
         if not self.active:
@@ -188,11 +298,13 @@ class RaidBoss(commands.Cog):
             self.join_task.cancel()
         self.active = False
         self.join_phase = False
-        await ctx.send(embed=discord.Embed(
-            title="🛑 Raid Ended",
-            description=f"The raid was ended early by {ctx.author.mention}.",
-            color=discord.Color.orange()
-        ))
+        await ctx.send(
+            embed=discord.Embed(
+                title="🛑 Raid Ended",
+                description=f"The raid was ended early by {ctx.author.mention}.",
+                color=discord.Color.orange(),
+            )
+        )
 
     # ---------- Internal helpers / turn loop ----------
 
@@ -208,13 +320,18 @@ class RaidBoss(commands.Cog):
             "hp": boss_hp,
             "max_hp": boss_hp,
             "atk": boss_atk,
-            "defense": 80  # boss defense (subtracted from player's damage if you want)
+            "defense": 80,  # boss defense (subtracted from player's damage if you want)
         }
 
     async def _turn_loop(self, ctx):
-        """Main loop: each turn ask players to react for action (20s), resolve actions, boss attacks."""
+        """Main loop: each turn ask players to react for action (10s), resolve actions, boss attacks."""
         turn = 1
-        while self.active and any(p["alive"] for p in self.players.values()) and self.boss and self.boss["hp"] > 0:
+        while (
+            self.active
+            and any(p["alive"] for p in self.players.values())
+            and self.boss
+            and self.boss["hp"] > 0
+        ):
             self.called_turn = turn
             # reset per-turn flags
             for p in self.players.values():
@@ -224,13 +341,27 @@ class RaidBoss(commands.Cog):
             # post action prompt
             embed = discord.Embed(
                 title=f"🔁 Raid Turn {turn}",
-                description=(f"Boss **{self.boss['name']}** — HP: {self._hp_bar(self.boss['hp'], self.boss['max_hp'])} "
-                             f"{self.boss['hp']:,}/{self.boss['max_hp']:,}\n\n"
-                             f"React with your action. You have **20 seconds**.\n\n"
-                             f"{EMOJI_ATTACK} — Attack\n{EMOJI_HEAL} — Heal (target ally)\n{EMOJI_DEFEND} — Defend (apply DEF reduction)"),
-                color=discord.Color.dark_gold()
+                description=(
+                    f"Boss **{self.boss['name']}** — HP: {self._hp_bar(self.boss['hp'], self.boss['max_hp'])} "
+                    f"{self.boss['hp']:,}/{self.boss['max_hp']:,}\n\n"
+                    f"React with your action. You have **10 seconds**.\n\n"
+                    f"{EMOJI_ATTACK} — Attack\n{EMOJI_HEAL} — Heal (self-heal)\n{EMOJI_DEFEND} — Defend (apply DEF reduction)"
+                ),
+                color=discord.Color.dark_gold(),
             )
-            msg = await ctx.send(embed=embed)
+            msg = None
+            # send turn prompt with boss image if available
+            if getattr(self, "_boss_image_url", None):
+                embed.set_image(url=self._boss_image_url)
+                msg = await ctx.send(embed=embed)
+            elif getattr(self, "_boss_image_path", None) and getattr(self, "_boss_image_filename", None):
+                # create new File for each send
+                file = discord.File(self._boss_image_path, filename=self._boss_image_filename)
+                embed.set_image(url=f"attachment://{self._boss_image_filename}")
+                msg = await ctx.send(embed=embed, file=file)
+            else:
+                msg = await ctx.send(embed=embed)
+
             self.action_message = msg
 
             # add reaction options
@@ -240,8 +371,8 @@ class RaidBoss(commands.Cog):
                 except Exception:
                     pass
 
-            # collect reactions for 20 seconds; last reaction per user counts
-            action_map = await self._collect_reactions_for_message(msg, timeout=20)
+            # collect reactions for 10 seconds; last reaction per user counts
+            action_map = await self._collect_reactions_for_message(msg, timeout=10)
 
             # map actions to players (only those who joined and alive)
             for user_id, em in action_map.items():
@@ -284,10 +415,14 @@ class RaidBoss(commands.Cog):
             # apply attacks to boss (sum)
             for pid, dmg in attack_events:
                 # optionally reduce by boss defense for each hit (simple approach)
-                net_dmg = max(0, dmg - int(self.boss["defense"] * 0.1))  # boss def reduces a small portion
+                net_dmg = max(
+                    0, dmg - int(self.boss["defense"] * 0.1)
+                )  # boss def reduces a small portion
                 self.boss["hp"] = max(0, self.boss["hp"] - net_dmg)
                 total_player_damage += net_dmg
-                resolution_lines.append(f"⚔️ **{self.players[pid]['name']}** attacked for **{net_dmg}** damage.")
+                resolution_lines.append(
+                    f"⚔️ **{self.players[pid]['name']}** attacked for **{net_dmg}** damage."
+                )
 
             # apply heals (self heal)
             for pid, heal_amt in heal_events:
@@ -298,16 +433,20 @@ class RaidBoss(commands.Cog):
                 p["hp"] = min(p["max_hp"], p["hp"] + heal_amt)
                 resolution_lines.append(
                     f"💉 **{p['name']}** healed themselves for **{p['hp'] - old}** HP."
-								)
+                )
 
             # check boss death before boss attacks
             if self.boss["hp"] <= 0:
-                await ctx.send(embed=discord.Embed(
-                    title="🏆 Raid Victory!",
-                    description=(f"The players dealt **{total_player_damage}** total damage and defeated "
-                                 f"**{self.boss['name']}**!"),
-                    color=discord.Color.green()
-                ))
+                await ctx.send(
+                    embed=discord.Embed(
+                        title="🏆 Raid Victory!",
+                        description=(
+                            f"The players dealt **{total_player_damage}** total damage and defeated "
+                            f"**{self.boss['name']}**!"
+                        ),
+                        color=discord.Color.green(),
+                    )
+                )
                 break
 
             # Boss attacks: choose 1 or 2 random alive players
@@ -322,7 +461,9 @@ class RaidBoss(commands.Cog):
             boss_events = []
             for tgt in targets:
                 # boss incoming damage variance
-                incoming = random.randint(max(1, self.boss["atk"] - 50), self.boss["atk"] + 50)
+                incoming = random.randint(
+                    max(1, self.boss["atk"] - 50), self.boss["atk"] + 50
+                )
                 # apply player's defense
                 damage_after_def = max(0, incoming - tgt["defense"])
                 def_line = f"🛡️ **{tgt['name']}** blocked **{tgt['defense']}** damage with their defense stat."
@@ -337,31 +478,58 @@ class RaidBoss(commands.Cog):
                 boss_events.append((tgt["name"], damage_after_def, oldhp, tgt["hp"]))
             # build resolution summary
             if total_player_damage > 0:
-                resolution_lines.insert(0, f"🔥 Players dealt **{total_player_damage}** total damage to **{self.boss['name']}**.")
+                resolution_lines.insert(
+                    0,
+                    f"🔥 Players dealt **{total_player_damage}** total damage to **{self.boss['name']}**.",
+                )
             if boss_events:
-                for (tname, dmg, oldhp, newhp) in boss_events:
-                    status = "💀 fallen!" if newhp <= 0 else f"{newhp}/{self.players[next(pid for pid,p in self.players.items() if p['name']==tname)]['max_hp']}"
-                    resolution_lines.append(f"💥 **{self.boss['name']}** hit **{tname}** for **{dmg}** damage. ({newhp}/{self.players[next(pid for pid,p in self.players.items() if p['name']==tname)]['max_hp']})")
+                for tname, dmg, oldhp, newhp in boss_events:
+                    status = (
+                        "💀 fallen!"
+                        if newhp <= 0
+                        else f"{newhp}/{self.players[next(pid for pid,p in self.players.items() if p['name']==tname)]['max_hp']}"
+                    )
+                    resolution_lines.append(
+                        f"💥 **{self.boss['name']}** hit **{tname}** for **{dmg}** damage. ({newhp}/{self.players[next(pid for pid,p in self.players.items() if p['name']==tname)]['max_hp']})"
+                    )
             # send turn resolution embed
-            summary = discord.Embed(title=f"🔔 Turn {turn} Results", color=discord.Color.dark_teal())
-            summary.description = "\n".join(resolution_lines) if resolution_lines else "No actions this turn."
+            summary = discord.Embed(
+                title=f"🔔 Turn {turn} Results", color=discord.Color.dark_teal()
+            )
+            summary.description = (
+                "\n".join(resolution_lines)
+                if resolution_lines
+                else "No actions this turn."
+            )
             # show boss hp and player statuses
             players_status = []
             for p in self.players.values():
                 status_emoji = "💀" if not p["alive"] else "❤️"
-                players_status.append(f"{status_emoji} **{p['name']}** — {self._hp_bar(p['hp'], p['max_hp'])} {p['hp']}/{p['max_hp']}")
-            summary.add_field(name=f"Boss: {self.boss['name']}", value=f"{self._hp_bar(self.boss['hp'], self.boss['max_hp'])} {self.boss['hp']:,}/{self.boss['max_hp']:,}", inline=False)
-            summary.add_field(name="Players", value="\n".join(players_status) or "(none)", inline=False)
+                players_status.append(
+                    f"{status_emoji} **{p['name']}** — {self._hp_bar(p['hp'], p['max_hp'])} {p['hp']}/{p['max_hp']}"
+                )
+            summary.add_field(
+                name=f"Boss: {self.boss['name']}",
+                value=f"{self._hp_bar(self.boss['hp'], self.boss['max_hp'])} {self.boss['hp']:,}/{self.boss['max_hp']:,}",
+                inline=False,
+            )
+            summary.add_field(
+                name="Players",
+                value="\n".join(players_status) or "(none)",
+                inline=False,
+            )
             await ctx.send(embed=summary)
 
             # check end conditions
             alive_now = [p for p in self.players.values() if p["alive"]]
             if not alive_now:
-                await ctx.send(embed=discord.Embed(
-                    title="💀 Raid Failed",
-                    description="All players were defeated. The boss remains victorious.",
-                    color=discord.Color.red()
-                ))
+                await ctx.send(
+                    embed=discord.Embed(
+                        title="💀 Raid Failed",
+                        description="All players were defeated. The boss remains victorious.",
+                        color=discord.Color.red(),
+                    )
+                )
                 break
             if self.boss["hp"] <= 0:
                 # already handled above, but guard
@@ -377,28 +545,34 @@ class RaidBoss(commands.Cog):
             # players won – survivors share rewards (we only list survivors)
             if survivors:
                 mention_list = " ".join(f"<@{p['id']}>" for p in survivors)
-                await ctx.send(embed=discord.Embed(
-                    title="🏁 Raid Complete — Players Win!",
-                    description=f"Survivors: {mention_list}\nPlease distribute rewards among survivors.",
-                    color=discord.Color.gold()
-                ))
+                await ctx.send(
+                    embed=discord.Embed(
+                        title="🏁 Raid Complete — Players Win!",
+                        description=f"Survivors: {mention_list}\nPlease distribute rewards among survivors.",
+                        color=discord.Color.gold(),
+                    )
+                )
             else:
                 await ctx.send("Raid finished: Boss defeated but no survivors.")
         else:
             # boss remains or players wiped
             if survivors:
                 mention_list = " ".join(f"<@{p['id']}>" for p in survivors)
-                await ctx.send(embed=discord.Embed(
-                    title="🛡️ Raid Over",
-                    description=f"The raid has ended. Survivors: {mention_list}\nDistribute rewards as you see fit.",
-                    color=discord.Color.orange()
-                ))
+                await ctx.send(
+                    embed=discord.Embed(
+                        title="🛡️ Raid Over",
+                        description=f"The raid has ended. Survivors: {mention_list}\nDistribute rewards as you see fit.",
+                        color=discord.Color.orange(),
+                    )
+                )
             else:
-                await ctx.send(embed=discord.Embed(
-                    title="💀 Raid Over - Wipe",
-                    description="No survivors remain.",
-                    color=discord.Color.dark_red()
-                ))
+                await ctx.send(
+                    embed=discord.Embed(
+                        title="💀 Raid Over - Wipe",
+                        description="No survivors remain.",
+                        color=discord.Color.dark_red(),
+                    )
+                )
 
         # cleanup
         self.active = False
@@ -409,46 +583,57 @@ class RaidBoss(commands.Cog):
         self.players.clear()
         self.player_order.clear()
 
-    @commands.command(name="mystats", help="Check your current raid stats (HP, ATK, DEF, etc.)")
+    @commands.command(
+        name="mystats", help="Check your current raid stats (HP, ATK, DEF, etc.)"
+    )
     async def mystats(self, ctx):
-      """Displays the player's current raid stats if they are in an active game."""
-      if ctx.channel.id != ALLOWED_CHANNEL_ID:
-        return
-      if not self.active:
-        await ctx.send(embed=discord.Embed(
-            title="ℹ️ No Active Raid",
-            description="There’s no ongoing raid right now.",
-            color=discord.Color.red()
-        ))
-        return
+        """Displays the player's current raid stats if they are in an active game."""
+        if ctx.channel.id != ALLOWED_CHANNEL_ID:
+            return
+        if not self.active:
+            await ctx.send(
+                embed=discord.Embed(
+                    title="ℹ️ No Active Raid",
+                    description="There’s no ongoing raid right now.",
+                    color=discord.Color.red(),
+                )
+            )
+            return
 
-      player = self.players.get(ctx.author.id)
-      if not player:
-        await ctx.send(embed=discord.Embed(
-            title="🚫 Not in the Raid",
-            description="You are not currently participating in the raid.",
-            color=discord.Color.red()
-        ))
-        return
+        player = self.players.get(ctx.author.id)
+        if not player:
+            await ctx.send(
+                embed=discord.Embed(
+                    title="🚫 Not in the Raid",
+                    description="You are not currently participating in the raid.",
+                    color=discord.Color.red(),
+                )
+            )
+            return
 
-      # Create HP bar
-      hp_bar = self._hp_bar(player["hp"], player["max_hp"])
+        # Create HP bar
+        hp_bar = self._hp_bar(player["hp"], player["max_hp"])
 
-      # Build embed
-      embed = discord.Embed(
-          title=f"📜 Stats for {ctx.author.display_name}",
-          color=discord.Color.blue()
-      )
-      embed.add_field(name="❤️ HP", value=f"{hp_bar} {player['hp']}/{player['max_hp']}", inline=False)
-      embed.add_field(name="⚔️ Attack", value=f"{player['atk']}", inline=True)
-      embed.add_field(name="🛡️ Defense", value=f"{player['defense']}", inline=True)
-      embed.add_field(name="💀 Status", value="Alive ✅" if player["alive"] else "Defeated ❌", inline=True)
+        # Build embed
+        embed = discord.Embed(
+            title=f"📜 Stats for {ctx.author.display_name}", color=discord.Color.blue()
+        )
+        embed.add_field(
+            name="❤️ HP",
+            value=f"{hp_bar} {player['hp']}/{player['max_hp']}",
+            inline=False,
+        )
+        embed.add_field(name="⚔️ Attack", value=f"{player['atk']}", inline=True)
+        embed.add_field(name="🛡️ Defense", value=f"{player['defense']}", inline=True)
+        embed.add_field(
+            name="💀 Status",
+            value="Alive ✅" if player["alive"] else "Defeated ❌",
+            inline=True,
+        )
 
-      await ctx.send(embed=embed)
+        await ctx.send(embed=embed)
 
-
-
-    async def _collect_reactions_for_message(self, message, timeout=20):
+    async def _collect_reactions_for_message(self, message, timeout=10):
         """
         Listen for reaction_add events on a message for `timeout` seconds.
         Return a mapping of user_id -> emoji (last reaction observed wins).
@@ -457,14 +642,18 @@ class RaidBoss(commands.Cog):
         end_time = asyncio.get_event_loop().time() + timeout
 
         def check(payload):
-            return payload.message_id == message.id and payload.user_id != self.bot.user.id
+            return (
+                payload.message_id == message.id and payload.user_id != self.bot.user.id
+            )
 
         while True:
             remaining = end_time - asyncio.get_event_loop().time()
             if remaining <= 0:
                 break
             try:
-                payload = await self.bot.wait_for("raw_reaction_add", timeout=remaining, check=check)
+                payload = await self.bot.wait_for(
+                    "raw_reaction_add", timeout=remaining, check=check
+                )
             except asyncio.TimeoutError:
                 break
             # interpret payload
@@ -479,9 +668,7 @@ class RaidBoss(commands.Cog):
         return action_map
 
     # ---------- Small utilities ----------
-
     def _hp_bar(self, hp, max_hp, length=12):
-        """Return a simple text bar like ████░░░░."""
         if max_hp <= 0:
             return ""
         ratio = hp / max_hp
@@ -490,6 +677,6 @@ class RaidBoss(commands.Cog):
         empty = length - filled
         return "█" * filled + "░" * empty
 
-# Add Cog
+
 async def setup(bot):
     await bot.add_cog(RaidBoss(bot))
