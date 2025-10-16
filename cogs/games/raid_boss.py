@@ -73,7 +73,7 @@ class RaidBoss(commands.Cog):
         embed = discord.Embed(
             title=f"⚔️ Raid Starting: {boss_name}",
             description=(f"A raid is forming! Type `!joinraid` to join. "
-                         f"Join window: **{join_duration} seconds** (timer does not reset)."),
+                         f"Join window: **{join_duration} seconds**."),
             color=discord.Color.blurple()
         )
         embed.add_field(name="Actions (choose by reacting during turns)",
@@ -87,7 +87,7 @@ class RaidBoss(commands.Cog):
         self.join_task = self.bot.loop.create_task(self._end_join_phase_after(ctx, join_duration))
 
     async def _end_join_phase_after(self, ctx, delay):
-        """Wait `delay` seconds (non-resetting) then begin the raid if players joined."""
+        """Wait `delay` seconds then begin the raid if players joined."""
         try:
             await asyncio.sleep(delay)
             # lock to avoid races
@@ -199,7 +199,7 @@ class RaidBoss(commands.Cog):
     def _finalize_players_and_boss(self):
         """Scale boss HP based on number of players and set base boss stats."""
         num_players = max(1, len(self.players))
-        base_hp = 5000
+        base_hp = 1000
         # scale boss HP proportionally (25% more HP per additional player)
         boss_hp = int(base_hp * (1 + 0.25 * (num_players - 1)))
         boss_atk = int(200 * (1 + 0.1 * (num_players - 1)))  # scale a bit as well
@@ -276,7 +276,7 @@ class RaidBoss(commands.Cog):
                     attack_events.append((pid, dmg))
                 elif p["action"] == "heal":
                     # heal amount as fraction of attack
-                    heal_amt = random.randint(int(p["atk"] * 0.35), int(p["atk"] * 0.7))
+                    heal_amt = random.randint(int(p["atk"] * 0.5), int(p["atk"] * 1.0))
                     heal_events.append((pid, heal_amt))
                 elif p["action"] == "defend":
                     p["defending"] = True
@@ -289,15 +289,16 @@ class RaidBoss(commands.Cog):
                 total_player_damage += net_dmg
                 resolution_lines.append(f"⚔️ **{self.players[pid]['name']}** attacked for **{net_dmg}** damage.")
 
-            # apply heals (choose targets: heal lowest-HP alive teammate (including self))
+            # apply heals (self heal)
             for pid, heal_amt in heal_events:
-                alive_targets = [p for p in self.players.values() if p["alive"]]
-                if not alive_targets:
+                p = self.players[pid]
+                if not p["alive"]:
                     continue
-                target = min(alive_targets, key=lambda x: x["hp"])  # heal lowest hp
-                old = target["hp"]
-                target["hp"] = min(target["max_hp"], target["hp"] + heal_amt)
-                resolution_lines.append(f"💉 **{self.players[pid]['name']}** healed **{target['name']}** for **{target['hp'] - old}** HP.")
+                old = p["hp"]
+                p["hp"] = min(p["max_hp"], p["hp"] + heal_amt)
+                resolution_lines.append(
+                    f"💉 **{p['name']}** healed themselves for **{p['hp'] - old}** HP."
+								)
 
             # check boss death before boss attacks
             if self.boss["hp"] <= 0:
@@ -324,6 +325,7 @@ class RaidBoss(commands.Cog):
                 incoming = random.randint(max(1, self.boss["atk"] - 50), self.boss["atk"] + 50)
                 # apply player's defense
                 damage_after_def = max(0, incoming - tgt["defense"])
+                def_line = f"🛡️ **{tgt['name']}** blocked **{tgt['defense']}** damage with their defense stat."
                 # if defending, halve the remainder (as requested)
                 if tgt["defending"]:
                     damage_after_def = damage_after_def // 2
@@ -340,7 +342,6 @@ class RaidBoss(commands.Cog):
                 for (tname, dmg, oldhp, newhp) in boss_events:
                     status = "💀 fallen!" if newhp <= 0 else f"{newhp}/{self.players[next(pid for pid,p in self.players.items() if p['name']==tname)]['max_hp']}"
                     resolution_lines.append(f"💥 **{self.boss['name']}** hit **{tname}** for **{dmg}** damage. ({newhp}/{self.players[next(pid for pid,p in self.players.items() if p['name']==tname)]['max_hp']})")
-
             # send turn resolution embed
             summary = discord.Embed(title=f"🔔 Turn {turn} Results", color=discord.Color.dark_teal())
             summary.description = "\n".join(resolution_lines) if resolution_lines else "No actions this turn."
@@ -407,6 +408,45 @@ class RaidBoss(commands.Cog):
         self.boss = None
         self.players.clear()
         self.player_order.clear()
+
+    @commands.command(name="mystats", help="Check your current raid stats (HP, ATK, DEF, etc.)")
+    async def mystats(self, ctx):
+      """Displays the player's current raid stats if they are in an active game."""
+      if ctx.channel.id != ALLOWED_CHANNEL_ID:
+        return
+      if not self.active:
+        await ctx.send(embed=discord.Embed(
+            title="ℹ️ No Active Raid",
+            description="There’s no ongoing raid right now.",
+            color=discord.Color.red()
+        ))
+        return
+
+      player = self.players.get(ctx.author.id)
+      if not player:
+        await ctx.send(embed=discord.Embed(
+            title="🚫 Not in the Raid",
+            description="You are not currently participating in the raid.",
+            color=discord.Color.red()
+        ))
+        return
+
+      # Create HP bar
+      hp_bar = self._hp_bar(player["hp"], player["max_hp"])
+
+      # Build embed
+      embed = discord.Embed(
+          title=f"📜 Stats for {ctx.author.display_name}",
+          color=discord.Color.blue()
+      )
+      embed.add_field(name="❤️ HP", value=f"{hp_bar} {player['hp']}/{player['max_hp']}", inline=False)
+      embed.add_field(name="⚔️ Attack", value=f"{player['atk']}", inline=True)
+      embed.add_field(name="🛡️ Defense", value=f"{player['defense']}", inline=True)
+      embed.add_field(name="💀 Status", value="Alive ✅" if player["alive"] else "Defeated ❌", inline=True)
+
+      await ctx.send(embed=embed)
+
+
 
     async def _collect_reactions_for_message(self, message, timeout=20):
         """
