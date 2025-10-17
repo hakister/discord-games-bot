@@ -179,20 +179,55 @@ class RaidBoss(commands.Cog):
                     await ctx.send("No players joined the raid — event cancelled.")
                     self.active = False
                     return
-                await ctx.send(
-                    embed=discord.Embed(
-                        title="🔥 Raid Begins!",
-                        description=(
-                            f"Boss **{self.boss['name']}** appears! "
-                            f"HP: {self.boss['hp']:,}\n"
-                            f"{len(self.players)} players joined."
-                        ),
-                        color=discord.Color.red(),
-                    )
+
+                # 🧮 Scale boss stats based on number of players
+                num_players = max(1, len(self.players))
+                base_hp = self.boss["hp"]
+                base_atk = self.boss["atk"]
+                base_def = self.boss["defense"]
+
+                # ⚔️ Scaling rules:
+                # +25% HP, +10% ATK, +5% DEF per additional player
+                scaled_hp = int(base_hp * (1 + 0.25 * (num_players - 1)))
+                scaled_atk = int(base_atk * (1 + 0.10 * (num_players - 1)))
+                scaled_def = int(base_def * (1 + 0.05 * (num_players - 1)))
+
+                # Apply new scaled values
+                self.boss["hp"] = scaled_hp
+                self.boss["max_hp"] = scaled_hp
+                self.boss["atk"] = scaled_atk
+                self.boss["defense"] = scaled_def
+
+                # 🎉 Announce scaled boss
+                embed = discord.Embed(
+                    title="🔥 Raid Begins!",
+                    description=(
+                        f"Boss **{self.boss['name']}** emerges stronger based on your party size!\n\n"
+                        f"**Players Joined:** {len(self.players)}\n"
+                        f"**HP:** {scaled_hp:,}\n"
+                        f"**ATK:** {scaled_atk}\n"
+                        f"**DEF:** {scaled_def}"
+                    ),
+                    color=discord.Color.red(),
                 )
+
+                # If the boss image is cached, attach it again
+                if getattr(self, "_boss_image_url", None):
+                    embed.set_image(url=self._boss_image_url)
+                    await ctx.send(embed=embed)
+                elif getattr(self, "_boss_image_path", None) and getattr(self, "_boss_image_filename", None):
+                    file = discord.File(self._boss_image_path, filename=self._boss_image_filename)
+                    embed.set_image(url=f"attachment://{self._boss_image_filename}")
+                    await ctx.send(embed=embed, file=file)
+                else:
+                    await ctx.send(embed=embed)
+
+                # 🌀 Start the turn loop
                 await self._turn_loop(ctx)
+
         except asyncio.CancelledError:
             return
+
 
     # --- Keep joinraid, raidstatus, raidend, mystats, _turn_loop, etc. exactly as-is ---
     # Paste your unchanged versions of those functions here.
