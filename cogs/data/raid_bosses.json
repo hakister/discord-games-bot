@@ -4,6 +4,9 @@
     "hp": 1800,
     "atk": 180,
     "def": 120,
+    "difficulty": 3,
+    "base_rewards": 4,
+    "reward_multiplier": 1.10,
     "image": "monster_gifs\\1511.gif"
   },
   {
@@ -11,6 +14,9 @@
     "hp": 2400,
     "atk": 240,
     "def": 130,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
     "image": "monster_gifs\\1039.gif"
   },
   {
@@ -18,6 +24,9 @@
     "hp": 2300,
     "atk": 250,
     "def": 110,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
     "image": "monster_gifs\\1272.gif"
   },
   {
@@ -25,6 +34,9 @@
     "hp": 1900,
     "atk": 220,
     "def": 90,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
     "image": "monster_gifs\\1046.gif"
   },
   {
@@ -32,6 +44,9 @@
     "hp": 2000,
     "atk": 210,
     "def": 100,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
     "image": "monster_gifs\\1389.gif"
   },
   {
@@ -39,6 +54,9 @@
     "hp": 2200,
     "atk": 230,
     "def": 100,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
     "image": "monster_gifs\\1112.gif"
   },
   {
@@ -46,6 +64,9 @@
     "hp": 2100,
     "atk": 200,
     "def": 130,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
     "image": "monster_gifs\\1115.gif"
   },
   {
@@ -53,6 +74,9 @@
     "hp": 2300,
     "atk": 240,
     "def": 120,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
     "image": "monster_gifs\\1252.gif"
   },
   {
@@ -60,6 +84,9 @@
     "hp": 2000,
     "atk": 190,
     "def": 150,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
     "image": "monster_gifs\\1086.gif"
   },
   {
@@ -67,6 +94,9 @@
     "hp": 2100,
     "atk": 200,
     "def": 140,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
     "image": "monster_gifs\\1147.gif"
   },
   {
@@ -74,6 +104,9 @@
     "hp": 1800,
     "atk": 180,
     "def": 100,
+    "difficulty": 3,
+    "base_rewards": 4,
+    "reward_multiplier": 1.10,
     "image": "monster_gifs\\1059.gif"
   },
   {
@@ -81,6 +114,9 @@
     "hp": 1700,
     "atk": 190,
     "def": 90,
+    "difficulty": 3,
+    "base_rewards": 4,
+    "reward_multiplier": 1.10,
     "image": "monster_gifs\\1150.gif"
   },
   {
@@ -88,6 +124,9 @@
     "hp": 1900,
     "atk": 210,
     "def": 120,
+    "difficulty": 3,
+    "base_rewards": 4,
+    "reward_multiplier": 1.10,
     "image": "monster_gifs\\1087.gif"
   },
   {
@@ -95,6 +134,9 @@
     "hp": 2200,
     "atk": 230,
     "def": 140,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
     "image": "monster_gifs\\1190.gif"
   },
   {
@@ -102,6 +144,9 @@
     "hp": 2000,
     "atk": 200,
     "def": 110,
+    "difficulty": 3,
+    "base_rewards": 4,
+    "reward_multiplier": 1.10,
     "image": "monster_gifs\\1038.gif"
   },
   {
@@ -109,6 +154,9 @@
     "hp": 2400,
     "atk": 240,
     "def": 130,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
     "image": "monster_gifs\\1157.gif"
   },
   {
@@ -116,6 +164,9 @@
     "hp": 2100,
     "atk": 230,
     "def": 100,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
     "image": "monster_gifs\\1159.gif"
   },
   {
@@ -123,6 +174,9 @@
     "hp": 2500,
     "atk": 200,
     "def": 50,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
     "image": "monster_gifs\\1583.gif"
   },
   {
@@ -130,6 +184,9 @@
     "hp": 2300,
     "atk": 240,
     "def": 140,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
     "image": "monster_gifs\\1312.gif"
   }
 ]

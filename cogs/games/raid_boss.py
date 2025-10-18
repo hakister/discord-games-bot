@@ -577,16 +577,34 @@ class RaidBoss(commands.Cog):
         # raid ended, compile survivors
         survivors = [p for p in self.players.values() if p["alive"]]
         if self.boss and self.boss["hp"] <= 0:
-            # players won – survivors share rewards (we only list survivors)
             if survivors:
+                num_players = len(self.player_order)
+
+                # --- Load boss reward tuning ---
+                base_boxes = self.boss.get("base_reward", 3)
+                reward_mult = self.boss.get("reward_multiplier", 1.0)
+
+                # --- Dynamic scaling formula ---
+                scaling_boxes = int((num_players - 1) * 0.4)
+                difficulty_factor = min(num_players / max(1, len(survivors)), 3)
+                total_boxes = int((base_boxes + scaling_boxes) * reward_mult * (0.5 + 0.5 * (1 / difficulty_factor)))
+
+                boxes_per_survivor = max(1, total_boxes // len(survivors))
+
                 mention_list = " ".join(f"<@{p['id']}>" for p in survivors)
-                await ctx.send(
-                    embed=discord.Embed(
-                        title="🏁 Raid Complete — Players Win!",
-                        description=f"Survivors: {mention_list}\nPlease distribute rewards among survivors.",
-                        color=discord.Color.gold(),
-                    )
+
+                # --- Message formatting ---
+                embed = discord.Embed(
+                    title="🏁 Raid Complete — Players Win!",
+                    description=(
+                        f"**Survivors:** {mention_list}\n\n"
+                        f"🎁 **Total Event Boxes:** {total_boxes:,}\n"
+                        f"📦 Each survivor receives **{boxes_per_survivor} Event Box(es)** "
+                        f"💬 Rewards scale by difficulty, boss type, and number of survivors!"
+                    ),
+                    color=discord.Color.gold()
                 )
+                await ctx.send(embed=embed)
             else:
                 await ctx.send("Raid finished: Boss defeated but no survivors.")
         else:
