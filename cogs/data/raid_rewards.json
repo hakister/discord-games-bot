@@ -1,0 +1,54 @@
+{
+	"rewards": [
+		{
+			"min_players": 1,
+			"max_players": 4,
+			"boxes": 2
+		},
+		{
+			"min_players": 5,
+			"max_players": 9,
+			"boxes": 4
+		},
+		{
+			"min_players": 10,
+			"max_players": 14,
+			"boxes": 6
+		},
+		{
+			"min_players": 15,
+			"max_players": 19,
+			"boxes": 8
+		},
+		{
+			"min_players": 20,
+			"max_players": 24,
+			"boxes": 10
+		},
+		{
+			"min_players": 25,
+			"max_players": 34,
+			"boxes": 12
+		},
+		{
+			"min_players": 35,
+			"max_players": 44,
+			"boxes": 14
+		},
+		{
+			"min_players": 45,
+			"max_players": 54,
+			"boxes": 16
+		},
+		{
+			"min_players": 55,
+			"max_players": 64,
+			"boxes": 18
+		},
+		{
+			"min_players": 65,
+			"max_players": 999,
+			"boxes": 20
+		}
+	]
+}

@@ -1,6 +1,5 @@
 import random
 import asyncio
-import math
 import json
 import discord
 from discord.ext import commands
@@ -14,6 +13,7 @@ ALLOWED_CHANNEL_ID = CHANNEL_ID
 # JSON file containing boss data
 BOSS_FOLDER = MONSTER_IMAGE_FOLDER
 BOSS_FILE = "cogs/data/raid_bosses.json"
+REWARD_FILE = "cogs/data/raid_rewards.json"
 
 EMOJI_ATTACK = "⚔️"
 EMOJI_HEAL = "💉"
@@ -43,6 +43,14 @@ class RaidBoss(commands.Cog):
         except Exception as e:
             print(f"[RaidBoss] ⚠️ Error loading boss data: {e}")
             self.boss_list = []
+
+        # Load reward scaling config
+        try:
+            with open(REWARD_FILE, "r", encoding="utf-8") as f:
+                self.reward_config = json.load(f).get("rewards", [])
+        except Exception as e:
+            print(f"[RaidBoss] ⚠️ Error loading reward scaling: {e}")
+            self.reward_config = []
 
     # ---------- Commands ----------
 
@@ -91,14 +99,16 @@ class RaidBoss(commands.Cog):
         else:
             boss_data = random.choice(self.boss_list)
 
-        # Set boss stats
+        # Set boss stats (use fields from JSON: hp, atk, def, image)
         self.boss = {
-            "name": boss_data["name"],
-            "hp": boss_data["hp"],
-            "max_hp": boss_data["hp"],
-            "atk": boss_data["atk"],
-            "defense": boss_data["def"],
+            "name": boss_data.get("name", "Unknown"),
+            "hp": int(boss_data.get("hp", 1000)),
+            "max_hp": int(boss_data.get("hp", 1000)),
+            "atk": int(boss_data.get("atk", 200)),
+            "defense": int(boss_data.get("def", 50)),
             "image": boss_data.get("image"),
+            # ensure berserk flag isn't present initially
+            "berserk": False,
         }
 
         self.join_phase = True
@@ -131,10 +141,11 @@ class RaidBoss(commands.Cog):
         if self.boss["image"]:
             img = self.boss["image"]
             # If it's a URL, use it directly
-            if isinstance(img, str) and (img.startswith("http://") or img.startswith("https://")):
+            if isinstance(img, str) and (
+                img.startswith("http://") or img.startswith("https://")
+            ):
                 embed.set_image(url=img)
                 await ctx.send(embed=embed)
-                # cache URL for later turns
                 self._boss_image_url = img
                 self._boss_image_path = None
                 self._boss_image_filename = None
@@ -150,7 +161,6 @@ class RaidBoss(commands.Cog):
                     file = discord.File(img_path, filename=filename)
                     embed.set_image(url=f"attachment://{filename}")
                     await ctx.send(embed=embed, file=file)
-                    # cache local path and filename for reuse per-turn
                     self._boss_image_path = img_path
                     self._boss_image_filename = filename
                     self._boss_image_url = None
@@ -180,16 +190,15 @@ class RaidBoss(commands.Cog):
                     self.active = False
                     return
 
-                # 🧮 Scale boss stats based on number of players
+                # 🧮 Scale boss stats based on number of players (kept)
                 num_players = max(1, len(self.players))
                 base_hp = self.boss["hp"]
                 base_atk = self.boss["atk"]
                 base_def = self.boss["defense"]
 
-                # ⚔️ Scaling rules:
-                # +25% HP, +10% ATK, +5% DEF per additional player
+                # ⚔️ Scaling rules: +20% HP, +5% ATK, +1% DEF per additional player
                 scaled_hp = int(base_hp * (1 + 0.25 * (num_players - 1)))
-                scaled_atk = int(base_atk * (1 + 0.10 * (num_players - 1)))
+                scaled_atk = int(base_atk * (1 + 0.07 * (num_players - 1)))
                 scaled_def = int(base_def * (1 + 0.05 * (num_players - 1)))
 
                 # Apply new scaled values
@@ -215,8 +224,12 @@ class RaidBoss(commands.Cog):
                 if getattr(self, "_boss_image_url", None):
                     embed.set_image(url=self._boss_image_url)
                     await ctx.send(embed=embed)
-                elif getattr(self, "_boss_image_path", None) and getattr(self, "_boss_image_filename", None):
-                    file = discord.File(self._boss_image_path, filename=self._boss_image_filename)
+                elif getattr(self, "_boss_image_path", None) and getattr(
+                    self, "_boss_image_filename", None
+                ):
+                    file = discord.File(
+                        self._boss_image_path, filename=self._boss_image_filename
+                    )
                     embed.set_image(url=f"attachment://{self._boss_image_filename}")
                     await ctx.send(embed=embed, file=file)
                 else:
@@ -228,9 +241,7 @@ class RaidBoss(commands.Cog):
         except asyncio.CancelledError:
             return
 
-
-    # --- Keep joinraid, raidstatus, raidend, mystats, _turn_loop, etc. exactly as-is ---
-    # Paste your unchanged versions of those functions here.
+    # --- Keep joinraid, raidstatus, raidend, mystats as before ---
     @commands.command(name="joinraid", help="Join the currently forming raid.")
     async def joinraid(self, ctx):
         """Players call this during the join window to participate."""
@@ -246,14 +257,13 @@ class RaidBoss(commands.Cog):
             return
 
         # Create player with randomized stats
-        # HP fixed, ATK & DEF randomized as requested
         player = {
             "id": ctx.author.id,
             "name": getattr(ctx.author, "display_name", ctx.author.name),
-            "hp": 1000,
-            "max_hp": 1000,
-            "atk": random.randint(90, 140),  # randomized ATK
-            "defense": random.randint(30, 90),  # randomized DEF
+            "hp": 1500,
+            "max_hp": 1500,
+            "atk": random.randint(100, 150),  # randomized ATK
+            "defense": random.randint(50, 100),  # randomized DEF
             "alive": True,
             "defending": False,
             "action": None,
@@ -303,8 +313,12 @@ class RaidBoss(commands.Cog):
         if getattr(self, "_boss_image_url", None):
             embed.set_image(url=self._boss_image_url)
             await ctx.send(embed=embed)
-        elif getattr(self, "_boss_image_path", None) and getattr(self, "_boss_image_filename", None):
-            file = discord.File(self._boss_image_path, filename=self._boss_image_filename)
+        elif getattr(self, "_boss_image_path", None) and getattr(
+            self, "_boss_image_filename", None
+        ):
+            file = discord.File(
+                self._boss_image_path, filename=self._boss_image_filename
+            )
             embed.set_image(url=f"attachment://{self._boss_image_filename}")
             await ctx.send(embed=embed, file=file)
         else:
@@ -342,25 +356,11 @@ class RaidBoss(commands.Cog):
         )
 
     # ---------- Internal helpers / turn loop ----------
-
-    def _finalize_players_and_boss(self):
-        """Scale boss HP based on number of players and set base boss stats."""
-        num_players = max(1, len(self.players))
-        base_hp = 1000
-        # scale boss HP proportionally (25% more HP per additional player)
-        boss_hp = int(base_hp * (1 + 0.25 * (num_players - 1)))
-        boss_atk = int(200 * (1 + 0.1 * (num_players - 1)))  # scale a bit as well
-        self.boss = {
-            "name": "Ravager",
-            "hp": boss_hp,
-            "max_hp": boss_hp,
-            "atk": boss_atk,
-            "defense": 80,  # boss defense (subtracted from player's damage if you want)
-        }
-
     async def _turn_loop(self, ctx):
-        """Main loop: each turn ask players to react for action (10s), resolve actions, boss attacks."""
+        """Main loop: each turn ask players to react for action (10s), resolve actions, boss attacks, and reward survivors."""
         turn = 1
+        self.boss["berserk"] = False  # Track berserk state
+
         while (
             self.active
             and any(p["alive"] for p in self.players.values())
@@ -368,29 +368,31 @@ class RaidBoss(commands.Cog):
             and self.boss["hp"] > 0
         ):
             self.called_turn = turn
-            # reset per-turn flags
+            # Reset per-turn flags
             for p in self.players.values():
                 p["defending"] = False
                 p["action"] = None
 
-            # post action prompt
+            # --- Display turn header ---
             embed = discord.Embed(
                 title=f"🔁 Raid Turn {turn}",
                 description=(
                     f"Boss **{self.boss['name']}** — HP: {self._hp_bar(self.boss['hp'], self.boss['max_hp'])} "
                     f"{self.boss['hp']:,}/{self.boss['max_hp']:,}\n\n"
                     f"React with your action. You have **10 seconds**.\n\n"
-                    f"{EMOJI_ATTACK} — Attack\n{EMOJI_HEAL} — Heal (self-heal)\n{EMOJI_DEFEND} — Defend (apply DEF reduction)"
+                    f"{EMOJI_ATTACK} — Attack\n"
+                    f"{EMOJI_HEAL} — Heal (self-heal)\n"
+                    f"{EMOJI_DEFEND} — Defend (apply DEF reduction)"
                 ),
                 color=discord.Color.dark_gold(),
             )
+
             msg = None
-            # send turn prompt with boss image if available
+            # include boss image if available
             if getattr(self, "_boss_image_url", None):
                 embed.set_image(url=self._boss_image_url)
                 msg = await ctx.send(embed=embed)
             elif getattr(self, "_boss_image_path", None) and getattr(self, "_boss_image_filename", None):
-                # create new File for each send
                 file = discord.File(self._boss_image_path, filename=self._boss_image_filename)
                 embed.set_image(url=f"attachment://{self._boss_image_filename}")
                 msg = await ctx.send(embed=embed, file=file)
@@ -399,17 +401,17 @@ class RaidBoss(commands.Cog):
 
             self.action_message = msg
 
-            # add reaction options
+            # --- Add reactions ---
             for em in ACTION_EMOJIS:
                 try:
                     await msg.add_reaction(em)
                 except Exception:
                     pass
 
-            # collect reactions for 10 seconds; last reaction per user counts
+            # --- Wait for reactions ---
             action_map = await self._collect_reactions_for_message(msg, timeout=10)
 
-            # map actions to players (only those who joined and alive)
+            # --- Assign actions ---
             for user_id, em in action_map.items():
                 if user_id in self.players and self.players[user_id]["alive"]:
                     if em == EMOJI_ATTACK:
@@ -419,215 +421,215 @@ class RaidBoss(commands.Cog):
                     elif em == EMOJI_DEFEND:
                         self.players[user_id]["action"] = "defend"
 
-            # ensure players who didn't react default to attack (optional) or do nothing
-            # here we'll default to attack to keep engagement
             for pid, p in self.players.items():
                 if p["alive"] and p["action"] is None:
                     p["action"] = "attack"
 
-            # Resolve player actions
+            # --- Resolve player actions ---
             resolution_lines = []
             total_player_damage = 0
-            # apply heals after computing attackers so we keep it fair: process attacks then heals then boss hits
-            # we will collect attack damages, perform heals, set defending flags, then boss targets and attacks
-            attack_events = []
-            heal_events = []
+            attack_events, heal_events = [], []
+
             for pid, p in self.players.items():
                 if not p["alive"]:
                     continue
                 if p["action"] == "attack":
-                    # random damage around atk
                     dmg = random.randint(max(1, p["atk"] - 15), p["atk"] + 20)
-                    # subtract boss defense partially (optional), for now apply full dmg
                     attack_events.append((pid, dmg))
                 elif p["action"] == "heal":
-                    # heal amount as fraction of attack
-                    heal_amt = random.randint(int(p["atk"] * 0.5), int(p["atk"] * 1.0))
+                    heal_amt = random.randint(int(p["atk"] * 0.7), int(p["atk"] * 1.4))
                     heal_events.append((pid, heal_amt))
                 elif p["action"] == "defend":
                     p["defending"] = True
 
-            # apply attacks to boss (sum)
+            # Apply attacks
             for pid, dmg in attack_events:
-                # optionally reduce by boss defense for each hit (simple approach)
-                net_dmg = max(
-                    0, dmg - int(self.boss["defense"] * 0.1)
-                )  # boss def reduces a small portion
+                net_dmg = max(0, dmg - int(self.boss["defense"] * 0.1))
                 self.boss["hp"] = max(0, self.boss["hp"] - net_dmg)
                 total_player_damage += net_dmg
-                resolution_lines.append(
-                    f"⚔️ **{self.players[pid]['name']}** attacked for **{net_dmg}** damage."
-                )
+                resolution_lines.append(f"⚔️ **{self.players[pid]['name']}** attacked for **{net_dmg}** damage.")
 
-            # apply heals (self heal)
+            # Apply heals
             for pid, heal_amt in heal_events:
                 p = self.players[pid]
                 if not p["alive"]:
                     continue
                 old = p["hp"]
                 p["hp"] = min(p["max_hp"], p["hp"] + heal_amt)
-                resolution_lines.append(
-                    f"💉 **{p['name']}** healed themselves for **{p['hp'] - old}** HP."
-                )
+                resolution_lines.append(f"💉 **{p['name']}** healed themselves for **{p['hp'] - old}** HP.")
 
-            # check boss death before boss attacks
+            # --- Boss death check before counterattack ---
             if self.boss["hp"] <= 0:
-                await ctx.send(
-                    embed=discord.Embed(
-                        title="🏆 Raid Victory!",
-                        description=(
-                            f"The players dealt **{total_player_damage}** total damage and defeated "
-                            f"**{self.boss['name']}**!"
-                        ),
-                        color=discord.Color.green(),
-                    )
-                )
+                await ctx.send(embed=discord.Embed(
+                    title="🏆 Raid Victory!",
+                    description=(f"The players dealt **{total_player_damage}** total damage and defeated "
+                                f"**{self.boss['name']}**!"),
+                    color=discord.Color.green()
+                ))
                 break
 
-            # Boss attacks: choose 1 or 2 random alive players
+            # --- Boss phase scaling ---
+            hp_ratio = self.boss["hp"] / self.boss["max_hp"]
+            phase_text, dmg_multiplier = None, 1.0
+
+            if hp_ratio <= 0.1:
+                dmg_multiplier = 1.45
+                phase_text = "🩸 **BERSERK MODE!** ATK increased massively!"
+                if not self.boss.get("berserk", False):
+                    self.boss["berserk"] = True
+                    self.boss["atk"] = int(self.boss["atk"] * 1.5)
+            elif hp_ratio <= 0.25:
+                dmg_multiplier = 1.35
+                phase_text = "😤 Enraged!"
+            elif hp_ratio <= 0.5:
+                dmg_multiplier = 1.25
+                phase_text = "😡 Furious!"
+            elif hp_ratio <= 0.75:
+                dmg_multiplier = 1.15
+                phase_text = "😠 Angry!"
+
+            if phase_text:
+                resolution_lines.append(f"🔥 **{self.boss['name']}** is {phase_text}")
+
+            # --- Boss selects targets dynamically ---
             alive_players = [p for p in self.players.values() if p["alive"]]
-            if not alive_players:
-                # all dead
-                break
+            total_players = len(alive_players)
+            if total_players <= 3:
+                num_targets = 1
+            elif total_players <= 6:
+                num_targets = 2
+            elif total_players <= 9:
+                num_targets = 3
+            elif total_players <= 12:
+                num_targets = 4
+            else:
+                num_targets = 5
 
-            num_targets = 1 if len(alive_players) == 1 else random.choice([1, 2])
-            targets = random.sample(alive_players, min(num_targets, len(alive_players)))
+            num_targets = min(num_targets, len(alive_players))
+            targets = random.sample(alive_players, num_targets)
 
+            # Add extra berserk hits
+            if self.boss.get("berserk", False):
+                extra_hits = random.choice([1, 2])
+                extra_targets = random.sample(alive_players, min(extra_hits, len(alive_players)))
+                targets.extend(extra_targets)
+
+            # --- Boss attack loop ---
             boss_events = []
             for tgt in targets:
-                # boss incoming damage variance
-                incoming = random.randint(
-                    max(1, self.boss["atk"] - 50), self.boss["atk"] + 50
-                )
-                # apply player's defense
+                incoming = random.randint(max(1, self.boss["atk"] - 50), self.boss["atk"] + 50)
+
+                # Critical chance
+                is_crit = random.random() < 0.1
+                if is_crit:
+                    incoming = int(incoming * random.uniform(1.5, 2.0))
+
+                # Apply phase scaling multiplier
+                incoming = int(incoming * dmg_multiplier)
+
+                # Defense and defend effects
                 damage_after_def = max(0, incoming - tgt["defense"])
-                def_line = f"🛡️ **{tgt['name']}** blocked **{tgt['defense']}** damage with their defense stat."
-                # if defending, halve the remainder (as requested)
                 if tgt["defending"]:
                     damage_after_def = damage_after_def // 2
-                # apply damage
+
+                # Apply damage
                 oldhp = tgt["hp"]
                 tgt["hp"] = max(0, tgt["hp"] - damage_after_def)
                 if tgt["hp"] <= 0:
                     tgt["alive"] = False
-                boss_events.append((tgt["name"], damage_after_def, oldhp, tgt["hp"]))
-            # build resolution summary
+
+                crit_text = " ⚡(CRITICAL!)" if is_crit else ""
+                boss_events.append((tgt["name"], damage_after_def, oldhp, tgt["hp"], crit_text))
+
             if total_player_damage > 0:
-                resolution_lines.insert(
-                    0,
-                    f"🔥 Players dealt **{total_player_damage}** total damage to **{self.boss['name']}**.",
+                resolution_lines.insert(0, f"🔥 Players dealt **{total_player_damage}** total damage to **{self.boss['name']}**.")
+
+            for (tname, dmg, oldhp, newhp, crit_text) in boss_events:
+                resolution_lines.append(
+                    f"💥 **{self.boss['name']}** hit **{tname}** for **{dmg}** damage{crit_text}. "
+                    f"({newhp}/{self.players[next(pid for pid,p in self.players.items() if p['name']==tname)]['max_hp']})"
                 )
-            if boss_events:
-                for tname, dmg, oldhp, newhp in boss_events:
-                    status = (
-                        "💀 fallen!"
-                        if newhp <= 0
-                        else f"{newhp}/{self.players[next(pid for pid,p in self.players.items() if p['name']==tname)]['max_hp']}"
-                    )
-                    resolution_lines.append(
-                        f"💥 **{self.boss['name']}** hit **{tname}** for **{dmg}** damage. ({newhp}/{self.players[next(pid for pid,p in self.players.items() if p['name']==tname)]['max_hp']})"
-                    )
-            # send turn resolution embed
-            summary = discord.Embed(
-                title=f"🔔 Turn {turn} Results", color=discord.Color.dark_teal()
-            )
-            summary.description = (
-                "\n".join(resolution_lines)
-                if resolution_lines
-                else "No actions this turn."
-            )
-            # show boss hp and player statuses
+
+            # --- Turn summary embed ---
+            summary = discord.Embed(title=f"🔔 Turn {turn} Results", color=discord.Color.dark_teal())
+            summary.description = "\n".join(resolution_lines) if resolution_lines else "No actions this turn."
+
             players_status = []
             for p in self.players.values():
                 status_emoji = "💀" if not p["alive"] else "❤️"
-                players_status.append(
-                    f"{status_emoji} **{p['name']}** — {self._hp_bar(p['hp'], p['max_hp'])} {p['hp']}/{p['max_hp']}"
-                )
-            summary.add_field(
-                name=f"Boss: {self.boss['name']}",
-                value=f"{self._hp_bar(self.boss['hp'], self.boss['max_hp'])} {self.boss['hp']:,}/{self.boss['max_hp']:,}",
-                inline=False,
-            )
-            summary.add_field(
-                name="Players",
-                value="\n".join(players_status) or "(none)",
-                inline=False,
-            )
+                players_status.append(f"{status_emoji} **{p['name']}** — {self._hp_bar(p['hp'], p['max_hp'])} {p['hp']}/{p['max_hp']}")
+
+            summary.add_field(name=f"Boss: {self.boss['name']}", value=f"{self._hp_bar(self.boss['hp'], self.boss['max_hp'])} {self.boss['hp']:,}/{self.boss['max_hp']:,}", inline=False)
+            summary.add_field(name="Players", value="\n".join(players_status) or "(none)", inline=False)
             await ctx.send(embed=summary)
 
-            # check end conditions
-            alive_now = [p for p in self.players.values() if p["alive"]]
-            if not alive_now:
-                await ctx.send(
-                    embed=discord.Embed(
-                        title="💀 Raid Failed",
-                        description="All players were defeated. The boss remains victorious.",
-                        color=discord.Color.red(),
-                    )
-                )
+            # --- End checks ---
+            if not any(p["alive"] for p in self.players.values()):
+                await ctx.send(embed=discord.Embed(
+                    title="💀 Raid Failed",
+                    description="All players were defeated. The boss remains victorious.",
+                    color=discord.Color.red()
+                ))
                 break
+
             if self.boss["hp"] <= 0:
-                # already handled above, but guard
                 break
 
             turn += 1
-            # small delay before next turn
-            await asyncio.sleep(1)
+            await asyncio.sleep(1)  # brief pause between turns
 
-        # raid ended, compile survivors
+        # --- Raid End / Rewards Section ---
         survivors = [p for p in self.players.values() if p["alive"]]
+        total_joined = len(self.players)
+
         if self.boss and self.boss["hp"] <= 0:
-            if survivors:
-                num_players = len(self.player_order)
+            # Determine total Event Boxes from config
+            total_boxes = 1  # default fallback
+            for rule in self.reward_config:
+                if rule["min_players"] <= total_joined <= rule["max_players"]:
+                    total_boxes = rule["boxes"]
+                    break
 
-                # --- Load boss reward tuning ---
-                base_boxes = self.boss.get("base_reward", 3)
-                reward_mult = self.boss.get("reward_multiplier", 1.0)
+            reward_lines = []
+            num_survivors = len(survivors)
 
-                # --- Dynamic scaling formula ---
-                scaling_boxes = int((num_players - 1) * 0.4)
-                difficulty_factor = min(num_players / max(1, len(survivors)), 3)
-                total_boxes = int((base_boxes + scaling_boxes) * reward_mult * (0.5 + 0.5 * (1 / difficulty_factor)))
+            if num_survivors == 0:
+                await ctx.send("Raid finished: Boss defeated but no survivors.")
+            else:
+                # If survivors >= total_boxes -> give each survivor 1 box (ignore total_boxes)
+                if num_survivors >= total_boxes:
+                    reward_map = {p["id"]: 1 for p in survivors}
+                else:
+                    # survivors < total_boxes -> split boxes equally, distribute leftover randomly
+                    base_share = total_boxes // num_survivors
+                    leftover = total_boxes % num_survivors
 
-                boxes_per_survivor = max(1, total_boxes // len(survivors))
+                    reward_map = {p["id"]: base_share for p in survivors}
+                    if leftover > 0:
+                        shuffled = survivors.copy()
+                        random.shuffle(shuffled)
+                        for i in range(leftover):
+                            reward_map[shuffled[i]["id"]] += 1
 
-                mention_list = " ".join(f"<@{p['id']}>" for p in survivors)
+                # Build display lines
+                for pid, boxes in reward_map.items():
+                    reward_lines.append(
+                        f"🎁 <@{pid}> — **{boxes}x Event Box{'es' if boxes > 1 else ''}**"
+                    )
 
-                # --- Message formatting ---
                 embed = discord.Embed(
                     title="🏁 Raid Complete — Players Win!",
                     description=(
-                        f"**Survivors:** {mention_list}\n\n"
-                        f"🎁 **Total Event Boxes:** {total_boxes:,}\n"
-                        f"📦 Each survivor receives **{boxes_per_survivor} Event Box(es)** "
-                        f"💬 Rewards scale by difficulty, boss type, and number of survivors!"
+                        f"**{self.boss['name']}** has been defeated!\n"
+                        f"**Total Event Boxes (scaled):** {total_boxes}\n"
+                        f"**Survivors:** {num_survivors} / {total_joined}\n\n"
+                        + "\n".join(reward_lines)
                     ),
-                    color=discord.Color.gold()
+                    color=discord.Color.gold(),
                 )
                 await ctx.send(embed=embed)
-            else:
-                await ctx.send("Raid finished: Boss defeated but no survivors.")
-        else:
-            # boss remains or players wiped
-            if survivors:
-                mention_list = " ".join(f"<@{p['id']}>" for p in survivors)
-                await ctx.send(
-                    embed=discord.Embed(
-                        title="🛡️ Raid Over",
-                        description=f"The raid has ended. Survivors: {mention_list}\nDistribute rewards as you see fit.",
-                        color=discord.Color.orange(),
-                    )
-                )
-            else:
-                await ctx.send(
-                    embed=discord.Embed(
-                        title="💀 Raid Over - Wipe",
-                        description="No survivors remain.",
-                        color=discord.Color.dark_red(),
-                    )
-                )
 
-        # cleanup
+        # Cleanup
         self.active = False
         self.join_phase = False
         self.join_task = None
