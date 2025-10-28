@@ -260,10 +260,10 @@ class RaidBoss(commands.Cog):
         player = {
             "id": ctx.author.id,
             "name": getattr(ctx.author, "display_name", ctx.author.name),
-            "hp": 1500,
-            "max_hp": 1500,
-            "atk": random.randint(100, 150),  # randomized ATK
-            "defense": random.randint(50, 100),  # randomized DEF
+            "hp": 1750,
+            "max_hp": 1750,
+            "atk": random.randint(90, 180),  # randomized ATK
+            "defense": random.randint(70, 140),  # randomized DEF
             "alive": True,
             "defending": False,
             "action": None,
@@ -434,10 +434,10 @@ class RaidBoss(commands.Cog):
                 if not p["alive"]:
                     continue
                 if p["action"] == "attack":
-                    dmg = random.randint(max(1, p["atk"] - 15), p["atk"] + 20)
+                    dmg = random.randint(max(1, p["atk"] - 20), p["atk"] + 25)
                     attack_events.append((pid, dmg))
                 elif p["action"] == "heal":
-                    heal_amt = random.randint(int(p["atk"] * 0.7), int(p["atk"] * 1.4))
+                    heal_amt = random.randint(int(p["atk"] * 0.9), int(p["atk"] * 1.8))
                     heal_events.append((pid, heal_amt))
                 elif p["action"] == "defend":
                     p["defending"] = True
