@@ -421,9 +421,14 @@ class RaidBoss(commands.Cog):
                     elif em == EMOJI_DEFEND:
                         self.players[user_id]["action"] = "defend"
 
-            for pid, p in self.players.items():
-                if p["alive"] and p["action"] is None:
-                    p["action"] = "attack"
+            # Players who didn't react simply skip their turn (no action)
+            inactive_players = [p["name"] for p in self.players.values() if p["alive"] and p["action"] is None]
+            if inactive_players:
+                skipped = ", ".join(inactive_players)
+                resolution_text = f"⏳ The following players didn't act this turn: {skipped}"
+            else:
+                resolution_text = None
+
 
             # --- Resolve player actions ---
             resolution_lines = []
@@ -552,6 +557,8 @@ class RaidBoss(commands.Cog):
 
             # --- Turn summary embed ---
             summary = discord.Embed(title=f"🔔 Turn {turn} Results", color=discord.Color.dark_teal())
+            if resolution_text:
+                resolution_lines.append(resolution_text)
             summary.description = "\n".join(resolution_lines) if resolution_lines else "No actions this turn."
 
             players_status = []
