@@ -132,9 +132,15 @@ class RaidBoss(commands.Cog):
         )
         embed.add_field(
             name="Actions",
-            value=f"{EMOJI_ATTACK} Attack — damage boss\n"
-            f"{EMOJI_HEAL} Heal — heal yourself\n"
-            f"{EMOJI_DEFEND} Defend — reduce incoming damage (DEF applies)\n",
+            value=(
+                f"{EMOJI_ATTACK} Attack — damage the boss\n"
+                f"{EMOJI_HEAL} Heal — restore your own HP\n"
+                f"{EMOJI_DEFEND} Defend — reduce damage taken this turn\n\n"
+                f"⚠️ **AFK Penalty System**\n"
+                f"• If you do not react in a turn, you **skip your action**\n"
+                f"• Each skipped turn causes **-50 HP**, stacking up to **-150 HP per turn**\n"
+                f"• Penalty resets when you take an action\n"
+            ),
             inline=False,
         )
 
@@ -267,6 +273,7 @@ class RaidBoss(commands.Cog):
             "alive": True,
             "defending": False,
             "action": None,
+            "afk_streak": 0, # track consecutive AFK turns
         }
         self.players[ctx.author.id] = player
         self.player_order.append(ctx.author.id)
@@ -412,6 +419,8 @@ class RaidBoss(commands.Cog):
             action_map = await self._collect_reactions_for_message(msg, timeout=10)
 
             # --- Assign actions ---
+            inactive_players = []
+
             for user_id, em in action_map.items():
                 if user_id in self.players and self.players[user_id]["alive"]:
                     if em == EMOJI_ATTACK:
@@ -421,14 +430,32 @@ class RaidBoss(commands.Cog):
                     elif em == EMOJI_DEFEND:
                         self.players[user_id]["action"] = "defend"
 
-            # Players who didn't react simply skip their turn (no action)
-            inactive_players = [p["name"] for p in self.players.values() if p["alive"] and p["action"] is None]
+            # ✅ Apply AFK penalties
+            for pid, p in self.players.items():
+                if not p["alive"]:
+                    continue
+
+                if p["action"] is None:
+                    # Player skipped — increase AFK streak
+                    p["afk_streak"] += 1
+                    inactive_players.append(p["name"])
+
+                    # HP penalty based on streak - max 150
+                    penalty = min(50 * p["afk_streak"], 150)
+                    oldhp = p["hp"]
+                    p["hp"] = max(0, p["hp"] - penalty)
+
+                    if p["hp"] <= 0:
+                        p["alive"] = False
+                else:
+                    # ✅ Player acted — reset streak
+                    p["afk_streak"] = 0
+
+            # Text display for skipped players
+            afk_notice = None
             if inactive_players:
                 skipped = ", ".join(inactive_players)
-                resolution_text = f"⏳ The following players didn't act this turn: {skipped}"
-            else:
-                resolution_text = None
-
+                afk_notice = f"⏳ **Skipped Turn:** {skipped} — They took damage!"
 
             # --- Resolve player actions ---
             resolution_lines = []
@@ -557,8 +584,8 @@ class RaidBoss(commands.Cog):
 
             # --- Turn summary embed ---
             summary = discord.Embed(title=f"🔔 Turn {turn} Results", color=discord.Color.dark_teal())
-            if resolution_text:
-                resolution_lines.append(resolution_text)
+            if afk_notice:
+                resolution_lines.append(afk_notice)
             summary.description = "\n".join(resolution_lines) if resolution_lines else "No actions this turn."
 
             players_status = []
