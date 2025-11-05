@@ -724,35 +724,44 @@ class RaidBoss(commands.Cog):
 
     async def _collect_reactions_for_message(self, message, timeout=10):
         """
-        Listen for reaction_add events on a message for `timeout` seconds.
-        Return a mapping of user_id -> emoji (last reaction observed wins).
+        Collect actions using reaction events AND final reaction state.
+        Ensures players aren't marked AFK if reactions were changed late.
         """
-        action_map = {}  # user_id -> emoji
+        action_map = {}
         end_time = asyncio.get_event_loop().time() + timeout
 
         def check(payload):
             return (
-                payload.message_id == message.id and payload.user_id != self.bot.user.id
+                payload.message_id == message.id
+                and payload.user_id != self.bot.user.id
+                and str(payload.emoji) in ACTION_EMOJIS
             )
 
+        # Collect ADD events during the window
         while True:
             remaining = end_time - asyncio.get_event_loop().time()
             if remaining <= 0:
                 break
+
             try:
                 payload = await self.bot.wait_for(
                     "raw_reaction_add", timeout=remaining, check=check
                 )
+                action_map[payload.user_id] = str(payload.emoji)
             except asyncio.TimeoutError:
                 break
-            # interpret payload
-            user_id = payload.user_id
-            emoji = str(payload.emoji)
-            # only accept our action emojis
-            if emoji not in ACTION_EMOJIS:
+
+        # ✅ Final reaction state override (fixes flicker/remove issues)
+        await message.channel.fetch_message(message.id)  # ensure updated cache
+        for reaction in message.reactions:
+            if str(reaction.emoji) not in ACTION_EMOJIS:
                 continue
-            # record or overwrite last reaction for this user
-            action_map[user_id] = emoji
+
+            async for user in reaction.users():
+                if user.bot:
+                    continue
+                if user.id in self.players and self.players[user.id]["alive"]:
+                    action_map[user.id] = str(reaction.emoji)
 
         return action_map
 
