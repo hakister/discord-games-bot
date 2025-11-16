@@ -1,54 +1,164 @@
 {
-	"rewards": [
+	"event_boxes": [
 		{
 			"min_players": 1,
 			"max_players": 4,
-			"boxes": 2
+			"amount": 2
 		},
 		{
 			"min_players": 5,
 			"max_players": 9,
-			"boxes": 4
+			"amount": 4
 		},
 		{
 			"min_players": 10,
 			"max_players": 14,
-			"boxes": 6
+			"amount": 6
 		},
 		{
 			"min_players": 15,
 			"max_players": 19,
-			"boxes": 8
+			"amount": 8
 		},
 		{
 			"min_players": 20,
 			"max_players": 24,
-			"boxes": 10
+			"amount": 10
 		},
 		{
 			"min_players": 25,
 			"max_players": 34,
-			"boxes": 12
+			"amount": 12
 		},
 		{
 			"min_players": 35,
 			"max_players": 44,
-			"boxes": 14
+			"amount": 14
 		},
 		{
 			"min_players": 45,
 			"max_players": 54,
-			"boxes": 16
+			"amount": 16
 		},
 		{
 			"min_players": 55,
 			"max_players": 64,
-			"boxes": 18
+			"amount": 18
 		},
 		{
 			"min_players": 65,
 			"max_players": 999,
-			"boxes": 20
+			"amount": 20
 		}
-	]
+	],
+	"legacy_tokens": {
+		"enabled": true,
+		"scaling": [
+			{
+				"min_players": 1,
+				"max_players": 4,
+				"amount": 10
+			},
+			{
+				"min_players": 5,
+				"max_players": 9,
+				"amount": 20
+			},
+			{
+				"min_players": 10,
+				"max_players": 14,
+				"amount": 30
+			},
+			{
+				"min_players": 15,
+				"max_players": 19,
+				"amount": 40
+			},
+			{
+				"min_players": 20,
+				"max_players": 24,
+				"amount": 50
+			},
+			{
+				"min_players": 25,
+				"max_players": 34,
+				"amount": 60
+			},
+			{
+				"min_players": 35,
+				"max_players": 44,
+				"amount": 70
+			},
+			{
+				"min_players": 45,
+				"max_players": 54,
+				"amount": 80
+			},
+			{
+				"min_players": 55,
+				"max_players": 64,
+				"amount": 90
+			},
+			{
+				"min_players": 65,
+				"max_players": 999,
+				"amount": 100
+			}
+		]
+	},
+	"treat_boxes": {
+		"enabled": true,
+		"scaling": [
+			{
+				"min_players": 1,
+				"max_players": 4,
+				"amount": 5
+			},
+			{
+				"min_players": 5,
+				"max_players": 9,
+				"amount": 10
+			},
+			{
+				"min_players": 10,
+				"max_players": 14,
+				"amount": 15
+			},
+			{
+				"min_players": 15,
+				"max_players": 19,
+				"amount": 20
+			},
+			{
+				"min_players": 20,
+				"max_players": 24,
+				"amount": 25
+			},
+			{
+				"min_players": 25,
+				"max_players": 34,
+				"amount": 30
+			},
+			{
+				"min_players": 35,
+				"max_players": 44,
+				"amount": 35
+			},
+			{
+				"min_players": 45,
+				"max_players": 54,
+				"amount": 40
+			},
+			{
+				"min_players": 55,
+				"max_players": 64,
+				"amount": 45
+			},
+			{
+				"min_players": 65,
+				"max_players": 999,
+				"amount": 50
+			}
+		]
+	}
 }

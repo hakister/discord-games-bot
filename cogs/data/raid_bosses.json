@@ -1,5 +1,25 @@
 [
   {
+    "name": "Mistress",
+    "hp": 1850,
+    "atk": 185,
+    "def": 95,
+    "difficulty": 3,
+    "base_rewards": 4,
+    "reward_multiplier": 1.10,
+    "image": "monster_gifs\\1059.gif"
+  },
+  {
+    "name": "Moonlight Flower",
+    "hp": 1750,
+    "atk": 190,
+    "def": 90,
+    "difficulty": 3,
+    "base_rewards": 4,
+    "reward_multiplier": 1.10,
+    "image": "monster_gifs\\1150.gif"
+  },
+  {
     "name": "Amon Ra",
     "hp": 1900,
     "atk": 190,
@@ -10,24 +30,24 @@
     "image": "monster_gifs\\1511.gif"
   },
   {
-    "name": "Baphomet",
-    "hp": 2550,
-    "atk": 250,
-    "def": 140,
-    "difficulty": 5,
-    "base_rewards": 6,
-    "reward_multiplier": 1.50,
-    "image": "monster_gifs\\1039.gif"
+    "name": "Orc Hero",
+    "hp": 1950,
+    "atk": 200,
+    "def": 115,
+    "difficulty": 3,
+    "base_rewards": 4,
+    "reward_multiplier": 1.10,
+    "image": "monster_gifs\\1087.gif"
   },
   {
-    "name": "Dark Lord",
-    "hp": 2500,
-    "atk": 260,
-    "def": 125,
-    "difficulty": 5,
-    "base_rewards": 6,
-    "reward_multiplier": 1.50,
-    "image": "monster_gifs\\1272.gif"
+    "name": "Osiris",
+    "hp": 2000,
+    "atk": 200,
+    "def": 105,
+    "difficulty": 3,
+    "base_rewards": 4,
+    "reward_multiplier": 1.10,
+    "image": "monster_gifs\\1038.gif"
   },
   {
     "name": "Doppelganger",
@@ -70,16 +90,6 @@
     "image": "monster_gifs\\1115.gif"
   },
   {
-    "name": "Garm",
-    "hp": 2500,
-    "atk": 250,
-    "def": 135,
-    "difficulty": 5,
-    "base_rewards": 6,
-    "reward_multiplier": 1.50,
-    "image": "monster_gifs\\1252.gif"
-  },
-  {
     "name": "Golden Thief Bug",
     "hp": 2200,
     "atk": 200,
@@ -100,36 +110,6 @@
     "image": "monster_gifs\\1147.gif"
   },
   {
-    "name": "Mistress",
-    "hp": 1850,
-    "atk": 185,
-    "def": 95,
-    "difficulty": 3,
-    "base_rewards": 4,
-    "reward_multiplier": 1.10,
-    "image": "monster_gifs\\1059.gif"
-  },
-  {
-    "name": "Moonlight Flower",
-    "hp": 1750,
-    "atk": 190,
-    "def": 90,
-    "difficulty": 3,
-    "base_rewards": 4,
-    "reward_multiplier": 1.10,
-    "image": "monster_gifs\\1150.gif"
-  },
-  {
-    "name": "Orc Hero",
-    "hp": 1950,
-    "atk": 200,
-    "def": 115,
-    "difficulty": 3,
-    "base_rewards": 4,
-    "reward_multiplier": 1.10,
-    "image": "monster_gifs\\1087.gif"
-  },
-  {
     "name": "Orc Lord",
     "hp": 2300,
     "atk": 235,
@@ -140,24 +120,14 @@
     "image": "monster_gifs\\1190.gif"
   },
   {
-    "name": "Osiris",
-    "hp": 2000,
-    "atk": 200,
-    "def": 105,
-    "difficulty": 3,
-    "base_rewards": 4,
-    "reward_multiplier": 1.10,
-    "image": "monster_gifs\\1038.gif"
-  },
-  {
-    "name": "Pharaoh",
-    "hp": 2550,
-    "atk": 255,
-    "def": 135,
-    "difficulty": 5,
-    "base_rewards": 6,
-    "reward_multiplier": 1.50,
-    "image": "monster_gifs\\1157.gif"
+    "name": "Lady Tanee",
+    "hp": 2300,
+    "atk": 230,
+    "def": 100,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
+    "image": "monster_gifs\\1688.gif"
   },
   {
     "name": "Phreeoni",
@@ -168,6 +138,136 @@
     "base_rewards": 5,
     "reward_multiplier": 1.25,
     "image": "monster_gifs\\1159.gif"
+  },
+  {
+    "name": "Bacsojin",
+    "hp": 2000,
+    "atk": 200,
+    "def": 120,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
+    "image": "monster_gifs\\1630.gif"
+  },
+  {
+    "name": "High Priest Magaleta",
+    "hp": 2100,
+    "atk": 200,
+    "def": 120,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
+    "image": "monster_gifs\\1649.gif"
+  },
+  {
+    "name": "High Wizard Katrinn",
+    "hp": 2100,
+    "atk": 250,
+    "def": 100,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
+    "image": "monster_gifs\\1651.gif"
+  },
+  {
+    "name": "Incantation Samurai",
+    "hp": 2000,
+    "atk": 210,
+    "def": 100,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
+    "image": "monster_gifs\\1492.gif"
+  },
+  {
+    "name": "Sniper Shecil",
+    "hp": 2100,
+    "atk": 250,
+    "def": 100,
+    "difficulty": 4,
+    "base_rewards": 5,
+    "reward_multiplier": 1.25,
+    "image": "monster_gifs\\1650.gif"
+  },
+  {
+    "name": "Kiel D-01",
+    "hp": 2300,
+    "atk": 240,
+    "def": 120,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
+    "image": "monster_gifs\\1734.gif"
+  },
+  {
+    "name": "Lord Knight Seyren",
+    "hp": 2200,
+    "atk": 250,
+    "def": 120,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
+    "image": "monster_gifs\\1646.gif"
+  },
+  {
+    "name": "Assassin Cross Eremes",
+    "hp": 2100,
+    "atk": 250,
+    "def": 100,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
+    "image": "monster_gifs\\1647.gif"
+  },
+  {
+    "name": "Ifrit",
+    "hp": 2600,
+    "atk": 260,
+    "def": 150,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
+    "image": "monster_gifs\\1832.gif"
+  },
+  {
+    "name": "Beelzebub",
+    "hp": 2600,
+    "atk": 260,
+    "def": 150,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
+    "image": "monster_gifs\\1874.gif"
+  },
+  {
+    "name": "Valkyrie Randgris",
+    "hp": 2600,
+    "atk": 260,
+    "def": 150,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
+    "image": "monster_gifs\\1751.gif"
+  },
+  {
+    "name": "Thanatos",
+    "hp": 2600,
+    "atk": 260,
+    "def": 140,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
+    "image": "monster_gifs\\1708.gif"
+  },
+  {
+    "name": "Gloom Under Night",
+    "hp": 2500,
+    "atk": 260,
+    "def": 140,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
+    "image": "monster_gifs\\1768.gif"
   },
   {
     "name": "Tao Gunka",
@@ -210,16 +310,6 @@
     "image": "monster_gifs\\1885.gif"
   },
   {
-    "name": "Lady Tanee",
-    "hp": 2300,
-    "atk": 230,
-    "def": 100,
-    "difficulty": 4,
-    "base_rewards": 5,
-    "reward_multiplier": 1.25,
-    "image": "monster_gifs\\1688.gif"
-  },
-  {
     "name": "Stormy Knight",
     "hp": 2400,
     "atk": 250,
@@ -238,5 +328,45 @@
     "base_rewards": 6,
     "reward_multiplier": 1.50,
     "image": "monster_gifs\\1623.gif"
+  },
+  {
+    "name": "Pharaoh",
+    "hp": 2550,
+    "atk": 255,
+    "def": 135,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
+    "image": "monster_gifs\\1157.gif"
+  },
+  {
+    "name": "Baphomet",
+    "hp": 2550,
+    "atk": 250,
+    "def": 140,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
+    "image": "monster_gifs\\1039.gif"
+  },
+  {
+    "name": "Dark Lord",
+    "hp": 2500,
+    "atk": 260,
+    "def": 125,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
+    "image": "monster_gifs\\1272.gif"
+  },
+  {
+    "name": "Garm",
+    "hp": 2500,
+    "atk": 250,
+    "def": 135,
+    "difficulty": 5,
+    "base_rewards": 6,
+    "reward_multiplier": 1.50,
+    "image": "monster_gifs\\1252.gif"
   }
 ]

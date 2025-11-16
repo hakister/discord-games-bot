@@ -47,10 +47,19 @@ class RaidBoss(commands.Cog):
         # Load reward scaling config
         try:
             with open(REWARD_FILE, "r", encoding="utf-8") as f:
-                self.reward_config = json.load(f).get("rewards", [])
+                cfg = json.load(f)
+            # allow old shape where top-level key might be "rewards"
+            if isinstance(cfg, dict) and "rewards" in cfg and isinstance(cfg["rewards"], dict):
+                cfg = cfg["rewards"]
+            self.reward_config = cfg if isinstance(cfg, dict) else {}
         except Exception as e:
             print(f"[RaidBoss] ⚠️ Error loading reward scaling: {e}")
-            self.reward_config = []
+            self.reward_config = {}
+
+        # Ensure required keys exist with safe defaults
+        self.reward_config.setdefault("event_boxes", [])
+        self.reward_config.setdefault("legacy_tokens", {"enabled": False, "scaling": []})
+        self.reward_config.setdefault("treat_boxes", {"enabled": False, "scaling": []})
 
     # ---------- Commands ----------
 
@@ -617,46 +626,144 @@ class RaidBoss(commands.Cog):
         total_joined = len(self.players)
 
         if self.boss and self.boss["hp"] <= 0:
-            # Determine total Event Boxes from config
-            total_boxes = 1  # default fallback
-            for rule in self.reward_config:
-                if rule["min_players"] <= total_joined <= rule["max_players"]:
-                    total_boxes = rule["boxes"]
-                    break
 
-            reward_lines = []
-            num_survivors = len(survivors)
-
-            if num_survivors == 0:
+            if not survivors:
                 await ctx.send("Raid finished: Boss defeated but no survivors.")
             else:
-                # If survivors >= total_boxes -> give each survivor 1 box (ignore total_boxes)
-                if num_survivors >= total_boxes:
-                    reward_map = {p["id"]: 1 for p in survivors}
+                num_survivors = len(survivors)
+
+                # Helper local for safe lookup
+                def scaled_amount_for(table_or_list, players):
+                    # table_or_list may be a list of rules [{min_players,max_players,amount},...]
+                    if not isinstance(table_or_list, list):
+                        return 0
+                    for rule in table_or_list:
+                        try:
+                            if rule["min_players"] <= players <= rule["max_players"]:
+                                return int(rule.get("amount", 0))
+                        except Exception:
+                            continue
+                    return 0
+
+                reward_results = {
+                    "event_boxes": {p["id"]: 0 for p in survivors},
+                    "legacy_tokens": {p["id"]: 0 for p in survivors},
+                    "treat_boxes": {p["id"]: 0 for p in survivors},
+                }
+
+                # --- EVENT BOXES ---
+                total_boxes = scaled_amount_for(self.reward_config.get("event_boxes", []), total_joined)
+                total_boxes = max(0, int(total_boxes))
+
+                if total_boxes <= 0:
+                    # nothing to give
+                    pass
+                elif num_survivors >= total_boxes:
+                    # Give 1 each (ignore total_boxes)
+                    for p in survivors:
+                        reward_results["event_boxes"][p["id"]] = 1
                 else:
-                    # survivors < total_boxes -> split boxes equally, distribute leftover randomly
                     base_share = total_boxes // num_survivors
                     leftover = total_boxes % num_survivors
-
-                    reward_map = {p["id"]: base_share for p in survivors}
+                    
+                    for p in survivors:
+                        reward_results["event_boxes"][p["id"]] = base_share
+                    
                     if leftover > 0:
                         shuffled = survivors.copy()
                         random.shuffle(shuffled)
                         for i in range(leftover):
-                            reward_map[shuffled[i]["id"]] += 1
+                            reward_results["event_boxes"][shuffled[i]["id"]] += 1
 
-                # Build display lines
-                for pid, boxes in reward_map.items():
+                # --- LEGACY TOKENS (optional) ---
+                legacy_cfg = self.reward_config.get("legacy_tokens", {"enabled": False, "scaling": []})
+                if legacy_cfg.get("enabled"):
+                    total_tokens = scaled_amount_for(legacy_cfg.get("scaling", []), total_joined)
+                    total_tokens = max(0, int(total_tokens))
+
+                    if total_tokens > 0:
+                        if num_survivors >= total_tokens:
+                            for p in survivors:
+                                reward_results["legacy_tokens"][p["id"]] = 1
+                        else:
+                            base_share = total_tokens // num_survivors
+                            leftover = total_tokens % num_survivors
+                            for p in survivors:
+                                reward_results["legacy_tokens"][p["id"]] = base_share
+                            if leftover > 0:
+                                shuffled = survivors.copy()
+                                random.shuffle(shuffled)
+                                for i in range(leftover):
+                                    reward_results["legacy_tokens"][shuffled[i]["id"]] += 1
+
+                # --- TRICK-OR-TREAT BOXES (optional) ---
+                treat_cfg = self.reward_config.get("treat_boxes", {"enabled": False, "scaling": []})
+                if treat_cfg.get("enabled"):
+                    total_treats = scaled_amount_for(treat_cfg.get("scaling", []), total_joined)
+                    total_treats = max(0, int(total_treats))
+
+                    if total_treats > 0:
+                        if num_survivors >= total_treats:
+                            for p in survivors:
+                                reward_results["treat_boxes"][p["id"]] = 1
+                        else:
+                            base_share = total_treats // num_survivors
+                            leftover = total_treats % num_survivors
+                            for p in survivors:
+                                reward_results["treat_boxes"][p["id"]] = base_share
+                            if leftover > 0:
+                                shuffled = survivors.copy()
+                                random.shuffle(shuffled)
+                                for i in range(leftover):
+                                    reward_results["treat_boxes"][shuffled[i]["id"]] += 1
+                # ---------- SUMMARY EMBED ----------
+
+                available_rewards_text = []
+
+                # Event Boxes
+                available_rewards_text.append(f"📦 **Event Boxes Available:** {total_boxes}")
+
+                # Legacy Tokens
+                if legacy_cfg.get("enabled"):
+                    lt = scaled_amount_for(legacy_cfg.get("scaling", []), total_joined)
+                    available_rewards_text.append(f"🪙 **Legacy Tokens Available:** {lt}")
+
+                # Trick-or-Treat Boxes
+                if treat_cfg.get("enabled"):
+                    tb = scaled_amount_for(treat_cfg.get("scaling", []), total_joined)
+                    available_rewards_text.append(
+                        f"🎃 **Trick-or-Treat Boxes Available:** {tb}"
+                    )
+
+                reward_lines = []
+                for p in survivors:
+                    pid = p["id"]
+                    ebox = reward_results["event_boxes"][pid]
+                    legacy = reward_results["legacy_tokens"][pid]
+                    treat = reward_results["treat_boxes"][pid]
+
+                    items = []
+                    if ebox > 0:
+                        items.append(f"**{ebox}x Event Box{'es' if ebox != 1 else ''}**")
+                    if legacy_cfg.get("enabled") and legacy > 0:
+                        items.append(f"**{legacy}x Legacy Token{'s' if legacy != 1 else ''}**")
+                    if treat_cfg.get("enabled") and treat > 0:
+                        items.append(
+                            f"**{treat}x Trick-or-Treat Box{'es' if treat != 1 else ''}**"
+                        )
+
                     reward_lines.append(
-                        f"🎁 <@{pid}> — **{boxes}x Event Box{'es' if boxes > 1 else ''}**"
+                        f"🎁 <@{pid}> — {', '.join(items) if items else '*no rewards*'}"
                     )
 
                 embed = discord.Embed(
                     title="🏁 Raid Complete — Players Win!",
                     description=(
                         f"**{self.boss['name']}** has been defeated!\n"
-                        f"**Total Event Boxes (scaled):** {total_boxes}\n"
                         f"**Survivors:** {num_survivors} / {total_joined}\n\n"
+                        "### 🎉 **Available Rewards**\n"
+                        + "\n".join(available_rewards_text)
+                        + "\n\n### 🎁 **Reward Distribution**\n"
                         + "\n".join(reward_lines)
                     ),
                     color=discord.Color.gold(),
@@ -774,6 +881,13 @@ class RaidBoss(commands.Cog):
         filled = max(0, min(length, filled))
         empty = length - filled
         return "█" * filled + "░" * empty
+
+    def _get_scaled_reward_amount(self, table, player_count):
+        """Return the reward amount based on scaling table and player count."""
+        for rule in table:
+            if rule["min_players"] <= player_count <= rule["max_players"]:
+                return rule["amount"]
+        return 0  # fallback
 
 
 async def setup(bot):
