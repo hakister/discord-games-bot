@@ -6,6 +6,12 @@ from config import TOKEN, PREFIX
 
 intents = discord.Intents.default()
 intents.message_content = True
+intents.reactions = True
+intents.members = True
+intents.guilds = True
+intents.dm_messages = True
+intents.dm_reactions = True
+intents.integrations = True
 
 bot = commands.Bot(command_prefix=PREFIX, intents=intents)
 

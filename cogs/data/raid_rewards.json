@@ -57,61 +57,6 @@
 			{
 				"min_players": 1,
 				"max_players": 4,
-				"amount": 10
-			},
-			{
-				"min_players": 5,
-				"max_players": 9,
-				"amount": 20
-			},
-			{
-				"min_players": 10,
-				"max_players": 14,
-				"amount": 30
-			},
-			{
-				"min_players": 15,
-				"max_players": 19,
-				"amount": 40
-			},
-			{
-				"min_players": 20,
-				"max_players": 24,
-				"amount": 50
-			},
-			{
-				"min_players": 25,
-				"max_players": 34,
-				"amount": 60
-			},
-			{
-				"min_players": 35,
-				"max_players": 44,
-				"amount": 70
-			},
-			{
-				"min_players": 45,
-				"max_players": 54,
-				"amount": 80
-			},
-			{
-				"min_players": 55,
-				"max_players": 64,
-				"amount": 90
-			},
-			{
-				"min_players": 65,
-				"max_players": 999,
-				"amount": 100
-			}
-		]
-	},
-	"treat_boxes": {
-		"enabled": true,
-		"scaling": [
-			{
-				"min_players": 1,
-				"max_players": 4,
 				"amount": 5
 			},
 			{
@@ -158,6 +103,61 @@
 				"min_players": 65,
 				"max_players": 999,
 				"amount": 50
+			}
+		]
+	},
+	"antonio_bags": {
+		"enabled": true,
+		"scaling": [
+			{
+				"min_players": 1,
+				"max_players": 4,
+				"amount": 4
+			},
+			{
+				"min_players": 5,
+				"max_players": 9,
+				"amount": 8
+			},
+			{
+				"min_players": 10,
+				"max_players": 14,
+				"amount": 12
+			},
+			{
+				"min_players": 15,
+				"max_players": 19,
+				"amount": 16
+			},
+			{
+				"min_players": 20,
+				"max_players": 24,
+				"amount": 20
+			},
+			{
+				"min_players": 25,
+				"max_players": 34,
+				"amount": 24
+			},
+			{
+				"min_players": 35,
+				"max_players": 44,
+				"amount": 28
+			},
+			{
+				"min_players": 45,
+				"max_players": 54,
+				"amount": 32
+			},
+			{
+				"min_players": 55,
+				"max_players": 64,
+				"amount": 36
+			},
+			{
+				"min_players": 65,
+				"max_players": 999,
+				"amount": 40
 			}
 		]
 	}
