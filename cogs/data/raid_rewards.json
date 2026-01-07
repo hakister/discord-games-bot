@@ -52,7 +52,7 @@
 		}
 	],
 	"legacy_tokens": {
-		"enabled": true,
+		"enabled": false,
 		"scaling": [
 			{
 				"min_players": 1,
@@ -107,7 +107,7 @@
 		]
 	},
 	"antonio_bags": {
-		"enabled": true,
+		"enabled": false,
 		"scaling": [
 			{
 				"min_players": 1,

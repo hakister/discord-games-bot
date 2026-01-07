@@ -14,7 +14,7 @@ class NumberGuess(commands.Cog):
         self.active_game = {}
         self.lock = asyncio.Lock()
 
-    @commands.command(name="gtn", help="Start a new Guess the Number game. The bot picks a number between 1 and 500.")
+    @commands.command(name="gtn", help="Start a new Guess the Number game. The bot picks a number between 1 and 2026.")
     async def guess_number(self, ctx):
         if ctx.channel.id != ALLOWED_CHANNEL_ID:
             return  # Ignore command if not in allowed channel
@@ -35,7 +35,7 @@ class NumberGuess(commands.Cog):
         
         # Start a new game
 
-        number = random.randint(1, 500)
+        number = random.randint(1, 2026)
         timeout_task = self.bot.loop.create_task(self.expire_game(ctx))
 
         self.active_game = {"user_id": ctx.author.id, "target": number, "timeout": timeout_task}
@@ -43,7 +43,7 @@ class NumberGuess(commands.Cog):
         embed = discord.Embed(
             title="🎲 Forsaken Legacy - Guess the Number Game",
             description=(
-                f"Hello! I've picked a number between **1 and 500**.\n"
+                f"Hello! I've picked a number between **1 and 2026**.\n"
                 "Type your guess in chat!"
             ),
             color=discord.Color.orange(),
@@ -73,8 +73,8 @@ class NumberGuess(commands.Cog):
             guess = int(content)
             target = self.active_game["target"]
 
-            if not (1 <= guess <= 500):
-                await message.channel.send(f"❗ {message.author.mention}, your guess must be between 1 and 500.")
+            if not (1 <= guess <= 2026):
+                await message.channel.send(f"❗ {message.author.mention}, your guess must be between 1 and 2026.")
                 return
 
             if guess == target:

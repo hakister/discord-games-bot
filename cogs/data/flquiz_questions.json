@@ -19,237 +19,456 @@
         "question": "Where is the Swordsman Association located?",
         "answer": "Izlude"
     },
-		{
+    {
         "question": "Where is the Archer Village located?",
         "answer": "Payon"
     },
-		{
+    {
         "question": "Where is the Acolyte Guild located?",
         "answer": "Prontera"
     },
-		{
+    {
         "question": "What 2nd class character is able to lay traps on the ground?",
         "answer": "Hunter"
     },
-		{
+    {
         "question": "What 2nd class character is able to create elemental converters?",
         "answer": "Sage"
     },
-		{
+    {
         "question": "What 2nd class character is able to brew potions?",
         "answer": "Alchemist"
     },
-		{
+    {
         "question": "What 2nd class character is able to forge weapons?",
         "answer": "Blacksmith"
     },
-		{
+    {
         "question": "What 2nd class character is able to cast Resurrection on fallen comrades?",
         "answer": "Priest"
     },
-		{
+    {
         "question": "What 1st class character has access to the Steal skill?",
         "answer": "Thief"
     },
-		{
+    {
         "question": "What 1st class character has access to the Endure skill?",
         "answer": "Swordsman"
     },
-		{
+    {
         "question": "What card enchants armor with the Holy property?",
         "answer": "Angeling"
     },
-		{
+    {
         "question": "What card enchants armor with the Poison property?",
         "answer": "Argiope"
     },
-		{
+    {
         "question": "What card enchants armor with the Shadow property?",
         "answer": "Bathory"
     },
-		{
+    {
         "question": "What card enchants armor with the Wind property?",
         "answer": "Dokebi"
     },
-		{
+    {
         "question": "What card enchants armor with the Undead property?",
         "answer": "Evil Druid"
     },
-		{
+    {
         "question": "What card enchants armor with the Ghost property?",
         "answer": "Ghostring"
     },
-		{
+    {
         "question": "What card enchants armor with the Fire property?",
         "answer": "Pasana"
     },
-		{
+    {
         "question": "What card enchants armor with the Earth property?",
         "answer": "Sandman"
     },
-		{
+    {
         "question": "What card enchants armor with the Water property?",
         "answer": "Swordfish"
     },
-		{
+    {
         "question": "Which NPC in the 'Seeker's New Beginnings' questline give the Auto Combat and Auto Support items?",
         "answer": "Quest Master"
     },
-		{
+    {
         "question": "What item do players get after they talk to the Kafra Welcome NPC in the Training Grounds?",
         "answer": "Kafra's Letter"
     },
-		{
+    {
         "question": "How much zeny is the trade tax when trading 1 item?",
         "answer": "4000"
     },
-		{
+    {
         "question": "How much weight limit do players get when their refinement set is +7?",
         "answer": "500"
     },
-		{
+    {
         "question": "How much weight limit do players get when their refinement set is +8?",
         "answer": "750"
     },
-		{
+    {
         "question": "How much weight limit do players get when their refinement set is +9?",
         "answer": "850"
     },
-		{
+    {
         "question": "How much extra bonus drop rate percentage do players get when Overkill is activated?",
         "answer": "10"
     },
-		{
+    {
         "question": "How much extra bonus movement speed percentage do players get when Valkyrie's Affinity is activated?",
         "answer": "10"
     },
-		{
+    {
         "question": "How many maps are selected for the PK Zone System?",
         "answer": "3"
     },
-		{
+    {
         "question": "Aside from High Priest, Paladin, Clown, and Gypsy, what Transcended class can be used for the Auto Support System?",
         "answer": "Creator"
     },
-		{
+    {
         "question": "Which map can players use their fishing rods?",
         "answer": "Jawaii"
     },
-		{
+    {
         "question": "How many baits are available to use for Fishing?",
         "answer": "5"
     },
-		{
+    {
         "question": "What fish can be exchanged in the Fish Trader NPC for a random amount of zeny?",
         "answer": "Golden Koi"
     },
-		{
+    {
         "question": "How many ingots are available in Mining?",
         "answer": "4"
     },
-		{
+    {
         "question": "How many Eluniums do you need to craft a Pickaxe for Mining?",
         "answer": "40"
     },
-		{
+    {
         "question": "What trunk is required for crafting a Pickaxe in Mining?",
         "answer": "Fine-grained"
     },
-		{
+    {
         "question": "What is the name of the very first custom instance of Forsaken Legacy?",
         "answer": "Rigel's Awakening"
     },
-		{
+    {
         "question": "When starting Rigel's Awakening, what item should the party leader have in their inventory?",
         "answer": "Lair of the Fallen Star Key"
     },
-		{
+    {
         "question": "What is the element of Rigel?",
         "answer": "Holy"
     },
-		{
+    {
         "question": "What is the name of the mini-boss monster in Rigel's Awakening?",
         "answer": "Schulang"
     },
-		{
+    {
         "question": "What is the name of the very first Raid Boss in Forsaken Legacy?",
         "answer": "Bellon"
     },
-		{
+    {
         "question": "Aside from the Teleportation skill, what other skill is disabled in the Raid Boss map?",
         "answer": "Greed"
     },
-		{
+    {
         "question": "Once the portal for the Raid Boss event opens, how many monsters will spawn before the Raid Boss appears?",
         "answer": "200"
     },
-		{
+    {
         "question": "How many minutes is given for idle players before they get kicked out from the Raid Boss map?",
         "answer": "1"
     },
-		{
+    {
         "question": "What is GM Yoasobi's correct Discord username?",
         "answer": "takunsenpai."
     },
-		{
+    {
         "question": "What is the highest tier of VIP in Forsaken Legacy?",
         "answer": "5"
     },
-		{
+    {
         "question": "What is the name of Forsaken Legacy's donation currency?",
         "answer": "Legacy Token"
     },
-		{
+    {
         "question": "How many kinds of stats are there when you create a character?",
         "answer": "6"
     },
-		{
+    {
         "question": "What stat affects the 'Melee' physical power of your character?",
         "answer": "Strength"
     },
-		{
+    {
         "question": "What stat affects the attack speed and flee of your character?",
         "answer": "Agility"
     },
-		{
+    {
         "question": "What stat affects the endurance, HP, and restorative power of your character?",
         "answer": "Vitality"
     },
-		{
+    {
         "question": "What stat affects the mental power of your character, allowing to deal magic damage?",
         "answer": "Intelligence"
     },
-		{
+    {
         "question": "What stat affects the accuracy and ranged physical power of your character?",
         "answer": "Dexterity"
     },
-		{
+    {
         "question": "What stat affects the fortune of your character, allowing it to deal critical attacks and luckily dodging enemy attacks?",
         "answer": "Luck"
     },
-		{
+    {
         "question": "What status ailment causes the reduction of your character's HIT and FLEE rate by 25%?",
         "answer": "Blind"
     },
-		{
+    {
         "question": "What status ailment causes the reduction of your character's ATK by 25% and LUK becomes 0?",
         "answer": "Curse"
     },
-		{
+    {
         "question": "What status ailment causes players to be unable to re-equip items stripped from them?",
         "answer": "Divest"
     },
-		{
+    {
         "question": "What status ailment causes the screen to go wavy and see crazy numbers for all damages processed around you even though it is fake?",
         "answer": "Hallucination"
     },
-		{
+    {
         "question": "What status ailments causes the inability to use any active skills?",
         "answer": "Silence"
     },
-		{
+    {
         "question": "What status ailment causes an increased casting time for skills by 20% to 100%?",
         "answer": "Slow Casting"
+    },
+    {
+        "question": "What command is used to help players navigate through the various areas and NPCs in Dark Prontera?",
+        "answer": "@guide"
+    },
+    {
+        "question": "What is the minimum amount of hourly points exchangeable for Hourly Coupons?",
+        "answer": "3"
+    },
+    {
+        "question": "What is the maximum amount of hourly points exchangeable for Hourly Coupons?",
+        "answer": "50"
+    },
+    {
+        "question": "What color is used to represent the 'Uncommon' item rarity in Forsaken Legacy?",
+        "answer": "Green"
+    },
+    {
+        "question": "What color is used to represent the 'Rare' item rarity in Forsaken Legacy?",
+        "answer": "Blue"
+    },
+    {
+        "question": "What color is used to represent the 'Epic' item rarity in Forsaken Legacy?",
+        "answer": "Purple"
+    },
+    {
+        "question": "What color is used to represent the 'Unique' item rarity in Forsaken Legacy?",
+        "answer": "Gold"
+    },
+    {
+        "question": "What color is used to represent the 'Legendary' item rarity in Forsaken Legacy?",
+        "answer": "Red"
+    },
+    {
+        "question": "How many item options does the 'Uncommon' rarity have?",
+        "answer": "1"
+    },
+    {
+        "question": "How many item options does the 'Rare' rarity have?",
+        "answer": "2"
+    },
+    {
+        "question": "How many item options does the 'Epic' rarity have?",
+        "answer": "3"
+    },
+    {
+        "question": "How many item options does the 'Unique' rarity have?",
+        "answer": "4"
+    },
+    {
+        "question": "How many item options does the 'Legendary' rarity have?",
+        "answer": "5"
+    },
+    {
+        "question": "How much extra bonus drop rate percentage do players get when Valkyrie's Affinity is activated?",
+        "answer": "10"
+    },
+    {
+        "question": "What is the max drop cap percentage when using a Tier V VIP Ring?",
+        "answer": "85"
+    },
+    {
+        "question": "What is the max drop cap percentage when using a Tier IV VIP Ring?",
+        "answer": "75"
+    },
+    {
+        "question": "Which MVP Pet uses the skill 'Weapon Perfection' to its owner?",
+        "answer": "Gopinich"
+    },
+    {
+        "question": "Which MVP Pet uses the skill 'Slim Potion Pitcher' to its owner?",
+        "answer": "Orc Lord"
+    },
+    {
+        "question": "Which MVP Pet uses the skill 'Wind Walk' at Level 5 to its owner?",
+        "answer": "Osiris"
+    },
+    {
+        "question": "Which MVP Pet uses the skill 'Auto Guard' at Level 3 to its owner?",
+        "answer": "Stormy Knight"
+    },
+    {
+        "question": "Which MVP Pet uses the skill 'Blessing' to its owner?",
+        "answer": "Maya"
+    },
+    {
+        "question": "Which MVP Pet uses the skill 'Suffragium' to its owner?",
+        "answer": "Dark Lord"
+    },
+    {
+        "question": "Which MVP Pet uses the skill 'Meltdown' to its owner?",
+        "answer": "Eddga"
+    },
+    {
+        "question": "Which MVP Pet uses the skill 'Land Protector' to its owner?",
+        "answer": "Evil Snake Lord"
+    },
+    {
+        "question": "Which MVP Pet uses the skill 'True Sight' to its owner?",
+        "answer": "Orc Hero"
+    },
+    {
+        "question": "Which MVP Pet uses the skill 'Magnificat' to its owner?",
+        "answer": "Tao Gunka"
+    },
+    {
+        "question": "How many kinds of materials are needed to enchant costume items?",
+        "answer": "4"
+    },
+    {
+        "question": "How much zeny does enchanting a costume item cost?",
+        "answer": "1000000"
+    },
+    {
+        "question": "How much maxmimum zeny does upgrading the current enchantment level of a costume item cost?",
+        "answer": "4000000"
+    },
+    {
+        "question": "How much minimum zeny does upgrading the current enchantment level of a costume item cost?",
+        "answer": "2000000"
+    },
+    {
+        "question": "How much zeny does resetting the enchantment of a costume item cost?",
+        "answer": "1500000"
+    },
+    {
+        "question": "What is the success rate percentage for enchanting a costume item?",
+        "answer": "70"
+    },
+    {
+        "question": "What is the success rate percentage for upgrading the enchantment level of a costume item?",
+        "answer": "100"
+    },
+    {
+        "question": "What is the success rate percentage for resetting the enchantment of a costume item?",
+        "answer": "85"
+    },
+    {
+        "question": "What is the minimum drop rate percentage enchantment for costume items?",
+        "answer": "3"
+    },
+    {
+        "question": "What is the maximum drop rate percentage enchantment for costume items?",
+        "answer": "9"
+    },
+    {
+        "question": "How many buffs does Beast Crest Tier IV provide?",
+        "answer": "3"
+    },
+    {
+        "question": "How many buffs does Beast Crest Tier V provide?",
+        "answer": "4"
+    },
+    {
+        "question": "How many buffs does Beast Crest Tier VI provide?",
+        "answer": "5"
+    },
+    {
+        "question": "How many buffs does Beast Crest Tier IX provide?",
+        "answer": "6"
+    },
+    {
+        "question": "How many buffs does Beast Crest Tier X provide?",
+        "answer": "7"
+    },
+    {
+        "question": "What command is used to access the MVP spawn status list in Forsaken Legacy?",
+        "answer": "@mvpboard"
+    },
+    {
+        "question": "What VIP Tier is the @mvpboard command accessible to players?",
+        "answer": "2"
+    },
+    {
+        "question": "In Forsaken Legacy's Card Recycler, what is the recycling rate percentage for random cards?",
+        "answer": "80"
+    },
+    {
+        "question": "In Forsaken Legacy's Card Recycler, what is the recycling rate percentage for card fragments?",
+        "answer": "19"
+    },
+    {
+        "question": "In Forsaken Legacy's Card Recycler, what is the recycling rate percentage for special rewards?",
+        "answer": "1"
+    },
+    {
+        "question": "How many cards are needed to use the Card Recycler in Forsaken Legacy?",
+        "answer": "4"
+    },
+    {
+        "question": "How much zeny is needed to use the Card Recycler in Forsaken Legacy?",
+        "answer": "150000"
+    },
+    {
+        "question": "What do players get on the 7th Day of the Daily Login Rewards?",
+        "answer": "Bubblegum"
+    },
+    {
+        "question": "What do players get on the 29th Day of the Daily Login Rewards?",
+        "answer": "Token of Siegfried"
+    },
+    {
+        "question": "What do players get on the Last Day of the Daily Login Rewards?",
+        "answer": "Gym Pass"
+    },
+    {
+        "question": "How many kinds of stardusts are available in Mining?",
+        "answer": "4"
+    },
+    {
+        "question": "How many maps are available for Mining?",
+        "answer": "4"
+    },
+    {
+        "question": "What map can you start finding Unique Ores in Mining?",
+        "answer": "miner02"
+    },
+    {
+        "question": "What map can you find Legendary Ores in Mining?",
+        "answer": "miner03"
     }
-
 ]
