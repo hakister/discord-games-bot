@@ -470,5 +470,157 @@
     {
         "question": "What map can you find Legendary Ores in Mining?",
         "answer": "miner03"
+    },
+    {
+        "question": "How many seconds does the Advanced Fishing Rod reduce fishing time by?",
+        "answer": "1"
+    },
+    {
+        "question": "How many seconds does the Silver Fishing Rod reduce fishing time by?",
+        "answer": ""
+    },
+    {
+        "question": "How many seconds does the Golden Fishing Rod reduce fishing time by?",
+        "answer": ""
+    },
+    {
+        "question": "What is the higher quality fish bait after the regular one?",
+        "answer": "Wormy"
+    },
+    {
+        "question": "What is the higher quality fish bait after Wormy?",
+        "answer": "Hook"
+    },
+    {
+        "question": "What is the higher quality fish bait after Hook?",
+        "answer": "Large"
+    },
+    {
+        "question": "What is the highest quality fish bait?",
+        "answer": "Rainbow"
+    },
+    {
+        "question": "How many fish coupons do you get for trading Smelly Fish to the Fish Trader NPC?",
+        "answer": "1"
+    },
+    {
+        "question": "How many fish coupons do you get for trading Mackerel to the Fish Trader NPC?",
+        "answer": "2"
+    },
+    {
+        "question": "How many fish coupons do you get for trading Tough Fish to the Fish Trader NPC?",
+        "answer": "3"
+    },
+    {
+        "question": "How many fish coupons do you get for trading Sturgeon to the Fish Trader NPC?",
+        "answer": "4"
+    },
+    {
+        "question": "How many fish coupons do you get for trading Bull Shark to the Fish Trader NPC?",
+        "answer": "5"
+    },
+    {
+        "question": "How many fish coupons do you get for trading Golden Koi to the Fish Trader NPC?",
+        "answer": "0"
+    },
+    {
+        "question": "In Forsaken Legacy's Codex System, what is the bonus effect for Costume Garment and Weapons?",
+        "answer": "Weight Limit"
+    },
+    {
+        "question": "In Forsaken Legacy's Codex System, what is the bonus effect for Headgear and Shoe cards?",
+        "answer": "Max SP"
+    },
+    {
+        "question": "In Forsaken Legacy's Codex System, what is the bonus effect for Armor and Garment cards?",
+        "answer": "Max HP"
+    },
+    {
+        "question": "Every how many hours is the Fish Trader available to trade fishes?",
+        "answer": "3"
+    },
+    {
+        "question": "For guild contribution in Forsaken Legacy, what is the maximum amount of zeny a guild member can contribute?",
+        "answer": "10000000"
+    },
+    {
+        "question": "What is the maximum guild experience reward for turning in hunting quests in Forsaken Legacy?",
+        "answer": "3000"
+    },
+    {
+        "question": "What is the minimum guild experience reward for turning in hunting quests in Forsaken Legacy?",
+        "answer": "1000"
+    },
+    {
+        "question": "What is the maximum guild experience reward for turning in collection quests in Forsaken Legacy?",
+        "answer": "5000"
+    },
+    {
+        "question": "What is the minimum guild experience reward for turning in collection quests in Forsaken Legacy?",
+        "answer": "2000"
+    },
+    {
+        "question": "How much experience and drop rate percentage bonus do guild members get at Guild Level 10?",
+        "answer": "7"
+    },
+    {
+        "question": "How much experience and drop rate percentage bonus do guild members get at Guild Level 20?",
+        "answer": "10"
+    },
+    {
+        "question": "How much experience and drop rate percentage bonus do guild members get at Guild Level 30?",
+        "answer": "13"
+    },
+    {
+        "question": "How much experience and drop rate percentage bonus do guild members get at Guild Level 40?",
+        "answer": "16"
+    },
+    {
+        "question": "How much experience and drop rate percentage bonus do guild members get at Guild Level 50?",
+        "answer": "20"
+    },
+    {
+        "question": "How much bonus weight limit do guild members get at Guild Level 10?",
+        "answer": "200"
+    },
+    {
+        "question": "How much bonus weight limit do guild members get at Guild Level 20?",
+        "answer": "400"
+    },
+    {
+        "question": "How much bonus weight limit do guild members get at Guild Level 30?",
+        "answer": "600"
+    },
+    {
+        "question": "How much bonus weight limit do guild members get at Guild Level 40?",
+        "answer": "800"
+    },
+    {
+        "question": "How much bonus weight limit do guild members get at Guild Level 50?",
+        "answer": "1000"
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
+    },
+    {
+        "question": "",
+        "answer": ""
     }
 ]
