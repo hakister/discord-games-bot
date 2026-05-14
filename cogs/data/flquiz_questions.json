@@ -477,11 +477,11 @@
     },
     {
         "question": "How many seconds does the Silver Fishing Rod reduce fishing time by?",
-        "answer": ""
+        "answer": "2"
     },
     {
         "question": "How many seconds does the Golden Fishing Rod reduce fishing time by?",
-        "answer": ""
+        "answer": "3"
     },
     {
         "question": "What is the higher quality fish bait after the regular one?",
@@ -600,27 +600,23 @@
         "answer": "1000"
     },
     {
-        "question": "",
-        "answer": ""
+        "question": "What VIP Tier is the @autoloot command accessible to players?",
+        "answer": "5"
     },
     {
-        "question": "",
-        "answer": ""
+        "question": "What VIP Tier can players start accessing the Forsaken Passage?",
+        "answer": "4"
     },
     {
-        "question": "",
-        "answer": ""
+        "question": "Which VIP Lounge NPC allows players to purchase materials for Poison Bottles, Acid Bottles, and Grenade Bottles?",
+        "answer": "VIP Mang Boy"
     },
     {
-        "question": "",
-        "answer": ""
+        "question": "Which VIP Lounge NPC allows players to purchase cooked food items that give +5 All Stat Food Buffs?",
+        "answer": "Cat Chef"
     },
     {
-        "question": "",
-        "answer": ""
-    },
-    {
-        "question": "",
-        "answer": ""
+        "question": "How much percentage discount do players get when purchasing items from the VIP Tool Dealer and VIP Utility Dealer NPCs in the VIP Lounge?",
+        "answer": "25%"
     }
 ]
